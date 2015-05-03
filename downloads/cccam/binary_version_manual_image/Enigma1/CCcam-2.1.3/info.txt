@@ -1,0 +1,6 @@
+
+<name>CCcam 2.1.3 - Complete</name>
+<description>CCcam 2.1.3 incl. NewCS 1.67 and OSCam 1.00-Startscript. No Configs, NewCS (bin) or OSCam (bin) included!</description>
+<creator>CCcam team uvadi</creator>
+
+### edit by root: Sa 29. Jan 00:09:24 CET 2011

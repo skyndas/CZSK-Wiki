@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<newCSconfig>
+	<readers name="Card Readers">
+		<device>
+			<name>lower</name>
+			<type>Sci</type>
+			<mhz>357</mhz>
+			<node>/dev/sci0</node>
+			
+			<export>No</export>
+			<enabled>yes</enabled>
+			<blocksa>No</blocksa>
+			<blockua>No</blockua>
+			<blockga>No</blockga>
+			<!-- <boxkey>0000000000</boxkey>  -->
+			<!-- <rsa>0000000000</rsa> -->
+			<irdeto-camkey>0000000000000000</irdeto-camkey>
+			<irdeto-camkey-data>0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</irdeto-camkey-data>
+			<crypto-special>No</crypto-special>
+			<ipk>0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ipk>
+			<ucpk>0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ucpk>
+			<PTShandshake>No</PTShandshake> 
+			<carddetect>Yes</carddetect>
+			<newcamd_port>11000</newcamd_port>
+			<autosid>Yes</autosid>
+			<Seca-PPV>no</Seca-PPV>
+			<pincode>0000</pincode> 
+			<sid>
+				<allow>
+				<!-- 	<id>0000</id>
+					<id>0001</id>
+					<id>0002</id> -->
+				</allow>  
+				<deny>
+				<!-- 	<id>0000</id>
+					<id>0001</id>
+					<id>0002</id> -->
+				</deny>
+			</sid>
+			<priority>round</priority> 
+		</device>		
+	</readers>	
+	<radegastserver>
+			<enabled>no</enabled>
+			<port>10001</port>
+			<allow>
+			<hostname>127.0.0.1</hostname>
+			</allow>
+	</radegastserver>
+	<cache>
+		<emm>20</emm>
+		<ecm>-1</ecm>
+	</cache>	
+	<httpd>
+		<server><port>3002</port><enabled>yes</enabled></server>
+		<user><name>newcs</name><password>newcs</password><accesslevel>admin</accesslevel></user>
+	</httpd>
+	<debug>
+		<password></password>	
+		<level>normal</level>	
+		<type>init</type>
+		<output>console,tcp</output>
+		<console_options>normal,init</console_options>
+		<tcp_port>3001</tcp_port>
+		<tcp_options>normal,init</tcp_options>
+	</debug>
+	<newcamdserver>
+		<enabled>yes</enabled>
+		<name>newcs</name>
+		<deskey>01 02 03 04 05 06 07 08 09 10 11 12 13 14</deskey>
+		<user><name>dummy</name><password>dummy</password><au>off</au><allow>lower</allow><allow>upper</allow></user>
+	</newcamdserver>
+</newCSconfig>
+

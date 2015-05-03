@@ -1,0 +1,73 @@
+#Example configuration file for sbox cardclient server
+
+#Add newcamd user
+#NC=dummy dummy slot0
+#NC=dummy dummy slot0 0
+#NC=dummy dummy slot0 0 150
+#NC=dummy dummy slot0 0 150 ip
+# |    |    |     |   |  |  |__________ user ip (optional)
+# |    |    |     |   |  |_____________ user timeout in sec min. 150 max. 1440 (optional)
+# |    |    |     |   |________________ 0=au disabled for this user 1=au enabled for this user (optional)
+# |    |    |     |____________________ server to which this user belongs
+# |    |    |__________________________ password for this user
+# |    |_______________________________ username
+# |____________________________________ newcamd client
+
+#NC=edk edk slot0 1
+#NC=edk2 edk2 slot1 0
+
+
+#Add radegast server
+#RS=ip port caid provider
+# | |   |     |     |__________________ provider
+# | |   |     |________________________ caid
+# | |   |______________________________ server port
+# | |__________________________________ server ip
+# |____________________________________ radegast server
+
+#RS=127.0.0.1 16050 1800 000000
+
+
+#Add newcamd server
+#NS=ip port user pass deskey au
+# | |   |    |    |     |     |________ enable send emms, 0=send all 1=dont send emm-s 2=dont send emm-u 4=dont send emm-g
+# | |   |    |    |     |______________ deskey
+# | |   |    |    |____________________ password
+# | |   |    |_________________________ user
+# | |   |______________________________ server port
+# | |__________________________________ server ip
+# |____________________________________ newcamd server
+
+#NS=127.0.0.1 15050 dummy dummy 0102030405060708091011121314 7
+
+
+#Add cccam server
+#CS=ip port user pass 3
+# | |   |    |    |   |________________ max hops (min.1 max.6)
+# | |   |    |    |____________________ password
+# | |   |    |_________________________ user
+# | |   |______________________________ server port
+# | |__________________________________ server ip
+# |____________________________________ cccam server
+
+#CS=127.0.0.1 15050 dummy dummy 3
+
+
+#Add cccam client
+#CC=user pass
+#CC=user pass 5 0 1
+#CC=user pass 5 0 1 { 0:0:1 }
+#CC=user pass 5 0 1 { 0:0:1 } userip
+# |   |    |  | | |   | | |     |______ user ip (optional)
+# |   |    |  | | |   | | |____________ max down hops (optional)
+# |   |    |  | | |   | |______________ without use (optional)
+# |   |    |  | | |   |________________ without use (optional)
+# |   |    |  | | |____________________ 0=au disabled for this user 1=au enabled for this user (optional)
+# |   |    |  | |______________________ without use (optional)
+# |   |    |  |________________________ gets all our shares at max 5 hops from us (optional)
+# |   |    |___________________________ password
+# |   |________________________________ user
+# |____________________________________ cccam client
+
+#CC=dummy dummy 3 0 0 { 0:0:1 } 192.168.0.154
+

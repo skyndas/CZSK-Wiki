@@ -1,0 +1,69 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fcharset0 Times New Roman;}{\f1\fswiss\fcharset0 Arial;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\sb100\sa100\f0\fs24 Sharing Howto - CCcam\line\line To start sharing both side's have to make a so called F-line\line in this Friends line you will set the username and password of\line your friend, aquintence, chatmate or whatever.\line\line also, you've got to forward port 12000 (default CCcam port) to your dreambox and you'll have to set the right attributes to CCcam.cfg in /var/etc (or in /etc/ depending on your box&image)\line it should be 644 to get it working\line\line further more you can also setup which cards your friend may (or may not)\line receive from you, and how far he or she can reshare your cards.\line it's also possible to determine on which time and from which\line IP-address he or she may connect.\line\line a complete F line looks like this:\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 F: user4 pass4 5 0 1 \{ 0:0:3, 0100:000080:1 \} \{ 0100:000080:15df \} \{ 12:00-17:00, 19:00-20:00 \} 81.23.45.67 \cell\row\pard\sb100\sa100 ############################\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 F: user4 pass4 \cell\row\pard\sb100\sa100 in this part you determine which username and password you will\line give to your friend. I.E. F: jantje pietje01,\line then jantje is his username and pietje01 is his password.\line\line ############################\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 5 0 1 \cell\row\pard\sb100\sa100 Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 # the 5 \cell\row\pard\sb100\sa100 the 5 means that your friend will receive all cards up to a maximum\line of 5 hops from your location. you can lower this number if you\line like, but it's not recommended (or, best practice) to do this\line since the card would be to far away and freezes will occur.\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 # the 0 \cell\row\pard\sb100\sa100 the 0 is used if your friend can use your emu's, with 0 he/she \line cannot use them, of you set it to "1" then he/she can.\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 # the 1 \cell\row\pard\sb100\sa100 to set if your friend will receive cardupdate's, you can set this to 1. \line I myself allways set it to 0\line\line ############################\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100\{ 0:0:3, 0100:000080:1 \}\line\{ 0100:000080:15df \} \cell\row\pard\sb100\sa100 this part start with a \{ (not with a "(" ) and a space, \line else it will not work.\line at the end you'll have to have the space and \} as well ofcourse.\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 # de 0:0:3 \cell\row\pard\sb100\sa100 in here the 0:0 means that your friend will be able to receive an reshare\line all cards (0:0) you have.\line the :3 means that he/she receives them 3 hops, so he can watch\line it him/herself (hop1) and share it to a friend (hop2) and that \line friend can reshare it to a friend of him (hop3)\line the one on hop3 cannot reshare your cards anymore.\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 # 0100:000080:1 \cell\row\pard\sb100\sa100 you can also set if someone can receive and reshare a particular\line card, or even your local card.\line 0100:000080 is the specific provider you want to put some restrictions to,\line and the :1 means 1 hop, so he/she can watch, but cannot reshare\line that provider/card.\line\line if you'd like to block access to a specific channel, then you\line can put the entire channel ident :\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 0100:000080:15df \cell\row\pard\sb100\sa100 use google to find a nice list with all channel idents if you're \line looking for specific channels.\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100\{ 12:00-17:00, 19:00-20:00 \} \cell\row\pard\sb100\sa100 well.. not much to say about this i guess, just use a\line 24hrs grid to set up time-based access to your server.\line\line [quote] # 81.23.45.67 [/quote\line if your friend has a static IP, then you can deny access to all\line other IP's that use the username/password specified in the beginning\line of the F line, so he/she can only connect from that IP address.\line\line to keep it real easy a F line basically only needs something like this:\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 F: user4 pass4 5 0 0 \{ 0:0:3 \} \cell\row\pard\sb100\sa100 ################################################## ############\line\line The C Line.\line\line with this line you yourself connect to your friend.\line but before you can connect, your friend FIRST has to set up a \line F line for you, so that you have a username/password.\line\line a simple C line looks like this:\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 C: someserver.somedomain 12000 user1 pass1 \cell\row\pard\sb100\sa100 someserver.somedomain = the DNS name or IP address of your friend.\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 12000 \cell\row\pard\sb100\sa100 this is the portnumber on which CCcam connects to your friend\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 user1 pass1 \cell\row\pard\sb100\sa100 these are your username and password.\line\line so, if your friend on IP address 81.23.45.67 has made this \line F line inside his cccam.cfg: \par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 F: jan01 pietje20 5 0 0 \{ 0:0:3 \} \cell\row\pard\sb100\sa100 then YOUR C line would look like:\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 C: 81.23.45.67 12000 jan01 pietje20 \cell\row\pard\sb100\sa100 so in your cccam.cfg you should have this set of lines:\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 F: friend friend01 5 0 0 \{ 0:0:3 \}\line C: 81.23.45.67 12000 jan01 pietje20 \cell\row\pard\sb100\sa100 What if you get a huge amount of the same cards from your friends-servers ?\line Cccam has the ability to filter out cards, so you can narrow down\line the number of duplicate cards.\line if you'd like to limit canal+ NL for instance, you can do that like this:\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 C: 82.34.56.78 12000 friend friend01 no \{ 0100:00006a:2, 0:0:4 \} \cell\row\pard\sb100\sa100 Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 no \cell\row\pard\sb100\sa100 means you do not want to use the emu's of your friend.\line if you do want this, set it to yes, but your friend has to set that up\line in the F line which he made for you on his box.\line\line if you are going to narrow down on idents, then you MUST use\line yes or no, else it will not work the way it's meant to be.\line (so, yes or no when using restrictions.)\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 0100:00006a:2 \cell\row\pard\sb100\sa100 means you want to receive the canal+ NL card (0100:00006a) \line at a maximum distance of 2 hops.\line so, only if your friend has him local (hop1) and if his friends have it local (hop2)\line\par
+Quote: \par
+\trowd\trgaph10\trleft-10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx9350\pard\intbl\sb100\sa100 0:0:4 \cell\row\pard\sb100\sa100 means that you will receive all cards (0:0) at a maximum distance\line of 4 hops. on this way you'll have less chance of freeze's.\line do not set it higher then 5, as this would sure trigger freezes as the cards is too far away from you.\line\line to keep it clean you could remove all text in cccam.cfg \line (or copy it to a text file on your pc as reference ;) )\line and only put your F and C lines in it (or any other cardshare lines).\line in this way it's a small file, and very clear to see what's inside.\line\line\par
+\pard\f1\fs20\par
+}
+ 

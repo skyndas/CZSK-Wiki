@@ -1,0 +1,91 @@
+1.0.0 RC3
+- added send message to neutrino
+- fixed parser. remove NULL chars from html code before parse.
+  this is also a fix to entitlements for orf cards
+- add threading sftp connect to reduce application hangs
+
+1.0.0 RC2
+- fixed syslog name resolution
+- added config value html_debug
+- added config value connection read_timeout
+- fixed parser get client connect info
+
+1.0.0 RC1
+- first release candidate
+- fixed save application size and position
+- fixed never shown auth required dialog when app restored
+- added option to disable syslog message debug if main debug enabled
+- fixed syslog get ip from hostname
+- added syslog simple check config values for multi tabbed
+- fixed syslog theme and color scheme
+- fixed parser strip unneeded text from html source
+- fixed parser get correct client username like user1 and user10
+- fixed show all entitlements
+- added function send message to dreambox client. supports Enigma 1 and Enigma 2
+
+0.9.9 BETA
+- this is the last pre-release. then comes version 1.0
+- added syslog to file
+- added multi tabbed syslog server console
+  u can log up to 20 server in a separately tab
+  take a look in config.ini how it works
+- changed config value cccam_only to logall
+- added syslog show red color if entry contains 'failed'
+- added direct config. this is still untestet.
+- added new reelboox lite path to auto detect CCcam.cfg
+- added new reelbox avantgarde path to auto detect CCcam.usr
+- added active clients on home tab. (but not active)
+- changed storing config values to a separately file
+- many code improvements / code redesigns
+- fixes fixes fixes ;)
+
+0.9.8 preview 5
+- added syslog server
+  syslog can log all or only cccam messages
+- added lock display function to syslog
+- added CCcam.channelinfo handler to syslog
+  copy this file to application path to handle
+- added simple shares info
+- added ungroup switch to shares info
+- automatic ungrouping on refresh shares
+- added row color to server and client info
+- added reply message to ftp connection
+- fixed client active switch
+- added grids doublebuffer reduce flicker
+- many code improvements
+
+0.9.7
+- added http authentication mechanism with login dialog
+- added server and client notes
+- added filter for line parser. use '##' to comment out
+- added tray icon to application hide
+- fixed set limits gbox line
+- no longer include pscp. you may download it separately
+
+0.9.6
+- added sftp (secure ftp over ssh) using putty's pscp
+- some code improvements on save and load CCcam.cfg
+
+0.9.5
+- fixed line parser
+- fixed functions to enable/disable server
+- limit newcamd des key 14 byte hex
+
+0.9.4
+- added support for any server lines (cccam, newcs, radegast, camd3, gbox)
+- some code improvements
+- fixed optional ftp directory
+- fixed some small parser bugs
+
+0.9.3
+- fixed ftp client engine (binary and passive transfer)
+- works with dbox2
+- added optional configure a ftp directory to CCcam.cfg in each profile
+  to override the automatic detection
+
+0.9.0
+- first public beta released
+- monitoring cccam
+- add/edit/delete F and C lines
+- show entitlements
+- automatic detection path to CCcam.cfg
