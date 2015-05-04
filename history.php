@@ -98,7 +98,12 @@
 								<li>- přidán OSCam Todo list</li>
 							</ul>
 						</li>
-						<li><strong>Wiki</strong> - přidány emotikony.</li>
+						<li><strong>Wiki</strong>
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- přidány emotikony.</li>
+								<li>- TODO list z hlavní strany přesunut na https://github.com/skyndas/CZSK-Wiki/wiki</li>
+							</ul>
+						</li>
 						<li><strong>Busybox</strong> - přidány další příkazy</li>
 					</ul>
 

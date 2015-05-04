@@ -154,6 +154,53 @@ wget -O /dev/null -q http://root:password@localhost/web/powerstate?newstate=3
 									</code>
 								</div>
 							</div>
+							<p><strong>Busybox - základní navigace</strong></p>
+							<div class="dt-sc-lmarg25">
+								<p>Návrat do domácího ($HOME) adresáře</p>
+								<div class="dt-sc-one">
+									<code>
+cd
+									</code>
+								</div>
+								<p>Změna specifického adresáře
+								<div class="dt-sc-one">
+									<code>
+cd /path/to/directory
+									</code>
+								</div>
+								<p>Návrat o jeden adresář výšše z aktuálního adresáře</p>
+								<div class="dt-sc-one">
+									<code>
+cd ..
+									</code>
+								</div>
+							</div>
+							<p><strong>Vytvoření nového adresáře</strong></p>
+							<div class="dt-sc-lmarg25">
+								<div class="dt-sc-one">
+									<code>
+mkdir [new_folder]
+									</code>
+								</div>
+							</div>
+							<p><strong>Smazání adresáře</strong></p>
+							<div class="dt-sc-lmarg25">
+								<p>Smazání prázdného adresáře</p>
+								<div class="dt-sc-one">
+									<code>
+rmdir [folder]
+									</code>
+								</div>
+							</div>
+							<p><strong>Výpis souborů</strong></p>
+							<div class="dt-sc-lmarg25">
+								<p>Zobrazení souborů a subadresářů v aktuálním adresáři</p>
+								<div class="dt-sc-one">
+									<code>
+ls
+									</code>
+								</div>
+							</div>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
