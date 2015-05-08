@@ -108,7 +108,7 @@
 							<h4>Příkazy telnetu pro CCcam</h4>
 
 							<p><strong>Spuštění CCcamu s parametry:</strong></p>
-							<div class="dt-sc-one">
+							<div class="dt-sc-one dt-sc-lmarg25">
 								<pre>
 To start you need the exact name of the bin file so here is an example
 
@@ -138,7 +138,7 @@ Of course you also need to be in the correct location so you change it with this
 							</div>
 
 							<p><span class="fa icon-icon_light"></span> <strong>Tip: Jak zobrazit pouze běžící proces CCcamu v telnetu:</strong></p>
-							<div class="dt-sc-one">
+							<div class="dt-sc-one dt-sc-lmarg25">
 								<pre>
 ps |grep CCcam
 
@@ -149,7 +149,7 @@ ps aux|grep CCcam
 							</div>
 
 							<p><span class="fa icon-icon_light"></span> <strong>Tip: Jak editovat CCcam.cfg pomocí shell příkazů:</strong></p>
-							<div class="dt-sc-one">
+							<div class="dt-sc-one dt-sc-lmarg25">
 								<pre>
 ADD USER :
 
@@ -171,7 +171,7 @@ ADD NLINE :
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Instalace "Nano Editoru" do receiveru Enigma 2</h4>
 
-							<div class="dt-sc-one">
+							<div class="dt-sc-one dt-sc-lmarg25">
 								<pre>
 February 28, 2010
 How to install nano on your dreambox

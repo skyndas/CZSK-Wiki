@@ -110,7 +110,7 @@
 								<li><i class="fa fa-plus size14px margright5px"></i> CCcam pracuje jako cardserver i klient</li>
 								<li><i class="fa fa-minus size14px margright5px"></i> CCcam jako klient neumí zasílat EMM na další server, pouze na lokální karty (poslední info o EMM potvrzeno z roku 2009)</li>
 								<li><i class="fa fa-plus size14px margright5px"></i> CCcam umí reshare</li>
-								<li><i class="fa fa-plus size14px margright5px"></i> CCcam podporuje share emu</li>
+								<li><i class="fa fa-plus size14px margright5px"></i> CCcam podporuje share emu (sdílení klíčů ze souboru)</li>
 							</ul>
 							<br>
 							<p><u>Podporované typy karet v interních nebo externích čtečkách:</u> </p>

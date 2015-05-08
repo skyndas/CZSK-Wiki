@@ -42,7 +42,7 @@
 		    font-weight: 700;
 		    font-size: 12px;
 		    background-color: #F2F2F2;
-		    padding: 2px 0 2px 0
+		    padding: 5px 0;
 		}
 		.cccam_wikitable_legend td,
 		.cccam_wikitable td {
@@ -74,6 +74,63 @@
 		    background-color: #FF3030;
 		}
 
+		.cccam_wikitable_channelinfo {
+			
+		}
+		.cccam_wikitable_channelinfo th {
+			padding: 8px 10px;
+			background-color: #F2F2F2;
+			text-align: center;
+		    font-weight: 700;
+		}
+		.cccam_wikitable_channelinfo th:first-child {
+			width:20%;
+		}
+		.cccam_wikitable_channelinfo th:nth-child(2) {
+			width:28%;
+		}
+		.cccam_wikitable_channelinfo td {
+			padding: 8px 10px;
+		}
+
+	/*----*****---- << List >> ----*****----*/
+		/* Ordered list with bold numbers */
+		ol.boldNumberList {
+			margin: 0px 0px 0px 25px;
+			padding:0;
+			counter-reset:item;
+		}
+		 
+		ol.boldNumberList > li {
+			margin:0;
+			list-style-type:none;
+			counter-increment:item;
+		}
+		 
+		ol.boldNumberList > li:before {
+			display:inline-block;
+			width:1.5em;
+			padding-right:0.5em;
+			font-weight:bold;
+			text-align:right;
+			content:counter(item) ".";
+		}
+
+		/* Definition list */
+		dl.NumberList dt {
+			font-size: 1em;
+			font-weight: normal;
+			text-decoration: underline;
+		}
+		dl.NumberList dt span {
+			font-size: 1em;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		dl.NumberList dd {
+			margin: 0;
+			padding: 0 0 0.5em 2em;
+		}
 
 	/*----*****---- << Text for Install.html >> ----*****----*/
 		.number_text_1 {
@@ -144,7 +201,23 @@
 		    background-color: #546D87;
 		}
 
-
+	/*----*****---- << DIV "code" same as syntax pre >> ----*****----*/
+		.code {
+			border-left: 3px solid #F8CC6E;
+			background-color: #E6E2D6;
+			display: block;
+			padding: 10px;
+			font-size: 11px;
+			font-family: monospace;
+			width: 96.5%;
+			overflow: auto;
+			margin-bottom: 20px;
+		}
+		.code span {
+			font-size: 13px;
+			font-weight: 700;
+			color: red;
+		}
 	/*----*****---- << Custom icons >> ----*****----*/
 		.icon-right-set {
 			vertical-align: bottom;

@@ -143,10 +143,11 @@
 							</ul>
 							<div class="dt-sc-margin25"></div>
 							<h5>CCcam.cfg - index</h5>
-							<ul class="dt-sc-lmarg">
+							<ul class="dt-sc-lmarg25">
 								<li><a href="#1"><strong>1.</strong> - <U>UŽIVATELÉ</U></a></li> 
 								<li><a href="#1.1"><strong>1.1.</strong> - Uživatelé - základní nastavení ( F: line )</a></li>
-								<li><a href="#1.2"><strong>1.2.</strong> - Uživatelé - rozřířené nastavení</a></li> 
+								<li><a href="#1.2"><strong>1.2.</strong> - Uživatelé - rozšířené nastavení</a></li>
+								<li><a href="#1.3"><strong>1.3.</strong> - Uživatelé - příklady</a></li>
 								<li></li>
 								<li><a href="#2"><strong>2.</strong> - <u>PŘIPOJENÍ NA SERVERY</u></a></li> 
 								<li><a href="#2.1"><strong>2.1.</strong> - Připojení na servery - připojení na CCcam server ( C: line )</a></li>
@@ -157,6 +158,12 @@
 								<li></li>
 								<li><a href="#3"><strong>3.</strong> - <u>VŠEOBECNÁ NASTAVENÍ</u></a></li> 
 								<li><a href="#3.1"><strong>3.1.</strong> - Všeobecná nastavení - příchozí port</a></li> 
+								<li><a href="#3.2"><strong>3.2.</strong> - Všeobecná nastavení - Webové rozhraní a TelnetInfo</a></li>
+								<li><a href="#3.3"><strong>3.3.</strong> - Všeobecná nastavení - Pokročilé informace o klientovi</a></li>
+								<li><a href="#3.4"><strong>3.4.</strong> - Všeobecná nastavení - Login do Webové rozhraní</a></li>
+								<li><a href="#3.5"><strong>3.5.</strong> - Všeobecná nastavení - Login pro TelnetInfo</a></li>
+								<li><a href="#3.6"><strong>3.6.</strong> - Všeobecná nastavení - Porty pro Webové rozhraní a TelnetInfo</a></li>
+								
 							</ul>
 						</div>
 
@@ -167,11 +174,51 @@
 						<div class="dt-sc-tabs-vertical-container">
 							<a name="1" class="linkname"></a>
 							<h4><strong class="article_number">1. </strong> UŽIVATELÉ</h4>
+							<p><strong>Syntaxe F: line</strong></p>
 							<div class="dt-sc-four-fifth">
 								<pre class="brush: text;">
 F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid:id(:downhops), caid:id(:downhops), ... } { caid:id:sid, caid:id:sid, ... } { begintime-endtime, ... } ) hostname/ip address
 								</pre>
 							</div>
+							<p><strong>Povinné údaje pro F: line</strong></p>
+							<dl class="NumberList">
+								<dt><span>1. </span>Uživatelské jméno</dt>
+								<dd>Délka je omezena na 20 znaků.</dd>
+								
+								<dt><span>2. </span>Uživatelské heslo</dt>
+								<dd>Délka hesla není nijak omezena.</dd>
+							</dl>
+							<p><strong>Volitelné údaje pro F: line</strong></p>
+							<dl class="NumberList">
+								<dt><span>1. </span>&lt;uphops></dt>
+								<dd></dd>
+
+								<dt><span>2. </span>&lt;shareemus></dt>
+								<dd>CCcam server umožňuje uživateli (klientovi) sdílet ze serveru emu (Softcam.key)</dd>
+
+								<dt><span>3. </span>&lt;allowemm></dt>
+								<dd>CCcam server umožňuje od uživatele (klienta) přijímat EMM instrukce. To je důležité v případě, že máme CCcam spuštěný např. na boxu bez signálu tj. box není připojený na satelitní parabolu a CCcam server nemůže přijímat EMM instrukce ze satelitního signálu. </dd>
+
+								<dt><span>4. </span>{ caid:id(:downhops), caid:id(:downhops), ... } { caid:id:sid, caid:id:sid, ... }</dt>
+								<dd></dd>
+
+								<dt><span>5. </span>{ begintime-endtime, ... }</dt>
+								<dd>Časové rozmezí poskytnutí share (sdílení) uživateli (klientovi)<br><strong>begintime</strong> je čas počátku sdílení<br>
+									<strong>begintime</strong> je čas konce sdílení</dd>
+
+								<dt><span>6. </span>&lt;hostname/ip address></dt>
+								<dd>Povolení share klientovi s konkrétní IP adresou. V případě že klient používá DynDNS (Dynamickou DNS) je nutné zadat DynDNS místo IP.</dd>
+							</dl>
+							<p><strong>Defaultní nastavení</strong> (pokud nezměníme pomocí volitelných polí)</p>
+							<ol class="boldNumberList">
+								<li>&lt;uphops> = 5</li>
+								<li>&lt;shareemus> = 1 (aktivováno)</li>
+								<li>&lt;allowemm> = 1 (aktivováno)</li>
+								<li>{ caid:id(:downhops), caid:id(:downhops), ... } { caid:id:sid, caid:id:sid, ... } = bez omezení</li>
+								<li>{ begintime-endtime, ... } = bez omezení</li>
+								<li>&lt;hostname/ip address> = bez omezení (uživatel se může připojit z jakékoliv adresy)</li>
+
+							</ol>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
@@ -267,7 +314,7 @@ F: user1 pass1
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
 							<a name="1.2" class="linkname"></a>
-							<h4><strong class="article_number">1.2. </strong>Uživatelé - rozřířené nastavení</h4>
+							<h4><strong class="article_number">1.2. </strong>Uživatelé - rozšířené nastavení</h4>
 							<div class="dt-sc-four-fifth">
 								<pre class="brush: text;">
 F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid:id(:downhops), caid:id(:downhops), ... } { caid:id:sid, caid:id:sid, ... } { begintime-endtime, ... } ) hostname/ip address
@@ -536,6 +583,57 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
+							<a name="1.3" class="linkname"></a>
+							<h4><strong class="article_number">1.3. </strong> Uživatelé - příklady</h4>
+							<p><strong>Příklad 1:</strong> - Základní nastavení uživatele bez nastavení volitelných polí</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p>
+									V případě, že nenastavíme volitelná pole, budou volitelné hodnoty nastaveny automaticky na defaultní hodnoty.
+								</p>
+								<code>
+									F: user1 passwd1
+								</code>
+							</div>
+							<p><strong>Příklad 2:</strong> </p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p>
+									
+								</p>
+								<div class="code">
+									F: user2 passwd2 <span>3</span> 0 0
+								</div>
+							</div>
+							<p><strong>Příklad 3:</strong> - Sdílení klíčů ze souboru Softcam.key</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p>Tato hodnota nám nastaví, zdali má uživatel/klient přístup k souboru Softcam.key</p>
+								<p><u>Možné hodnoty</u></p>
+								<p><strong>0</strong> - uživatel nemá přístup k souboru<br>
+									<strong>1</strong> - uživatel má přístup k souboru</p>
+								<p><u>Příklad</u></p>
+								<div class="code">
+									F: user3 passwd3 3 <span>0</span> 0
+								</div>
+								<p>V tomto příkladě uživatel "user3" nemá přístup k emu tj. k souboru Softcam.key</p>
+							</div>
+							<p><strong>Příklad 4:</strong> - Přijímání EMM od uživatele/klienta</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p>EMM jsou důležité pro aktualizaci karet. Touto hodnotou si určíme zdali chcem přijímat EMM instrukce od uživatele/klienta nebo nechceme.</p>
+								<p><u>Možné hodnoty</u></p>
+								<p><strong>0</strong> - zákaz přijímat EMM od uživatele<br>
+									<strong>1</strong> - povoleno přijímat EMM od uživatele</p>
+								<p><u>Příklad</u></p>
+								<div class="code">
+									F: user4 passwd4 3 0 <span>0</span>
+								</div>
+								<p>V tomto příkladě je zakázáno od uživatele "user4" přijímat EMM instrukce.</p>
+							</div>
+						</div>
+
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
 							<a name="2" class="linkname"></a>
 							<h4><strong class="article_number">2. </strong> PŘIPOJENÍ NA SERVERY</h4>
 						</div>
@@ -799,19 +897,127 @@ G: &lt;pass> &lt;localhost> &lt;localport> &lt;peerpass> &lt;peeraddress> &lt;pe
 						<div class="dt-sc-tabs-vertical-container">
 							<a name="3.1" class="linkname"></a>
 							<h4><strong class="article_number">3.1. </strong> Všeobecná nastavení - příchozí port</h4>
-							<p>Vyčteno z CCcam.cfg</p>
+							<p><u>Vyčteno z CCcam.cfg</u></p>
 							<pre class="brush: text;">
 # server shall listen on this port pro incoming connections
 # default port is 12000, disable server with parm -s or set port 0
 #
 #SERVER LISTEN PORT : 12000
 							</pre>
+							<p><u>Defaultní hodnoty</u> (bez upravování položky v CCcam.cfg)</p>
+							<p>SERVER LISTEN PORT : 12000</p>
+							<p><u>Popis</u></p>
 							<p>Pomocí zadání "SERVER LISTEN PORT :" definujeme port CCcamu pro příchozí spojení uživatelů. Defaultně je nastaven port 12000, ale můžeme nastavit i jiný vyjma portu 21,22,23,80</p>
 							<p>Pokud chceme CCcam používat pouze jako klient můžeme příchozí port vypnout zadáním:</p>
 							<pre class="brush: text;">
 SERVER LISTEN PORT : 0
 							</pre>
-							<p>Při vypnutém CCcam portu bude nedostupně i webové rozhraní.</p>
+							<p>Při vypnutém CCcam portu bude nedostupné i webové rozhraní.</p>
+						</div>
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
+							<a name="3.2" class="linkname"></a>
+							<h4><strong class="article_number">3.2. </strong> Všeobecná nastavení - Webové rozhraní a TelnetInfo</h4>
+							<p><u>Vyčteno z CCcam.cfg</u></p>
+							<pre class="brush: text;">
+# server can give some info about server and client connections
+# and cardinfo using telnet or webbrowser.
+#
+# Switch on/off access to info
+# default is yes
+#
+#ALLOW TELNETINFO: no
+#ALLOW WEBINFO: no
+							</pre>
+							<p><u>Defaultní hodnoty</u> (bez upravování položek v CCcam.cfg)</p>
+							<p>ALLOW TELNETINFO: yes<br>ALLOW WEBINFO: yes</p>
+							<p><u>Popis</u></p>
+							<p>Pomocí zadání "ALLOW TELNETINFO :" definujeme zapnutí/vypnutí získávání informací CCcamu přes Telnet.</p>
+							<p>Pomocí zadání "ALLOW WEBINFO :" definujeme zapnutí/vypnutí webového rozhraní (WebIf) CCcamu.</p>
+						</div>
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
+							<a name="3.3" class="linkname"></a>
+							<h4><strong class="article_number">3.3. </strong> Všeobecná nastavení - Pokročilé informace o klientovi</h4>
+							<p><u>Vyčteno z CCcam.cfg</u></p>
+							<pre class="brush: text;">
+# Show extended client info when showing client list
+# default is yes
+#
+#SHOW EXTENEDED CLIENT INFO : no
+							</pre>
+							<p><u>Defaultní hodnoty</u> (bez upravování položky v CCcam.cfg)</p>
+							<p>SHOW EXTENEDED CLIENT INFO: yes</p>
+							<p><u>Popis</u></p>
+							<p>Zobrazí pokročilé informace o klientovi v seznamu klientů.</p>
+						</div>
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
+							<a name="3.4" class="linkname"></a>
+							<h4><strong class="article_number">3.4. </strong> Všeobecná nastavení - Login do Webové rozhraní </h4>
+							<p><u>Vyčteno z CCcam.cfg</u></p>
+							<pre class="brush: text;">
+# The webinfo service can be protected with a username and password.
+# This is switched off by default
+#
+#WEBINFO USERNAME : &lt;username>
+#WEBINFO PASSWORD : &lt;password>
+							</pre>
+							<p><u>Defaultní hodnoty</u> (bez upravování položek v CCcam.cfg)</p>
+							<p>Login do webového rozhraní je v defaultním stavu vypnutý.</p>
+							<p><u>Popis</u></p>
+							<p>Po zadání logovacích údajů (uživatelské jméno a heslo) bude možné se přihlásit do webového rozhraní CCcamu pouze pod témito údaji.</p>
+						</div>
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
+							<a name="3.5" class="linkname"></a>
+							<h4><strong class="article_number">3.5. </strong> Všeobecná nastavení - Login pro TelnetInfo </h4>
+							<p><u>Vyčteno z CCcam.cfg</u></p>
+							<pre class="brush: text;">
+# The telnetinfo service can be protected with a username and password.
+# This is switched off by default
+#
+#TELNETINFO USERNAME : &lt;username>
+#TELNETINFO PASSWORD : &lt;password>
+							</pre>
+							<p><u>Defaultní hodnoty</u> (bez upravování položek v CCcam.cfg)</p>
+							<p>Login do TelnetInfo je v defaultním stavu vypnutý.</p>
+							<p><u>Popis</u></p>
+							<p>TelnetInfo bude chráněn uživatelským jménem a heslem.</p>
+						</div>
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
+							<a name="3.6" class="linkname"></a>
+							<h4><strong class="article_number">3.6. </strong> Všeobecná nastavení - Porty pro Webové rozhraní a TelnetInfo </h4>
+							<p><u>Vyčteno z CCcam.cfg</u></p>
+							<pre class="brush: text;">
+# default port for telnet is 16000
+# default port for web is 16001
+# supported commands:
+#        info
+#        activeclients
+#        clients
+#        servers
+#        shares
+#        providers
+#        entitlements
+# example use:
+#     echo servers | telnet localhost 16000
+#     go with your browser to http://ip_CCcam_server:16001
+#
+#TELNETINFO LISTEN PORT : 16000
+#WEBINFO LISTEN PORT : 16001
+							</pre>
+							<p><u>Defaultní hodnoty</u> (bez upravování položek v CCcam.cfg)</p>
+							<p>Port pro TelnetInfo "TELNETINFO LISTEN PORT : 16000"<br>
+								Port pro Webové rozhraní "WEBINFO LISTEN PORT : 16001".</p>
+							<p><u>Popis</u></p>
+							<p>Změnou nastavujeme port pro Webové rozhraní a TelnetInfo. Např. "WEBINFO LISTEN PORT : 35000" nám změní port pro Webové rozhraní. Pro připojení zadáme do prohlížeče "http://IP_for_CCcam-Server:35000"</p>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>

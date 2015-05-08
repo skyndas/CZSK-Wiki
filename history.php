@@ -77,18 +77,20 @@
 			<!-- **Full-width-section - Starts** -->       
 			<div class="full-width-section">
 				<div class="container">
-					<h5>v8 (XX-XX-XXXX)</h5>
+					<h5>v8 (08-05-2015)</h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>NewCS</strong> - přidány binární soubory</li>
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
 								<li>- popis souboru CCcam.prio</li>
-								<li>- popis souboru CCcam.channelinfo</li>
+								<li>- lepší popis souboru CCcam.channelinfo</li>
 								<li>- další popis pro F: line v CCcam.cfg s generátorem F: line</li>
 								<li>- další popis pro C: line v CCcam.cfg s generátorem C: line</li>
+								<li>- další popis souboru CCcam.cfg</li>
 								<li>- oprava programového kódu pro generátory (thx czsk)</li>
 								<li>- přidána možnost označení generované line pomocí tlačítka</li>
 								<li>- přidány soubory k offline stažení pro Nano editor v1.2 a v2.0</li>
+								<li>- přidány scripty</li>
 							</ul>
 						</li>
 						<li><strong>OSCam</strong>

@@ -1,0 +1,10 @@
+script version Generator_v2.4.sh
+-----------------------------------
+it will create:
+/tmp/CCCam.channelinfo
+/tmp/CCcam.providers
+/tmp/CCcam.prio
+/tmp/sid.list
+/tmp/oscam.srvid
+
+find the file in tmp 
