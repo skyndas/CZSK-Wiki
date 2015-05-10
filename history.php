@@ -79,7 +79,11 @@
 				<div class="container">
 					<h5>v10 (XX-XX-XXXX)</h5>
 					<ul class="dt-sc-fancy-list arrow" >
-						<li></li>
+						<li><strong>CCcam</strong>
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- přidány rozšiřující informace k binárním souborům pro jednotlivé image</li>
+							</ul>
+						</li>
 					</ul>
 
 					<h5>v9 (10-05-2015)</h5>

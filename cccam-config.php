@@ -231,13 +231,13 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p><strong style="color: #21C2F8;">D</strong>  = Omezení podle IP/DNS</p>
 								<p><u>Základní pravidla</u></p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
-										<li>Dodržovat sktriktně mezeru za čárkou ","</li>
-										<li>Dodržovat sktriktně mezeru za levou složenou závorkou "{"</li>
-										<li>Dodržovat sktriktně mezeru za pravou složenou závorkou "}"</li>
-										<li>Pokud nedodržíme mezery, nebude nastavení fungovat !!!</li>
-										<li>Pokud nepoužijeme volitelné nastavení "uphops", ale použijeme následující volitelné nastavení "shareemus a allowemm" musíme předchozí nastavení stejně uvést.</li>
-										<li>Předchozí pravidlo platí i pro nastavení blokování karet, programů a časového omezení. V tomto případě, pokud nějaké nastavení nepoužijeme, zapíšeme prázdné složené závorky "{ }" pro danou hodnotu. </li>
-									</ul>
+									<li>Dodržovat sktriktně mezeru za čárkou ","</li>
+									<li>Dodržovat sktriktně mezeru za levou složenou závorkou "{"</li>
+									<li>Dodržovat sktriktně mezeru za pravou složenou závorkou "}"</li>
+									<li>Pokud nedodržíme mezery, nebude nastavení fungovat !!!</li>
+									<li>Pokud nepoužijeme volitelné nastavení "uphops", ale použijeme následující volitelné nastavení "shareemus a allowemm" musíme předchozí nastavení stejně uvést.</li>
+									<li>Předchozí pravidlo platí i pro nastavení blokování karet, programů a časového omezení. V tomto případě, pokud nějaké nastavení nepoužijeme, zapíšeme prázdné složené závorky "{ }" pro danou hodnotu. </li>
+								</ul>
 								<p><u>Sekce <strong style="color: #21C2F8;">A</strong></u> - { caid:id(:downhops), caid:id(:downhops), ... }</p>
 								<p class="dt-sc-lmarg25">
 									Pokud je caid:id = 0:0 , tak tento zápis platí pro všechny karty<br>
