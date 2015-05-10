@@ -74,7 +74,7 @@
 							<span class="fa fa-home"></span>
 							<a href="index.php">Úvod</a>
 							<span class="fa fa-angle-right"></span>
-							<span class="fa fa-book"></span>
+							<span class="fa fa-cube"></span>
 							<a href="#">Emulátory</a>
 							<span class="fa fa-angle-right"></span>
 							<span class="current">CCcam</span>

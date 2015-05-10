@@ -84,6 +84,7 @@
 								<li>- přidány rozšiřující informace k binárním souborům pro jednotlivé image</li>
 							</ul>
 						</li>
+						<li><strong>Wiki</strong> - změna ikony v hlavním menu pro emulátory.</li/
 					</ul>
 
 					<h5>v9 (10-05-2015)</h5>
