@@ -77,7 +77,7 @@
 			<!-- **Full-width-section - Starts** -->       
 			<div class="full-width-section">
 				<div class="container">
-					<h5>v9 (XX-XX-XXXX)</h5>
+					<h5>v9 (10-05-2015)</h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
