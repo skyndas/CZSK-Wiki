@@ -94,11 +94,90 @@
 							<!-- **entry-meta-data - Starts** -->
 							<div class="entry-meta-data">
 								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 9.5.2015</p>
+								<p><span class="fa fa-calendar"> </span> Datum: 10.5.2015</p>
 							</div> <!-- **entry-meta-data - Ends** -->
 						</div>
 						<div class="dt-sc-tabs-vertical-container">
-							<h4>Binární soubory - pro jednotlivé image</h4>
+							<h4>Binární soubory CCcam- pro jednotlivé image</h4>
+							<div class="dt-sc-tabs-vertical-frame-content">
+								<p><strong>Cccam 2.3.0. pro VTi image - Enigma 2</strong></p>
+								<div class="dt-sc-lmarg25">
+									<p><u>Ke stažení</u></p>
+									<p><img src="images/icons/icon_file-ipk-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version_image/E2_Cccam2.3.0_VTi/enigma2-plugin-cam-cccam-v2.3.0_e2_vti.ipk">E2 Cccam 2.3.0 VTi</a></p>
+									<p><u>Obsah instalátoru</u></p>
+									<ul class="dt-sc-fancy-list caret-right">
+										<li>Binární soubor "CCcam_230" (bude uložen do složky "usr/bin")</li>
+										<li>Startscript "CCcam2.3.0_cam.sh" (bude uložen do "usr/script")</li>
+										<li>Konfigurační soubor "CCcam.cfg" (bude uložen do "etc/")</li>
+										<li>Volitelné soubory "CCcam.channelinfo, CCcam.providers" (bude uložen do "etc/")</li>
+									</ul>
+								</div>
+								
+								<p><strong>Cccam 2.3.0. pro OpenPli image - Enigma 2</strong></p>
+								<div class="dt-sc-lmarg25">
+									<p><u>Ke stažení</u></p>
+									<p><img src="images/icons/icon_file-ipk-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version_image/E2_Cccam2.3.0_OpenPli/enigma2-plugin-cam-cccam-v2.3.0_e2_pli.ipk">E2 Cccam 2.3.0 OpenPli</a></p>
+									<p><u>Obsah instalátoru</u></p>
+									<ul class="dt-sc-fancy-list caret-right">
+										<li>Binární soubor "CCcam_230" (bude uložen do složky "usr/bin")</li>
+										<li>Startscript "softcam.CCcam230" (bude uložen do "etc/init.d")</li>
+										<li>Konfigurační soubor "CCcam.cfg" (bude uložen do "etc/")</li>
+										<li>Volitelné soubory "CCcam.channelinfo, CCcam.providers" (bude uložen do "etc/")</li>
+									</ul>
+								</div>
+
+								<p><strong>Cccam 2.3.0. pro Black Hole image - Enigma 2</strong></p>
+								<div class="dt-sc-lmarg25">
+									<p><u>Ke stažení</u></p>
+									<p><img src="images/icons/icon_file-ipk-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version_image/E2_Cccam2.3.0_BlackHole/enigma2-plugin-cam-cccam-v2.3.0_e2_bh.ipk">E2 Cccam 2.3.0 Black Hole</a></p>
+									<p><u>Obsah instalátoru</u></p>
+									<ul class="dt-sc-fancy-list caret-right">
+										<li>Binární soubor "CCcam_230" (bude uložen do složky "usr/bin")</li>
+										<li>Startscript "Ncam_CCcam2.3.0.sh" (bude uložen do "usr/camscript")</li>
+										<li>Konfigurační soubor "CCcam.cfg" (bude uložen do "etc/")</li>
+										<li>Volitelné soubory "CCcam.channelinfo, CCcam.providers" (bude uložen do "etc/")</li>
+									</ul>
+								</div>
+
+								<p><strong>Cccam 2.3.0. pro openATV image - Enigma 2</strong></p>
+								<div class="dt-sc-lmarg25">
+									<p><u>Ke stažení</u></p>
+									<p><img src="images/icons/icon_file-ipk-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version_image/E2_Cccam2.3.0_openATV/enigma2-plugin-cams-cccam-2.3.0_openatv_all.ipk">E2 Cccam 2.3.0 openATV</a></p>
+									<p><u>Obsah instalátoru</u></p>
+									<ul class="dt-sc-fancy-list caret-right">
+										<li>Binární soubor "CCcam_230" (bude uložen do složky "usr/bin")</li>
+										<li>Startscript "Ncam_CCcam_2.3.0.sh" (bude uložen do "usr/camscript")</li>
+										<li>Konfigurační soubor "CCcam.cfg" (bude uložen do "usr/keys")</li>
+										<li>Volitelné soubory "CCcam.channelinfo, CCcam.providers" (bude uložen do "usr/keys")</li>
+									</ul>
+								</div>
+
+								<p><strong>Cccam 2.3.0. pro ViX image - Enigma 2</strong></p>
+								<div class="dt-sc-lmarg25">
+									<p><u>Ke stažení</u></p>
+									<p><img src="images/icons/icon_file-ipk-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version_image/E2_Cccam2.3.0_ViX/enigma2-plugin-cams-cccam.2.3.0_1.0_mipsel.ipk">E2 Cccam 2.3.0 ViX</a></p>
+									<p><u>Obsah instalátoru</u></p>
+									<ul class="dt-sc-fancy-list caret-right">
+										<li>Binární soubor "CCcam.2.3.0" (bude uložen do složky "usr/softcams")</li>
+										<li>Startscript není přiložen</li>
+										<li>Konfigurační soubor "CCcam.cfg" není přiložen</li>
+										<li>Volitelné soubory "CCcam.channelinfo, CCcam.providers" není přiložen</li>
+									</ul>
+								</div>
+
+								<p><strong>Cccam 2.3.0. pro Newnigma2 image - Enigma 2</strong></p>
+								<div class="dt-sc-lmarg25">
+									<p><u>Ke stažení</u></p>
+									<p><img src="images/icons/icon_file-ipk-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version_image/E2_Cccam2.3.0_Newnigma2/newnigma2-camd-cccam2.3.0_2.3.0-r0_mipsel.ipk">E2 Cccam 2.3.0 Newnigma2</a></p>
+									<p><u>Obsah instalátoru</u></p>
+									<ul class="dt-sc-fancy-list caret-right">
+										<li>Binární soubor "CCcam_230" (bude uložen do složky "usr/bin")</li>
+										<li>Startscript "CCcam2_3_0.emu" (bude uložen do "usr/script")</li>
+										<li>Konfigurační soubor "CCcam.cfg" není přiložen</li>
+										<li>Volitelné soubory "CCcam.channelinfo, CCcam.providers" není přiložen</li>
+									</ul>
+								</div>
+							</div>
 							
 						</div>
 

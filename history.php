@@ -85,9 +85,11 @@
 								<li>- přidán popis souboru ecm.info</li>
 								<li>- přidány stránky pro kompletní html strukturu (chybí jen "cccam-script2.php" - viz CCcam Todo list)</li>
 								<li>- přidáno další info o CCcamInfoPhp v1.02</li>
+								<li>- přidány binární soubory pro vybrané image</li>
 							</ul>
 						</li>
-						<li><strong>Obrázky</strong> - provedena komprece obrázků PNG.</li>
+						<li><strong>Obrázky</strong> - provedena komprese obrázků PNG.</li>
+						<li><strong>Wiki</strong> - nové ikony pro zobrazení typu souboru</li>
 					</ul>
 
 					<h5>v8 (08-05-2015)</h5>
