@@ -77,6 +77,19 @@
 			<!-- **Full-width-section - Starts** -->       
 			<div class="full-width-section">
 				<div class="container">
+					<h5>v9 (XX-XX-XXXX)</h5>
+					<ul class="dt-sc-fancy-list arrow" >
+						<li><strong>CCcam</strong>
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- přidány grafické obrázky s ukázkami</li>
+								<li>- přidán popis souboru ecm.info</li>
+								<li>- přidány stránky pro kompletní html strukturu (chybí jen "cccam-script2.php" - viz CCcam Todo list)</li>
+								<li>- přidáno další info o CCcamInfoPhp v1.02</li>
+							</ul>
+						</li>
+						<li><strong>Obrázky</strong> - provedena komprece obrázků PNG.</li>
+					</ul>
+
 					<h5>v8 (08-05-2015)</h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>NewCS</strong> - přidány binární soubory</li>

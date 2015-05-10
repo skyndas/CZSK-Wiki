@@ -117,6 +117,9 @@
 		}
 
 		/* Definition list */
+		dl.NumberList {
+			margin: 0px 0px 0px 35px;
+		}
 		dl.NumberList dt {
 			font-size: 1em;
 			font-weight: normal;
@@ -212,11 +215,21 @@
 			width: 96.5%;
 			overflow: auto;
 			margin-bottom: 20px;
+			white-space: pre;
+		}
+		.code_text_space {
+			white-space: nowrap;
 		}
 		.code span {
 			font-size: 13px;
 			font-weight: 700;
 			color: red;
+		}
+		.code span+span {
+			color: blue;
+		}
+		.code span+span+span {
+			color: green;
 		}
 	/*----*****---- << Custom icons >> ----*****----*/
 		.icon-right-set {

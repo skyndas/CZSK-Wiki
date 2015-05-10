@@ -94,7 +94,7 @@
 							<!-- **entry-meta-data - Starts** -->
 							<div class="entry-meta-data">
 								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 24.4.2015</p>
+								<p><span class="fa fa-calendar"> </span> Datum: 10.5.2015</p>
 							</div> <!-- **entry-meta-data - Ends** -->
 						</div>
 						<div class="dt-sc-tabs-vertical-container">
@@ -103,10 +103,10 @@
 								<li><strong>Doplnit:</strong>
 									<ul>
 										<li>Log</li>
-										<li>Vytvořit více obrázku k CCcam nástroje - CCcamInfoPHP v1.02</li>
+										<li style="text-decoration:line-through">Vytvořit více obrázku k CCcam nástroje - CCcamInfoPHP v1.02</li>
 										<li>Vytvořit více obrázku k CCcam nástroje - CCcamInfoPHP r257</li>
 										<li>Info k CCcam.cfg - mám rozdělané</li>
-										<li>Doplnit info k WEbIf</li>
+										<li>Doplnit info k WebIf</li>
 										<li>Najít informace o podporovaných typů čteček</li>
 										<li>Info o instalačních složkách v různých image</li>
 									</ul>
@@ -119,6 +119,7 @@
 										<li>Vytvořit CCcam binary pro jednotlivé image</li>
 										<li>Vytvořit stránky s informacemi pro jednotlivé konfigurační soubory</li>
 										<li>Popis instalace</li>
+										<li>Stránku "cccam-script2.php" pro popis "Script č.2 - Generátor souborů E2"</li>
 									</ul>
 								</li>
 							</ul>
@@ -127,6 +128,8 @@
 									<ul>
 										<li>Historie CCcamu</li>
 										<li>Telnet CCcamu</li>
+										<li>Logování - Ecm.Info</li>
+										<li>CCcamInfoPhp v1.02</li>
 									</ul>
 								</li>
 							</ul>

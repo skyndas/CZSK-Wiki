@@ -1,0 +1,40 @@
+[account]
+user = user1
+pwd = passwd1
+cccreshare = 
+
+[account]
+user = user2
+pwd = passwd2
+cccreshare = 3
+
+[account]
+user = user5
+pwd = passwd5
+cccreshare = 3
+
+[account]
+user = user6
+pwd = passwd6
+cccreshare = 0
+
+[account]
+user = user7
+pwd = passwd7
+cccreshare = 0
+
+[account]
+user = user8
+pwd = passwd8
+cccreshare = 0
+
+[account]
+user = user9
+pwd = passwd9
+cccreshare = 0
+
+[account]
+user = user10
+pwd = passwd10
+cccreshare = 0
+

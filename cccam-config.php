@@ -151,6 +151,7 @@
 								<li></li>
 								<li><a href="#2"><strong>2.</strong> - <u>PŘIPOJENÍ NA SERVERY</u></a></li> 
 								<li><a href="#2.1"><strong>2.1.</strong> - Připojení na servery - připojení na CCcam server ( C: line )</a></li>
+								<li><a href="#2.1.1"><strong>2.1.1</strong> - Připojení na servery - připojení na CCcam server - Příklady</a></li>
 								<li><a href="#2.2"><strong>2.2.</strong> - Připojení na servery - připojení na Newcamd server ( N: line )</a></li> 
 								<li><a href="#2.3"><strong>2.3.</strong> - Připojení na servery - připojení na Radegast server ( R: line )</a></li> 
 								<li><a href="#2.4"><strong>2.4.</strong> - Připojení na servery - připojení na Camd3 server ( L: line )</a></li>
@@ -203,7 +204,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<dd></dd>
 
 								<dt><span>5. </span>{ begintime-endtime, ... }</dt>
-								<dd>Časové rozmezí poskytnutí share (sdílení) uživateli (klientovi)<br><strong>begintime</strong> je čas počátku sdílení<br>
+								<dd>Časové rozmezí poskytnutí share (sdílení) uživateli (klientovi). Čas zadáváme ve 24 hodinovém formátu.<br><strong>begintime</strong> je čas počátku sdílení<br>
 									<strong>begintime</strong> je čas konce sdílení</dd>
 
 								<dt><span>6. </span>&lt;hostname/ip address></dt>
@@ -219,6 +220,41 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<li>&lt;hostname/ip address> = bez omezení (uživatel se může připojit z jakékoliv adresy)</li>
 
 							</ol>
+							<p><strong>Pravidla zápisu</strong></p>
+							<div class="dt-sc-lmarg25">
+								<div class="code code_text_space" style="font-size: 13px">
+									F: user pass 0 0 0 { <strong style="color: #21C2F8;">A</strong> } { <strong style="color: #21C2F8;">B</strong> } { <strong style="color: #21C2F8;">C</strong> } <strong style="color: #21C2F8;">D</strong>
+								</div>
+								<p><strong style="color: #21C2F8;">A</strong> = Blokace karet</p>
+								<p><strong style="color: #21C2F8;">B</strong>  = Blokace programů podle SID</p>
+								<p><strong style="color: #21C2F8;">C</strong>  = Časové omezení</p>
+								<p><strong style="color: #21C2F8;">D</strong>  = Omezení podle IP/DNS</p>
+								<p><u>Základní pravidla</u></p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+										<li>Dodržovat sktriktně mezeru za čárkou ","</li>
+										<li>Dodržovat sktriktně mezeru za levou složenou závorkou "{"</li>
+										<li>Dodržovat sktriktně mezeru za pravou složenou závorkou "}"</li>
+										<li>Pokud nedodržíme mezery, nebude nastavení fungovat !!!</li>
+										<li>Pokud nepoužijeme volitelné nastavení "uphops", ale použijeme následující volitelné nastavení "shareemus a allowemm" musíme předchozí nastavení stejně uvést.</li>
+										<li>Předchozí pravidlo platí i pro nastavení blokování karet, programů a časového omezení. V tomto případě, pokud nějaké nastavení nepoužijeme, zapíšeme prázdné složené závorky "{ }" pro danou hodnotu. </li>
+									</ul>
+								<p><u>Sekce <strong style="color: #21C2F8;">A</strong></u> - { caid:id(:downhops), caid:id(:downhops), ... }</p>
+								<p class="dt-sc-lmarg25">
+									Pokud je caid:id = 0:0 , tak tento zápis platí pro všechny karty<br>
+									Pokud vynecháme "downhops", je to stejné jako kdybychom zapsali ":0" a znamená to "žádný downhop, žádný reshare".
+								</p>
+
+								<p><u>Sekce <strong style="color: #21C2F8;">D</strong></u> - hostname/ip address</p>
+								<div class="dt-sc-lmarg25">
+									<p>Pokud chcem uživatele pouze omezit na vybranou IP/DNS musíme alespoň nastavit:</p>
+									<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+										<li>&lt;uphops></li>
+										<li>&lt;shareemus></li>
+										<li>&lt;allowemm></li>
+									</ul>
+									Hodnoty uzavřené ve složených závorkách "{ }" nemusíme konfigurovat, ale závorky musíme uvést. Základní syntaxe je uvedena v příkladech
+								</div>
+							</div>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
@@ -629,6 +665,224 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								</div>
 								<p>V tomto příkladě je zakázáno od uživatele "user4" přijímat EMM instrukce.</p>
 							</div>
+							<p><strong>Příklad 5:</strong> - Downhops</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p></p>
+								<p><u>Příklad</u></p>
+								<div class="code code_text_space">
+									F: user5 passwd5 3 0 0 { <span>0100:00006A</span>, <span>0622:000000:1</span>, <span>0500:000000:2</span> }
+								</div>
+								<p>V tomto příkladě má uživatel "user5":</p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+									<li>Uživatel nezíská <span style="color:red">Canal Digital 0100:00006A</span> (nezapsaná hodnota "downhop", je stejné jako 0100:00006A:0)</li>
+									<li>Uživatel získá kartu <span style="color:green">0622:000000:1</span> (uživatel nemůže dál sdílet tuto kartu, "downhop" hodnota je ":1")</li>
+									<li>Uživatel zístku kartu <span style="color: blue">0500:000000:2</span> sám pro sebe a může jí dál sdílet ("downhop" hodnota je ":2")</li>
+								</ul>
+								<p><u>Grafické znázornění příkladu 5</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_07.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_07.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Příklad 5</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+								<p class="dt-sc-lmarg25">Uživatel <span style="font-weight: bold">Friend <span style="color: #0071BC">1</span></span> má rozdělené přístupy ke kartám takto: 
+									<ul class="dt-sc-fancy-list caret-right" style="margin-left: 50px;">
+										<li>má zablokován přístup ke kartě <span style="color: #B71B0B">Card1</span></li>
+										<li>má přístup ke kartě <span style="color: #3565FF">Card2</span>, ale nemůže ji dál sdílet</li>
+										<li>má přístup ke kartě <span style="color: #269606">Card3</span> sám pro sebe a může ji dál sdílet </li>
+										<li>nemůže využívat SofCam.key, CCcam server nepoužívá EMM do uživatele.</li>
+									</ul></p>
+							</div>
+							<p style="clear: both; padding-top: 15px"><strong>Příklad 6:</strong> - Downhops (blokování reshare)</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p></p>
+								<p><u>Příklad</u></p>
+								<div class="code">
+									F: user6 passwd6 <span>0</span> 0 0 { <span>0:0:1</span> }
+								</div>
+								<p>V tomto příkladě má uživatel "user6":</p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+									<li>Uživatel může užívat pouze lokální karty <span style="color:red">0</span> </li>
+									<li>Uživatel má zakázáno reshare <span style="color:green">0:0:1</span> (0:0 vyjadřuje "všechny karty", uživatel nemůže dál sdílet tuto kartu, "downhop" hodnota je ":1")</li>
+								</ul>
+								<p><u>Grafické znázornění příkladu 6</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_06.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_06.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Příklad 6</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+								<p class="dt-sc-lmarg25">Uživatel <span style="font-weight: bold">Friend <span style="color: #0071BC">1</span></span> má přístup ke všem kartám "<span style="color: #B71B0B">Card1</span>, <span style="color: #3565FF">Card2</span>, <span style="color: #269606">Card3</span>" ale nemůže tyto karty dál sdílet, nemůže využívat SofCam.key, CCcam server nepoužívá EMM.</p>
+							</div>
+							<p style="clear: both; padding-top: 15px"><strong>Příklad 7:</strong> - Blokování programu</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p></p>
+								<p><u>Příklad</u></p>
+								<div class="code code_text_space">
+									F: user7 passwd7 <span>0</span> 0 0 { <span>0:0:1</span> } { <span>0D96:000000:1F43</span> }
+								</div>
+								<p>V tomto příkladě má uživatel "user7":</p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+									<li>Uživatel může užívat pouze lokální karty <span style="color:red">0</span> </li>
+									<li>Uživatel má zakázáno reshare <span style="color:green">0:0:1</span> (0:0 vyjadřuje "všechny karty", uživatel nemůže dál sdílet tuto kartu, "downhop" hodnota je ":1")</li>
+									<li>Uživatel má blokováno užívat program ČT1 <span style="color:blue">0D96:000000:1F43</span></li>
+								</ul>
+								<p><u>Grafické znázornění příkladu 7</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_05.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_05.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Příklad 7</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+								<p class="dt-sc-lmarg25">Uživatel <span style="font-weight: bold">Friend <span style="color: #0071BC">1</span></span> má přístup ke všem kartám "<span style="color: #B71B0B">Card1</span>, <span style="color: #3565FF">Card2</span>, <span style="color: #269606">Card3</span>" ale nemůže tyto karty dál sdílet, nemůže využívat SofCam.key, CCcam server nepoužívá EMM a uživatel má blokováno užívat program ČT1.</p>
+							</div>
+							<p style="clear: both; padding-top: 15px"><strong>Příklad 8:</strong> - Blokování více programů</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p></p>
+								<p><u>Příklad</u></p>
+								<div class="code code_text_space">
+									F: user8 passwd8 <span>0</span> 0 0 { <span>0:0:1</span> } { <span>0D96:000000:1F43, 0D96:000000:1F44, 0D96:000000:1F47</span> }
+								</div>
+								<p>V tomto příkladě má uživatel "user8":</p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+									<li>Uživatel může užívat pouze lokální karty <span style="color:red">0</span> </li>
+									<li>Uživatel má zakázáno reshare <span style="color:green">0:0:1</span> (0:0 vyjadřuje "všechny karty", uživatel nemůže dál sdílet tyto karty, "downhop" hodnota je ":1")</li>
+									<li>Uživatel má blokováno užívat programy ČT1, ČT2, ČT Sport <span style="color:blue">0D96:000000:1F43, 0D96:000000:1F44, 0D96:000000:1F47</span></li>
+								</ul>
+								<p><u>Grafické znázornění příkladu 8</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_04.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_04.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Příklad 8</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+								<p class="dt-sc-lmarg25">Uživatel <span style="font-weight: bold">Friend <span style="color: #0071BC">1</span></span> má přístup ke všem kartám "<span style="color: #B71B0B">Card1</span>, <span style="color: #3565FF">Card2</span>, <span style="color: #269606">Card3</span>" ale nemůže tyto karty dál sdílet, nemůže využívat SofCam.key, CCcam server nepoužívá EMM a uživatel má blokováno užívat programy ČT1, ČT2, ČT Sport.</p>
+							</div>
+							<p style="clear: both; padding-top: 15px"><strong>Příklad 9:</strong> - Časové omezení uživatele</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p></p>
+								<p><u>Příklad</u></p>
+								<div class="code">
+									F: user9 passwd9 0 0 0 { } { } { <span>12:00-17:00, 19:00-20:00</span> }
+								</div>
+								<p>V tomto příkladě má uživatel "user9":</p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+									<li>Uživatel může užívat lokální karty v době od 12 do 17h a poté od 19 do 20h.</li>
+								</ul>
+								<p><u>Grafické znázornění příkladu 9</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_03.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_03.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Příklad 9</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+								<p class="dt-sc-lmarg25">Uživatel <span style="font-weight: bold">Friend <span style="color: #0071BC">1</span></span> má přístup ke všem kartám "<span style="color: #B71B0B">Card1</span>, <span style="color: #3565FF">Card2</span>, <span style="color: #269606">Card3</span>", nemůže využívat SofCam.key, CCcam server nepoužívá EMM a uživatel může využívat karty dle zadaného časovéh rozmezí.</p>
+							</div>
+							<p style="clear: both; padding-top: 15px"><strong>Příklad 10:</strong> - Omezení uživatele na dannou IP</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<p><u>Popis</u></p>
+								<p></p>
+								<p><u>Příklad</u></p>
+								<div class="code">
+									F: user10 passwd10 0 0 0 { } { } { } <span>friend_dns.noip.com</span>
+								</div>
+								<p>V tomto příkladě má uživatel "user10":</p>
+								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+									<li>Uživatel může užívat lokální karty pouze z adresy <span style="red">friend_dns.noip.com</span> (pokud se připojí z jiné adresy, bude CCcam serverem odmítnut).</li>
+								</ul>
+								<p><u>Grafické znázornění příkladu 10</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_02.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_02.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Příklad 10</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+								<p class="dt-sc-lmarg25">Uživatel <span style="font-weight: bold">Friend <span style="color: #0071BC">1</span></span> má přístup ke všem kartám "<span style="color: #B71B0B">Card1</span>, <span style="color: #3565FF">Card2</span>, <span style="color: #269606">Card3</span>", nemůže využívat SofCam.key, CCcam server nepoužívá EMM a uživatel se může připojit pouze z DynDNS adresy "friend_dns.noip.com".</p>
+							</div>
+							</div>
 						</div>
 
 
@@ -642,11 +896,14 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 						<div class="dt-sc-tabs-vertical-container">
 							<a name="2.1" class="linkname"></a>
 							<h4><strong class="article_number">2.1. </strong> Připojení na servery - připojení na CCcam server ( C: line )</h4>
+							<p><strong>Syntaxe C: line</strong></p>
 							<div>
 								<pre class="brush: text;">
 C: &lt;hostname> &lt;port> &lt;username> &lt;password> &lt;wantemus> ( { caid:id(:uphops), caid:id(:uphops), ... } )
 								</pre>
 							</div>
+							<p><strong>Všeobecně o C: line</strong></p>
+							<p>Z diskuzí jsem vyčetl, že co se týká poštu C:line je doporučeno zadávat cca 2-3. Je otázka kolik jich opravdu potřebujeme pro to abychom mohli v klidu sledovat vybraný program. V případě, že využíváme cca 2-3 C:line je dále doporučeno využít filtraci CAID. Podle diskuzních fór počet C:line závisí na hardwarovém vybavení našeho boxu. Někteří uživatelé testovali na VU+ Solo 2 celkem 7 C:line a nezaznamenali problémy. </p>
 							<p><strong>Generování C: line</strong></p>
 						<!-- GENERATOR 3 -->
 							<div id="generator3" class="generator">
@@ -841,6 +1098,19 @@ C: &lt;hostname> &lt;port> &lt;username> &lt;password> &lt;wantemus> ( { caid:id
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
+							<a name="2.1.1" class="linkname"></a>
+							<h4><strong class="article_number">2.1.1. </strong> Připojení na servery - připojení na CCcam server - Příklady</h4>
+							<p><strong>Příklad 1:</strong> - Základní nastavení připojení na další CCcam server bez nastavení volitelných polí</p>
+							<div class="dt-sc-four-fifth dt-sc-lmarg25">
+								<code>
+									C: server_dns.noip.com 12000 cccamuser1 cccampasswd1
+								</code>
+							</div>
+
+						</div>
+							
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
 							<a name="2.2" class="linkname"></a>
 							<h4><strong class="article_number">2.2. </strong> Připojení na servery - připojení na Newcamd server ( N: line )</h4>
 							<div>
@@ -907,7 +1177,8 @@ G: &lt;pass> &lt;localhost> &lt;localport> &lt;peerpass> &lt;peeraddress> &lt;pe
 							<p><u>Defaultní hodnoty</u> (bez upravování položky v CCcam.cfg)</p>
 							<p>SERVER LISTEN PORT : 12000</p>
 							<p><u>Popis</u></p>
-							<p>Pomocí zadání "SERVER LISTEN PORT :" definujeme port CCcamu pro příchozí spojení uživatelů. Defaultně je nastaven port 12000, ale můžeme nastavit i jiný vyjma portu 21,22,23,80</p>
+							<p>Pomocí zadání "SERVER LISTEN PORT :" definujeme port CCcamu pro příchozí spojení uživatelů. Defaultně je nastaven port 12000, ale můžeme nastavit i jiný vyjma standartních portů používaných v linuxových boxech pro další účely. <a href="linuxbox.php"> Více o portech <span class="fa fa-long-arrow-right"> </span> </a> 
+							</p>
 							<p>Pokud chceme CCcam používat pouze jako klient můžeme příchozí port vypnout zadáním:</p>
 							<pre class="brush: text;">
 SERVER LISTEN PORT : 0
@@ -1017,7 +1288,7 @@ SERVER LISTEN PORT : 0
 							<p>Port pro TelnetInfo "TELNETINFO LISTEN PORT : 16000"<br>
 								Port pro Webové rozhraní "WEBINFO LISTEN PORT : 16001".</p>
 							<p><u>Popis</u></p>
-							<p>Změnou nastavujeme port pro Webové rozhraní a TelnetInfo. Např. "WEBINFO LISTEN PORT : 35000" nám změní port pro Webové rozhraní. Pro připojení zadáme do prohlížeče "http://IP_for_CCcam-Server:35000"</p>
+							<p>Změnou nastavujeme port pro Webové rozhraní a TelnetInfo. Např. "WEBINFO LISTEN PORT : 35000" nám změní port pro Webové rozhraní. Pro připojení zadáme do prohlížeče "http://IP_for_CCcam-Server:35000". Pokud budeme měnit číslo portů pozor na využití standartních portů linoxovými boxy. <a href="linuxbox.php"> Více o portech <span class="fa fa-long-arrow-right"> </span> </a> </p>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>

@@ -41,6 +41,12 @@
 	<!-- **Custom stylesheets** -->
 	<link rel="stylesheet"  href="css/custom.css" media="all" />
 	<link rel="stylesheet"  href="css/czsk-wiki-font.css" media="all" />
+
+	<!-- **SyntaxHighlighter** -->
+	<script type="text/javascript" src="js/SyntaxHighlighter/shCore.js"></script>
+	<script type="text/javascript" src="js/SyntaxHighlighter/shBrushPlain.js"></script>
+	<link type="text/css" rel="stylesheet" href="js/SyntaxHighlighter/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 
 <body>
@@ -125,6 +131,10 @@
 								<li>Stáhnout soubor "CCcamInfoPhp_v1.02.zip"</li>
 								<li>Instalovat XAMPP</li>
 								<li>Zkopívat složku "CCcamInfoPhp_v1.02" ze staženého souboru do složky "htdocs" ve složce kam jsme instalovali XAMPP</li>
+								<li>Otevřít soubor Apache server "php.ini"</li>
+								<li>Najít řádek "; Resource Limits ;"</li>
+								<li>Změnit hodnotu položky "max_execution_time = 30 " na "max_execution_time = 60 "</li>
+								<li>Uložit soubor "php.ini"</li>
 								<li>Spustit prohlížeč a zadat do příkazového řádku "http://localhost/CCcamInfoPhp_v1.02</li>								
 							</ol>
 							<p>Po provedení všech kroků se nám zobrazí titulní webová stránka CCcamInfoPhp s konfigurací připojení.</p>
@@ -168,11 +178,39 @@
 								</div>
 							</div>
 							<p><strong>POZNÁMKA:</strong> CCcamInfoPhp používá následující soubory, které je potřebné občas aktualizovat</p>
-							<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+							<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right" style="margin-bottom:10px">
 								<li>CCcam.providers</li>
 								<li>CCcam_fake.providers</li>
 								<li>CCcam_used.providers</li>
 							</ul>
+							<p><strong>Manuální nastavení serverů</strong> (platí pro verzi 0.8.2 a vyšší)</p>
+							<div class="dt-sc-lmarg25">
+								<p>Pro manuální nastavení připojení k CCcam serveru otevřeme soubor "config.php". Soubor obsahuje i nápovědu o zadávání konfigurace připojení.</p>
+								<p>Na internetu jsem našel volný přístup k webovému rozhraní CCcamu, které je dlouhodobě přístupné bez logovacích údajů. Na tomto spojení si můžeme ukázat nastavení CCcamInfoPhp. Do souboru "config.php" přidáme následující řádek:</p>
+								<pre class="brush: text;">
+$CCCamWebInfo[] = array("telephone.dyndns.info","16001");
+								</pre>
+								<p>CccamInfoPhp v1.02 obshuje asi nějakou programovou chybu, protože v případě, že chceme přidat více než jeden server přes webové rozhraní CCcamInfoPhp, vyskočí chyba php kódu. Z toho důvodu je důležité umět i přidat připojení na server manuálně.</p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 390px; padding-left: 0;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/cccam_13.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/cccam_13.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#"> Manuální nastavení připojení</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>

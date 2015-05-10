@@ -106,7 +106,7 @@
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>DynDNS zdarma</h4>
 							<ul>
-								<li><a href="https://www.noip.com/">https://www.noip.com/</a> - 1 záznam zdarma</li>
+								<li><a href="https://www.noip.com/" target="_blank">https://www.noip.com/</a> - 1 záznam zdarma</li>
 							</ul>
 						</div>
 					</div>

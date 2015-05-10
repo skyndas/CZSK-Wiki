@@ -94,23 +94,45 @@
 							<!-- **entry-meta-data - Starts** -->
 							<div class="entry-meta-data">
 								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 25.4.2015</p>
+								<p><span class="fa fa-calendar"> </span> Datum: 10.5.2015</p>
 							</div> <!-- **entry-meta-data - Ends** -->
 						</div>
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Datum vzniku</h4>
-							<p><strong>CCcam</strong> je od českých tvůrců, kteří jsou pod hlavičkou "CCcam team" a vznikl cca kolem roku 2006. </p>
+							<p><strong>CCcam</strong> je pravděpodobně od českých tvůrců, kteří jsou pod hlavičkou "CCcam team" a vznikl cca kolem roku 2006. </p>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>O CCcam</h4>
+							<p><u>Ukázka topologie sítě s použitím CCcamu</u></p>
+								<div class="textcontainer">
+									<div class="portfolio-container">
+										<div style="width: 500px;" class="portfolio number_text">
+											<!-- **portfolio-thumb - Starts** -->
+											<div class="portfolio-thumb">
+												<figure>
+													<img src="images/cccam/graficke_pripojeni_CCcamu_08.png" alt="image">
+													<div class="image-overlay">
+														<a class="zoom" href="images/cccam/graficke_pripojeni_CCcamu_08.png" data-gal="prettyPhoto[gallery]"><span class="fa fa-search"></span></a>
+														<div class="portfolio-content">
+															<h5> <a href="#">Topologie sítě CCcam</a> </h5>
+															<span class="fa fa-sort-up"></span>
+														</div>
+													</div>
+												</figure>
+											</div> <!-- **portfolio-thumb - Ends** -->
+										</div>
+									</div>
+								</div>
 							<p><u>Výhody a nevýhody CCcamu:</u> </p>
 							<ul class="dt-sc-lmarg25">
 								<li><i class="fa fa-plus size14px margright5px"></i> CCcam pracuje jako cardserver i klient</li>
 								<li><i class="fa fa-minus size14px margright5px"></i> CCcam jako klient neumí zasílat EMM na další server, pouze na lokální karty (poslední info o EMM potvrzeno z roku 2009)</li>
 								<li><i class="fa fa-plus size14px margright5px"></i> CCcam umí reshare</li>
 								<li><i class="fa fa-plus size14px margright5px"></i> CCcam podporuje share emu (sdílení klíčů ze souboru)</li>
+								<li><i class="fa fa-plus size14px margright5px"></i> Automatické rozpoznání karet v univerzální čtečce boxu</li>
+								<li><i class="fa fa-plus size14px margright5px"></i> CCcam používá pouze jeden hlavní konfigurační soubor Cccam.cfg</li>
 							</ul>
 							<br>
 							<p><u>Podporované typy karet v interních nebo externích čtečkách:</u> </p>
@@ -543,7 +565,7 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 						<hr>
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Hlavní složky, soubory a porty CCcam - základní složky pro enigma 1 a 2</h4>
-							<div class="dt-sc-tabs-vertical-frame-content">
+							<div >
 								<ul>
 									<li><strong>CCcam.Binary</strong> = chmod 755 (např. CCcam.ppc, CCcam.mips, CCcam.x86)
 										<ul>
@@ -582,18 +604,19 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 									<ul class="dt-sc-fancy-list caret-right">
 										<li><strong>CCcam.bin</strong> - binární soubor.</li>
 										<li><strong>CCcam.sh</strong> - soubor se scriptem pro automatické spouštění CCcamu. Soubor CCcam.sh je možné přejmenovat na jakékoliv jméno s příponou "*.sh"</li>
-										<li><strong>CCcam.cfg</strong> - hlavní konfigurační soubor pro nastavení uživatelů, spojení, čteček atd....</li>
-										<li><strong>CCcam.prio (volitelné)</strong> - konfigurační soubor pro nastavení priority nebo ignorování karet</li>
-										<li><strong>CCcam.channelinfo (volitelné)</strong> - konfigurační soubor pro zobrazení jména programu ve WebIf a v logu místo SID.</li>
+										<li><strong>CCcam.cfg</strong> - hlavní konfigurační soubor pro nastavení uživatelů, spojení, čteček atd.... <a href="cccam-config.php"> Více o CCcam.cfg <span class="fa fa-long-arrow-right"> </span> </a></li>
+										<li><strong>CCcam.prio (volitelné)</strong> - konfigurační soubor pro nastavení priority nebo ignorování karet <a href="cccam-prio.php"> Více o CCcam.prio <span class="fa fa-long-arrow-right"> </span> </a></li>
+										<li><strong>CCcam.channelinfo (volitelné)</strong> - konfigurační soubor pro zobrazení jména programu ve WebIf a v logu místo SID. <a href="cccam-channelinfo.php"> Více o CCcam.channelinfo <span class="fa fa-long-arrow-right"> </span> </a></li>
 										<li><strong>CCcam.providers (volitelné)</strong> - konfigurační soubor pro zobrazení jména provideru a kódování ve WebIf a v logu místo CAID.</li>
-										<li><strong>SoftCam.Keys (volitelné)</strong> - konfigurační soubor pro emulaci.</li>
+										<li><strong>SoftCam.Keys (volitelné)</strong> - konfigurační soubor pro emulaci. Tento soubor obsahuje klíče pro dekódovaní televizních kanálů.</li>
 										<li><strong>AutoRoll.Keys (volitelné)</strong> - DOPLNIT !!!</li>
 										<li><strong>Constant.cw (volitelné)</strong> - DOPLNIT !!!</li>
 									</ul>
-									<p><u>Soubory které lze nastavit pro použití v CCcam.cfg</u></p>
+									<p><u>Log soubory s výstupem ze CCcamu.</u></p>
 									<ul class="dt-sc-fancy-list caret-right">
+										<li><strong>cccamlog.log (volitelné)</strong> - Logovací soubor CCcamu <a href="cccam-log.php"> Více o cccamlog.log <span class="fa fa-long-arrow-right"> </span> </a> </li>
 										<li><strong>Warnings.txt (volitelné)</strong> - Soubor se seznam útoků na CCcam bez povolení. Umístění souboru lze nastavit v souboru CCcam.cfg " #LOG WARNINGS : /tmp/warnings.txt "</li>
-										<li><strong>Ecm.info (volitelné)</strong> - DOPLNIT !!!</li>
+										<li><strong>Ecm.info</strong> - Soubor ve kterém se nacházejí informace o dekódovaném programu na který se právě díváte. Vzhledem k tomu, že ve webovém rozhraní není žádné info o DVB-Api, najdeme alespoň několik informací v tomto souboru.  <a href="cccam-ecm.php"> Více o Ecm.Info <span class="fa fa-long-arrow-right"> </span> </a> </li>
 									</ul>
 								</div>
 							</div>
@@ -683,12 +706,17 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 							<div class="dt-sc-tabs-vertical-frame-content">
 								<a href="http://www.world-of-files.net/index.php?directory=Emus/CCcam/CCcam%20Providers&PHPSESSID=aatn6v2d7r8uf52monvqd16243" target="_blank">CCcam.providers files</a><br>
 								<a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Prio" target="_blank">CCcam.prio files</a><br>
-								<a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Channel%20Info" target="_blank">CCcam.channelinfo files</a><br><br>
-								<strong>Generátory</strong>
-								<p>Generátory generují soubory na základě veřejně dostupných databází, v případě že se program nenachází v databázi, nebude jeho SID ani vygenerován.</p>
+								<a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Channel%20Info" target="_blank">CCcam.channelinfo files</a>
+							</div>
+						</div>
+
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
+							<h4>Generátory</h4>
+							<p>Generátory generují soubory na základě veřejně dostupných databází, v případě že se program nenachází v databázi, nebude jeho SID ani vygenerován.</p>
+							<div class="dt-sc-tabs-vertical-frame-content">
 								<a href="http://www.infosat.org/uc/?action=channelinfo">Infosat.org CCcam.channelinfo generátor</a><br>
 								<a href="http://kos.hdsat.pl/">Hdsat.pl CCcam.channelinfo, CCcam.prio generátor</a>
-
 							</div>
 						</div>
 

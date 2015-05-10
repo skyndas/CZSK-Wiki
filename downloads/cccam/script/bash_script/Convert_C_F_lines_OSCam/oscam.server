@@ -1,0 +1,12 @@
+[reader]
+label= server_dns.noip.com
+protocol = cccam
+device = server_dns.noip.com,12000
+account = cccamuser1,cccampasswd1
+
+[reader]
+label= server_dns.noip.com
+protocol = cccam
+device = server_dns.noip.com,12000
+account = cccamuser2,cccampasswd2
+
