@@ -1,3 +1,100 @@
+<!-- SWITCH PRO NÁZEV STRÁNKY -->
+<?php
+	if(!isset($_GET['page'])) {
+		$title = "Úvodní stránka";
+	}	
+	if(isset($_GET['page'])) {
+		switch($_GET['page']) {
+			case false :
+				$title = "Úvodní stránka";
+			break;
+			case 'home-page' :
+				$title = "Úvodní stránka";
+			break;
+			case 'cccam' :
+				$title = "CCcam";
+			break;
+			case 'cccam-binary' :
+				$title = "CCcam - binární soubory";
+			break;
+			case 'cccam-binary1' :
+				$title = "CCcam - binární soubory pro jednotlivé image";
+			break;
+			case 'cccam-channelinfo' :
+				$title = "CCcam - Konfigurace CCcam.channelinfo";
+			break;
+			case 'cccam-config' :
+				$title = "CCcam - Konfigurace CCcam.cfg";
+			break;
+			case 'cccam-ecm' :
+				$title = "CCcam - Ecm.info";
+			break;
+			case 'cccam-history' :
+				$title = "CCcam - Historie";
+			break;
+			case 'cccam-install' :
+				$title = "CCcam - Instalace";
+			break;
+			case 'cccam-log' :
+				$title = "Debug CCcamu";
+			break;
+			case 'cccam-prio' :
+				$title = "CCcam - CCcam.prio";
+			break;
+			case 'cccam-providers' :
+				$title = "CCcam - CCcam.providers";
+			break;
+			case 'cccam-script' :
+				$title = "CCcam - Bash script";
+			break;
+			case 'cccam-script1' :
+				$title = "CCcam - Script č.1 - Update souborů E2";
+			break;
+			case 'cccam-script2' :
+				$title = "CCcam - Script č.2 - Generátor souborů E2";
+			break;
+			case 'cccam-script3' :
+				$title = "CCcam - Ostatní Bash scripty";
+			break;
+			case 'cccam-startscriptE1' :
+				$title = "CCcam - Start script pro E1";
+			break;
+			case 'cccam-startscriptE2' :
+				$title = "CCcam - Start script pro E2";
+			break;
+			case 'cccam-telnet' :
+				$title = "CCcam - Telnet";
+			break;
+			case 'cccam-todo' :
+				$title = "CCcam - TODO list";
+			break;
+			case 'cccam-tools' :
+				$title = "CCcam - CCcamInfoPHP v1.02";
+			break;
+			case 'cccam-tools1' :
+				$title = "CCcam - CCcamInfoPHP v2.57";
+			break;
+			case 'cccam-webif' :
+				$title = "CCcam - WebIf";
+			break;
+			case 'dyndns' :
+				$title = "DynDNS";
+			break;
+			case 'busybox' :
+				$title = "Busybox";
+			break;
+			case 'historie' :
+				$title = "Historie Wiki";
+			break;
+			case 'mgcamd-index' :
+				$title = "MGcamd";
+			break;
+			default:
+				$title = "Stránka nenalezena";
+			break;
+		}
+	}
+?>
 <!Doctype html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
@@ -7,11 +104,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>CZSK - Wiki</title>
-	
+	<title><?php echo "CZSK - Wiki :: $title"?></title>
 	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="author" content="CZSK Team">
+	<meta name="keywords" content="" />
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,13 +116,13 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	
 	<!-- **CSS - stylesheets** -->
-	<link id="default-css" rel="stylesheet" href="style.css" type="text/css" media="all" />
-	<link id="shortcodes-css" rel="stylesheet" href="shortcodes.css" type="text/css" media="all"/>
+	<link id="default-css" rel="stylesheet" href="css/basic/style.css" type="text/css" media="all" />
+	<link id="shortcodes-css" rel="stylesheet" href="css/basic/shortcodes.css" type="text/css" media="all"/>
 	<link id="skin-css" rel="stylesheet" href="skins/skyblue/style.css" type="text/css" media="all"/>
 	<link id="layer-slider" rel="stylesheet"  href="css/layerslider.css" media="all" />
 	
 	<!-- **Additional - stylesheets** -->
-	<link rel="stylesheet" href="responsive.css" type="text/css" media="all"/>
+	<link rel="stylesheet" href="css/basic/responsive.css" type="text/css" media="all"/>
 	<link rel="stylesheet" href="css/meanmenu.css" type="text/css" media="all"/>
 	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="css/animations.css" type="text/css" media="all" />
@@ -39,11 +135,24 @@
 	<link rel="stylesheet" href="css/fonts.css" />
 
 	<!-- **Custom stylesheets** -->
-	<link rel="stylesheet"  href="css/custom.css" media="all" />
+	<link rel="stylesheet"  href="css/basic/custom.css" media="all" />
 	<link rel="stylesheet"  href="css/czsk-wiki-font.css" media="all" />
+
+	<!-- **SyntaxHighlighter** -->
+	<script type="text/javascript" src="js/SyntaxHighlighter/shCore.js"></script>
+	<script type="text/javascript" src="js/SyntaxHighlighter/shBrushBash.js"></script>
+	<script type="text/javascript" src="js/SyntaxHighlighter/shBrushPlain.js"></script>
+	<link type="text/css" rel="stylesheet" href="js/SyntaxHighlighter/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+	<!-- **jQuery** -->  
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<!-- **JQuery encode/decode Base64 -->
+	<script src="js/jquery.base64.js" type="text/javascript"></script>
 </head>
 
 <body>
+<!-- **Preloader** -->
 <div class="loader-wrapper">
 	<div id="loader-image"></div>
 </div>
@@ -52,277 +161,51 @@
 	<div class="inner-wrapper">
 		<div id="header-wrapper">
 			<!-- **Header** -->
-
-			<?php include ("contents/header.html"); ?>
-
+<?php include ("inc/html_content/header.html"); ?>
 			<!-- **Header - End** -->
 		</div>
 		
 		<!-- **Main - Starts** --> 
 		<div id="main">
-			
-			<div class="dt-sc-margin30"></div>  
-			<!-- **Full-width-section - Starts** -->       
-			<div class="full-width-section">
-				<div class="container">
-					<div class="hr-title">
-						<h2>O Cardsharingu</h2>
-						<!-- **title-sep - Starts** -->
-						<div class="title-sep">
-						</div> <!-- **title-sep - Ends** -->
-					</div>
-					<div class="column dt-sc-one-fourth first fadeInRight" data-animation="fadeInRight" data-delay="100">
-						<div class="dt-sc-ico-content type9">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="basic-info.php"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
-						<div class="dt-sc-ico-content type9">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="#"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
-						<div class="dt-sc-ico-content type9">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="#"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
-						<div class="dt-sc-ico-content type9">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="#"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
-						</div>
-					</div>
+			<!-- VLOŽENÍ STRÁNEK S OBSAHEM-->
+			<?php
+				$url = '';
+				// For blank category and page
+				if (empty($_GET['category']) && empty($_GET['page'])) {
+					$url .= 'inc/home-page.php';
+				}
 
-				</div>
-			</div><!-- **full-width-section - Ends** -->
-			
-			<!-- **full-width-section - starts** -->
-			<div class="dt-sc-margin30"></div>
-			<div class="intro-text type1">
-				<div class="container">
-					<div class="dt-sc-hr-invisible-very-small"></div>
-					<h2 class="aligncenter"><strong>Cardsharing</strong> - nejzábavnější sledování televizních programů.</h2>
-				</div>
-				<div class="dt-sc-hr-invisible-very-small"></div>
-			</div><!-- **full-width-section - Ends** -->
+				// If not exist "category" but exist "page"
+				if (empty($_GET['category'])) {
+					if (!empty($_GET['page'])) {
+						$url .= 'inc/';
+						$url .= $_GET['page'] . '.php';
+					}
+				}
 
-			<!-- **full-width-section - starts** -->
-			<div class="full-width-section">
-				<div class="container">
-					<div class="dt-sc-margin30"></div>
-					<div class="hr-title">
-						<h2>Cardservery</h2>
-						<!-- **title-sep - Starts** -->
-						<div class="title-sep">
-						</div> <!-- **title-sep - Ends** -->
-					</div>
-					<div class="dt-sc-margin30"></div>
-					<div class="column dt-sc-one-fifth first fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa icon-logo_radegast"></span>
-							</div>
-							<h4> <a href="radegast-index.php"> Radegast </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="radegast-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa icon-logo_newcs"></span>
-							</div>
-							<h4> <a href="newcs-index.php"> NewCS </a> </h4>
-							<p> NewCS je pouze karetní server (cardserver). </p>
-							<a class="read-more" href="newcs-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa icon-logo_camd3"></span>
-							</div>
-							<h4> <a href="#"> Camd3 </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa icon-logo_sbox"></span>
-							</div>
-							<h4> <a href="sbox-index.php"> sBox </a> </h4>
-							<p>sBox je karetní server (cardserver). </p>
-							<a class="read-more" href="sbox-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa icon-logo_cccam"></span>
-							</div>
-							<h4> <a href="cccam-index.php"> CCcam </a> </h4>
-							<p> CCcam je karetní server (cardserver) i klient. </p>
-							<a class="read-more" href="cccam-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
+				// If not exist "category" and "page"
+				if (!empty($_GET['category'])) {
+					$url .= 'inc/' . $_GET['category'] . '/';
+					if (!empty($_GET['page'])) {
+						$url .= $_GET['page'] . '.php';
+					}
+				}
 
-					<div class="dt-sc-margin70"></div>
-					<div class="column dt-sc-one-fifth first fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa icon-logo_oscam"></span>
-							</div>
-							<h4> <a href="oscam-index.php"> OSCam </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="oscam-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
+				// If exist url
+				if (file_exists("$url")) {
+					include $url;
+				} elseif (!file_exists("$url")) {
+					include ("404.php");
+				}
 
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa fa-tint"></span>
-							</div>
-							<h4> <a href="#"> MPCS </a> </h4>
-							<p> MPCS je pouze karetní server (cardserver).</p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa fa-tint"></span>
-							</div>
-							<h4> <a href="#"> WiCard </a> </h4>
-							<p> WiCard je karetní server (cardserver) i klient. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-
-					<div class="dt-sc-margin30"></div>
-					<div class="hr-title">
-						<h2>Clienti</h2>
-						<!-- **title-sep - Starts** -->
-						<div class="title-sep">
-						</div> <!-- **title-sep - Ends** -->
-					</div>
-					<div class="dt-sc-margin30"></div>
-					<div class="column dt-sc-one-fifth first fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa fa-tint"></span>
-							</div>
-							<h4> <a href="mgcamd-index.php"> MGcamd </a> </h4>
-							<p> Klient. </p>
-							<a class="read-more" href="mgcamd-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa fa-tint"></span>
-							</div>
-							<h4> <a href="#"> Evocamd </a> </h4>
-							<p> Klient. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa fa-tint"></span>
-							</div>
-							<h4> <a href="#"> IncubusCamd </a> </h4>
-							<p> Klient. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-
-					<div class="dt-sc-margin30"></div>
-					<div class="hr-title">
-						<h2>Nezařazené</h2>
-						<!-- **title-sep - Starts** -->
-						<div class="title-sep">
-						</div> <!-- **title-sep - Ends** -->
-					</div>
-					<div class="dt-sc-margin30"></div>
-					<div class="column dt-sc-one-fifth first fadeInUp" data-animation="fadeInUp" data-delay="100">
-						<div class="dt-sc-ico-content type8">
-							<div class="icon">
-								<span class="fa fa-tint"></span>
-							</div>
-							<h4> <a href="#"> Mbox </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-
-					<div class="dt-sc-margin30"></div>
-					<div class="hr-title">
-						<h2>Karty</h2>
-						<!-- **title-sep - Starts** -->
-						<div class="title-sep">
-						</div> <!-- **title-sep - Ends** -->
-					</div>
-					<div class="dt-sc-margin30"></div>
-					<div class="column dt-sc-one-fifth first fadeInLeft" data-animation="fadeInLeft" data-delay="100">
-						<div class="dt-sc-ico-content type4">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="#"> Skylink </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
-						<div class="dt-sc-ico-content type4">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="#"> CSlink </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-					<div class="column dt-sc-one-fifth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
-						<div class="dt-sc-ico-content type4">
-							<div class="icon">
-								<span class="fa fa-square"></span>
-							</div>
-							<h4> <a href="#"> Sky Deutschland </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
-						</div>
-					</div>
-				</div>
-			</div> <!-- **Full-width-section - Ends** --> 
-			<div class="dt-sc-hr-invisible"></div>
+			?>
 			  
 		</div> <!-- **Main - Ends** --> 
 		
 		<!-- **Footer** -->
 		<footer id="footer">
 
-<?php include ("contents/footer.html"); ?>
+<?php include ("inc/html_content/footer.html"); ?>
 
 		</footer> <!-- **Footer - End** -->
 		
@@ -330,11 +213,8 @@
 	
 </div><!-- **Wrapper - End** -->
 
-	<!-- **jQuery** -->  
-	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<!-- **jQuery** -->  
 	<script src="js/jquery-migrate.min.js"></script> 
-	
-	<script src="js/preloader.js" type="text/javascript"></script>
 	<script src="js/pace.min.js" type="text/javascript"></script>
 	
 	<script src="js/jquery.tabs.min.js"></script>
@@ -366,10 +246,10 @@
 	<script src="js/responsive-nav.js" type="text/javascript"></script>
 	<script src="js/jquery.meanmenu.min.js" type="text/javascript"></script>
 	
-	<!-- **Sticky Nav** -->
+<!-- **Sticky Nav** -->
 	<script src="js/jquery.sticky.js" type="text/javascript"></script>
 	
-	<!-- **To Top** -->
+<!-- **To Top** -->
 	<script src="js/jquery.ui.totop.min.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" src="js/twitter/jquery.tweet.min.js"></script>
@@ -379,6 +259,28 @@
 	<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
 	
 	<script src="js/custom.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+	// Basic script for selection text by button or submit
+	jQuery(document).ready(function($){
+		jQuery.fn.selectText = function(){
+			var doc = document;
+			var element = this[0];
+			console.log(this, element);
+			if (doc.body.createTextRange) {
+				var range = document.body.createTextRange();
+					range.moveToElementText(element);
+					range.select();
+		   } else if (window.getSelection) {
+				var selection = window.getSelection();        
+				var range = document.createRange();
+					range.selectNodeContents(element);
+					selection.removeAllRanges();
+					selection.addRange(range);
+				}
+			};
+	});
+	</script>
 		  
 
 </body>
