@@ -42,9 +42,16 @@
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
-							<h4>DynDNS zdarma</h4>
+							<h4>DynDNS</h4>
+							<p><strong>NO-IP.com</strong></p>
 							<ul>
 								<li><a href="https://www.noip.com/" target="_blank">https://www.noip.com/</a> - 1 záznam zdarma</li>
+								<li><a href="http://www.noip.com/download?page=win" target="_blank">Dynamic DNS Update Client (DUC) for Windows</a></li>
+							</ul>
+							<p><strong>DYN.com</strong></p>
+							<ul>
+								<li><a href="http://dyn.com/dns/" target="_blank">http://dyn.com/dns/</a></li>
+								<li><a href="http://dyn.com/apps/update-client-faqs/" target="_blank">Update Client FAQs</a></li>
 							</ul>
 						</div>
 					</div>

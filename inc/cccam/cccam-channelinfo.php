@@ -52,6 +52,10 @@
 CAID:ID:SID "Název_programu (poznámka) [Kódovací_systém CAID ID]"
 								</pre>
 							</div>
+						</div>
+						
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">
 							<h4>Seznam zkratek kódovacích systémů používaných v CCcam.channelinfo</h4>
 							<div>
 								<table class="cccam_wikitable_channelinfo" style="margin-bottom: 20px">
@@ -266,7 +270,11 @@ CAID:ID:SID "Název_programu (poznámka) [Kódovací_systém CAID ID]"
 										<td>0D03:000000:1F43 "Skylink - CT 1 [EMU-CW]"</td>
 									</tr>
 								</table>
-							</div>						
+							</div>
+						</div>
+						
+						<div class="dt-sc-hr-invisible-very-small"></div>
+						<div class="dt-sc-tabs-vertical-container">				
 							<h4>Příklady</h4>
 							<div class="dt-sc-four-fifth dt-sc-lmarg25">
 								<pre>

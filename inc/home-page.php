@@ -13,8 +13,8 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="basic-info.php"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
+							<h4> <a href="index.php?category=basic_info&page=basic_info-index"> Základy cardsharingu </a> </h4>
+							<p>Základní vysvětlení cardsharingu. </p>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -22,8 +22,8 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
+							<h4> <a href="#"> XXXX </a> </h4>
+							<p>Info text. </p>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -31,8 +31,8 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
+							<h4> <a href="#"> XXXX </a> </h4>
+							<p>Info text. </p>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -40,8 +40,8 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> Základy cardsharingu </a> </h4>
-							<p>Info text o cardsharingu. </p>
+							<h4> <a href="index.php?category=cardsharing_server&page=cardsharing_server"> Cardsharing servery </a> </h4>
+							<p>Seznam serverů poskytujících cardsharing. </p>
 						</div>
 					</div>
 
@@ -74,9 +74,10 @@
 							<div class="icon">
 								<span class="fa icon-logo_radegast"></span>
 							</div>
-							<h4> <a href="radegast-index.php"> Radegast </a> </h4>
-							<p> Informační text. </p>
-							<a class="read-more" href="radegast-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
+							<h4> <a href="index.php?category=radegast&page=radegast-index"> Radegast </a> </h4>
+							<p> Informační text.<br><br> </p>
+							<p class="development_end"> Vývoj ukončen !! </p>
+							<a class="read-more" href="index.php?category=radegast&page=radegast-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
@@ -86,6 +87,7 @@
 							</div>
 							<h4> <a href="index.php?category=newcs&page=newcs-index"> NewCS </a> </h4>
 							<p> NewCS je pouze karetní server (cardserver). </p>
+							<p class="development_end"> Vývoj ukončen !! </p>
 							<a class="read-more" href="index.php?category=newcs&page=newcs-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
@@ -95,7 +97,8 @@
 								<span class="fa icon-logo_camd3"></span>
 							</div>
 							<h4> <a href="#"> Camd3 </a> </h4>
-							<p> Informační text. </p>
+							<p> Informační text.<br><br> </p>
+							<p class="development_end"> Vývoj ukončen !! </p>
 							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
@@ -104,9 +107,10 @@
 							<div class="icon">
 								<span class="fa icon-logo_sbox"></span>
 							</div>
-							<h4> <a href="sbox-index.php"> sBox </a> </h4>
+							<h4> <a href="index.php?category=sbox&page=sbox-index"> sBox </a> </h4>
 							<p>sBox je karetní server (cardserver). </p>
-							<a class="read-more" href="sbox-index.php"> Více <span class="fa fa-long-arrow-right"></span> </a>
+							<p class="development_continues"> Vývoj pokračuje </p>
+							<a class="read-more" href="index.php?category=sbox&page=sbox-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
@@ -116,6 +120,7 @@
 							</div>
 							<h4> <a href="index.php?category=cccam&page=cccam-index"> CCcam </a> </h4>
 							<p> CCcam je karetní server (cardserver) i klient. </p>
+							<p class="development_end"> Vývoj ukončen !! </p>
 							<a class="read-more" href="index.php?category=cccam&page=cccam-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
@@ -127,8 +132,21 @@
 								<span class="fa icon-logo_oscam"></span>
 							</div>
 							<h4> <a href="index.php?category=oscam&page=oscam-index"> OSCam </a> </h4>
-							<p> Informační text. </p>
+							<p> OSCam je karetní server (cardserver) i klient. </p>
+							<p class="development_continues"> Vývoj pokračuje </p>
 							<a class="read-more" href="index.php?category=oscam&page=oscam-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
+						</div>
+					</div>
+
+					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
+						<div class="dt-sc-ico-content type8">
+							<div class="icon">
+								<span class="fa icon-logo_doscam"></span>
+							</div>
+							<h4> <a href="index.php?category=doscam&page=doscam-index"> DOSCam </a> </h4>
+							<p> DOSCam je karetní server (cardserver) i klient. </p>
+							<p class="development_continues"> Vývoj pokračuje </p>
+							<a class="read-more" href="index.php?category=doscam&page=doscam-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 
@@ -225,9 +243,9 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> Skylink </a> </h4>
+							<h4> <a href="index.php?category=card&page=card-czech"> České karty </a> </h4>
 							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
+							<a class="read-more" href="index.php?category=card&page=card-czech"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fifth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -235,9 +253,9 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> CSlink </a> </h4>
+							<h4> <a href="index.php?category=card&page=card-slovak"> Slovenské karty </a> </h4>
 							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
+							<a class="read-more" href="index.php?category=card&page=card-slovak"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fifth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -245,9 +263,29 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> Sky Deutschland </a> </h4>
+							<h4> <a href="index.php?category=card&page=card-deutsch1"> Německé a Rakouské karty </a> </h4>
 							<p> Informační text. </p>
-							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
+							<a class="read-more" href="index.php?category=card&page=card-deutsch1"> Více <span class="fa fa-long-arrow-right"></span> </a>
+						</div>
+					</div>
+					<div class="column dt-sc-one-fifth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
+						<div class="dt-sc-ico-content type4">
+							<div class="icon">
+								<span class="fa fa-square"></span>
+							</div>
+							<h4> <a href="index.php?category=card&page=card-french"> Francouzské karty </a> </h4>
+							<p> Informační text. </p>
+							<a class="read-more" href="index.php?category=card&page=card-french"> Více <span class="fa fa-long-arrow-right"></span> </a>
+						</div>
+					</div>
+					<div class="column dt-sc-one-fifth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
+						<div class="dt-sc-ico-content type4">
+							<div class="icon">
+								<span class="fa fa-square"></span>
+							</div>
+							<h4> <a href="index.php?category=card&page=card-etc"> Ostatní karty </a> </h4>
+							<p> Informační text. </p>
+							<a class="read-more" href="index.php?category=card&page=card-etc"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 				</div>

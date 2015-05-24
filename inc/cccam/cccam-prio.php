@@ -71,6 +71,7 @@
 									P: CAID1, CAID2 
 								</code>
 							</div>
+							<p><strong>Situace 5 - 6:</strong> Více informací v anglickém popisu níže. </p>
 							<p>Zápisy se SID obvykle nejsou nutné, protože SIDy jsou v rozsahu CAID nebo IDENTů. Můžeme využít pouze v případě, že chceme například zablokovat vybraný program.</p>
 							<p><u>Příklad </u></p>
 							<div class="dt-sc-four-fifth dt-sc-lmarg25">

@@ -1,14 +1,13 @@
 @font-face {
 	font-family: 'czsk-wiki-font';
-	src:url('../fonts/czsk-wiki-font.eot?vmw34x');
-	src:url('../fonts/czsk-wiki-font.eot?#iefixvmw34x') format('embedded-opentype'),
-		url('../fonts/czsk-wiki-font.woff?vmw34x') format('woff'),
-		url('../fonts/czsk-wiki-font.ttf?vmw34x') format('truetype'),
-		url('../fonts/czsk-wiki-font.svg?vmw34x#icomoon') format('svg');
+	src:url('../fonts/czsk-wiki-font.eot?w249yk');
+	src:url('../fonts/czsk-wiki-font.eot?#iefixw249yk') format('embedded-opentype'),
+		url('../fonts/czsk-wiki-font.woff?w249yk') format('woff'),
+		url('../fonts/czsk-wiki-font.ttf?w249yk') format('truetype'),
+		url('../fonts/czsk-wiki-font.svg?w249yk#czsk-wiki-font') format('svg');
 	font-weight: normal;
 	font-style: normal;
 } 
-
 
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'czsk-wiki-font';
@@ -26,76 +25,78 @@
 
 /* Custom icon */
 .icon-logo_sbox:before {
-	content: "\e600";
+	content: "\e60f";
 	font-size: 18px;
 }
 
 .icon-logo_radegast:before {
-	content: "\e601";
+	content: "\e60e";
 	font-size: 20px;
 }
 
 .icon-logo_oscam:before {
-	content: "\e602";
+	content: "\e60d";
 	font-size: 40px;
 }
 
 .icon-logo_newcs:before {
-	content: "\e603";
+	content: "\e60c";
 	font-size: 18px;
 }
-
+.icon-logo_doscam:before {
+	content: "\e610";
+}
 .icon-logo_cccam:before {
-	content: "\e604";
+	content: "\e60b";
 	font-size: 18px;
 }
 
 .icon-logo_camd3:before {
-	content: "\e605";
+	content: "\e60a";
 	font-size: 20px;
 }
 
 .icon-icon_smile_wink:before {
-	content: "\e606";
-}
-
-.icon-icon_smile_unsure:before {
-	content: "\e607";
-}
-
-.icon-icon_smile_tongue:before {
-	content: "\e608";
-}
-
-.icon-icon_smile_surprised:before {
 	content: "\e609";
 }
 
+.icon-icon_smile_unsure:before {
+	content: "\e608";
+}
+
+.icon-icon_smile_tongue:before {
+	content: "\e607";
+}
+
+.icon-icon_smile_surprised:before {
+	content: "\e606";
+}
+
 .icon-icon_smile_squint:before {
-	content: "\e60a";
+	content: "\e605";
 }
 
 .icon-icon_smile_sad:before {
-	content: "\e60b";
+	content: "\e604";
 }
 
 .icon-icon_smile_cry:before {
-	content: "\e60c";
+	content: "\e603";
 }
 
 .icon-icon_smile_big_smile:before {
-	content: "\e60d";
+	content: "\e602";
 }
 
 .icon-icon_light:before {
-	content: "\e60e";
+	content: "\e601";
 	font-size: 24px;
 	margin-right: 10px;
 	color: #EEC106;
 }
 
 .icon-icon_help:before {
-	content: "\e60f";
+	content: "\e600";
 	font-size: 16px;
 }
 
@@ -104,6 +105,9 @@
 	color: #E64D3D;
 	margin-right: 10px;
 	font-size: 24px;
+}
+.fa-github-square::before {
+    font-size: 20px;
 }
 .size14px {
 	font-size: 14px;

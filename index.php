@@ -11,14 +11,56 @@
 			case 'home-page' :
 				$title = "Úvodní stránka";
 			break;
-			case 'cccam' :
+			case 'basic_info-index' :
+				$title = "Základy cardsharingu";
+			break;
+			case 'busybox' :
+				$title = "Busybox";
+			break;
+			case 'card-index' :
+				$title = "Karty";
+			break;
+			case 'card-czech' :
+				$title = "Karty - České karty";
+			break;
+			case 'card-slovak' :
+				$title = "Karty - Slovenské karty";
+			break;
+			case 'card-austria1' :
+				$title = "Karty - Rakouské karty";
+			break;
+			case 'card-austria2' :
+				$title = "Karty - Rakouské karty";
+			break;
+			case 'card-deutsch1' :
+				$title = "Karty - Německé karty";
+			break;
+			case 'card-deutsch2' :
+				$title = "Karty - Německé karty";
+			break;
+			case 'cardsharing_server' :
+				$title = "Cardsharing servery";
+			break;
+			case 'cardsharing_test1' :
+				$title = "Cardsharing servery";
+			break;
+			case 'cardsharing_test2' :
+				$title = "Cardsharing servery";
+			break;
+			case 'cardsharing_test3' :
+				$title = "Cardsharing servery";
+			break;
+			case 'cardsharing_test4' :
+				$title = "Cardsharing servery";
+			break;
+			case 'cccam-index' :
 				$title = "CCcam";
 			break;
 			case 'cccam-binary' :
-				$title = "CCcam - binární soubory";
+				$title = "CCcam - Binární soubory";
 			break;
 			case 'cccam-binary1' :
-				$title = "CCcam - binární soubory pro jednotlivé image";
+				$title = "CCcam - Binární soubory pro jednotlivé image";
 			break;
 			case 'cccam-channelinfo' :
 				$title = "CCcam - Konfigurace CCcam.channelinfo";
@@ -77,17 +119,65 @@
 			case 'cccam-webif' :
 				$title = "CCcam - WebIf";
 			break;
+			case 'doscam-index' :
+				$title = "DOSCam";
+			break;
+			case 'doscam-doscam-cfg' :
+				$title = "Konfigurace DOSCamu";
+			break;
+			case 'doscam-history' :
+				$title = "DOSCam - Historie";
+			break;
+			case 'doscam-telnet' :
+				$title = "DOSCam - Telnet";
+			break;
 			case 'dyndns' :
 				$title = "DynDNS";
-			break;
-			case 'busybox' :
-				$title = "Busybox";
 			break;
 			case 'historie' :
 				$title = "Historie Wiki";
 			break;
+			case 'linuxbox-index' :
+				$title = "Linux - Standartní porty";
+			break;
+			case 'linuxbox-symlink' :
+				$title = "Linux - Symlink";
+			break;
 			case 'mgcamd-index' :
 				$title = "MGcamd";
+			break;
+			case 'oscam-index' :
+				$title = "OSCam";
+			break;
+			case 'oscam-todo' :
+				$title = "OSCam - TODO list";
+			break;
+			case 'radegast-index' :
+				$title = "Radegast";
+			break;
+			case 'radegast-history' :
+				$title = "Radegast - Historie";
+			break;
+			case 'radegast-install' :
+				$title = "Radegast - Instalace";
+			break;
+			case 'radegast-webif' :
+				$title = "Radegast - WebIf";
+			break;
+			case 'radegast-binary' :
+				$title = "Radegast - Binární soubory";
+			break;
+			case 'radegast-binary1' :
+				$title = "Radegast - Binární soubory pro E1";
+			break;
+			case 'radegast-config' :
+				$title = "Radegast - Konfigurace";
+			break;
+			case 'radegast-telnet' :
+				$title = "Radegast - Telnet";
+			break;
+			case 'radegast-log' :
+				$title = "Radegast - Log";
 			break;
 			default:
 				$title = "Stránka nenalezena";
@@ -147,6 +237,10 @@
 
 	<!-- **jQuery** -->  
 	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+	<!-- **Chart javascript** -->  
+	<script src="js/Chart.js" type="text/javascript"></script>
+
 	<!-- **JQuery encode/decode Base64 -->
 	<script src="js/jquery.base64.js" type="text/javascript"></script>
 </head>
@@ -214,11 +308,10 @@
 </div><!-- **Wrapper - End** -->
 
 <!-- **jQuery** -->  
-	<script src="js/jquery-migrate.min.js"></script> 
+	<script src="js/jquery-migrate.min.js"></script>
 	<script src="js/pace.min.js" type="text/javascript"></script>
 	
 	<script src="js/jquery.tabs.min.js"></script>
-	<script src="js/jquery.tipTip.minified.js"></script>
 	
 	<script src="js/jquery-easing-1.3.js" type="text/javascript"></script>
 	
@@ -246,20 +339,19 @@
 	<script src="js/responsive-nav.js" type="text/javascript"></script>
 	<script src="js/jquery.meanmenu.min.js" type="text/javascript"></script>
 	
-<!-- **Sticky Nav** -->
-	<script src="js/jquery.sticky.js" type="text/javascript"></script>
-	
-<!-- **To Top** -->
-	<script src="js/jquery.ui.totop.min.js" type="text/javascript"></script>
-	
-	<script type="text/javascript" src="js/twitter/jquery.tweet.min.js"></script>
-	
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	
 	<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
-	
-	<script src="js/custom.js" type="text/javascript"></script>
 
+<!-- **Sticky Nav** -->
+	<script src="js/jquery.sticky.js" type="text/javascript"></script>
+<!-- **Preloader** -->
+	<script src="js/preloader.js" type="text/javascript"></script>
+<!-- **To Top** -->
+	<script src="js/jquery.ui.totop.min.js" type="text/javascript"></script>
+<!-- **Custom script** -->
+	<script src="js/custom.js" type="text/javascript"></script>
+<!-- **Basic script for selection text by button or submit** -->
 	<script type="text/javascript">
 	// Basic script for selection text by button or submit
 	jQuery(document).ready(function($){
@@ -279,6 +371,18 @@
 					selection.addRange(range);
 				}
 			};
+		$(function () {
+			$('.popup-modal').magnificPopup({
+				type: 'inline',
+				preloader: false,
+				focus: '#username',
+				modal: true
+			});
+			$(document).on('click', '.popup-modal-dismiss', function (e) {
+				e.preventDefault();
+				$.magnificPopup.close();
+			});
+		});
 	});
 	</script>
 		  

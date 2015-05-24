@@ -45,7 +45,8 @@
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Ke stažení - <span>cccam.cfg pro poslední public verzi CCcam 2.3.0</span></h4>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="downloads/cccam/config/CCcam_2.3.0.cfg" target="_blank">CCcam.cfg pro CCcam v2.3.0</a><br>
+								<a href="downloads/cccam/config/CCcam_2.3.0_english.cfg" target="_blank">CCcam.cfg pro CCcam v2.3.0 - anglický popis</a><br>
+								<a href="downloads/cccam/config/CCcam_2.3.0_deutsch.cfg" target="_blank">CCcam.cfg pro CCcam v2.3.0 - německý popis</a><br>
 							</div>
 						</div>
 
@@ -555,7 +556,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 									V případě, že nenastavíme volitelná pole, budou volitelné hodnoty nastaveny automaticky na defaultní hodnoty.
 								</p>
 								<code>
-									F: user1 passwd1
+F: user1 passwd1
 								</code>
 							</div>
 							<p><strong>Příklad 2:</strong> </p>
@@ -563,8 +564,8 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p>
 									
 								</p>
-								<div class="code">
-									F: user2 passwd2 <span>3</span> 0 0
+								<div class="code code_text_space">
+F: user2 passwd2 <span>3</span> 0 0
 								</div>
 							</div>
 							<p><strong>Příklad 3:</strong> - Sdílení klíčů ze souboru Softcam.key</p>
@@ -575,8 +576,8 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p><strong>0</strong> - uživatel nemá přístup k souboru<br>
 									<strong>1</strong> - uživatel má přístup k souboru</p>
 								<p><u>Příklad</u></p>
-								<div class="code">
-									F: user3 passwd3 3 <span>0</span> 0
+								<div class="code code_text_space">
+F: user3 passwd3 3 <span>0</span> 0
 								</div>
 								<p>V tomto příkladě uživatel "user3" nemá přístup k emu tj. k souboru Softcam.key</p>
 							</div>
@@ -588,8 +589,8 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p><strong>0</strong> - zákaz přijímat EMM od uživatele<br>
 									<strong>1</strong> - povoleno přijímat EMM od uživatele</p>
 								<p><u>Příklad</u></p>
-								<div class="code">
-									F: user4 passwd4 3 0 <span>0</span>
+								<div class="code code_text_space">
+F: user4 passwd4 3 0 <span>0</span>
 								</div>
 								<p>V tomto příkladě je zakázáno od uživatele "user4" přijímat EMM instrukce.</p>
 							</div>
@@ -599,7 +600,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p></p>
 								<p><u>Příklad</u></p>
 								<div class="code code_text_space">
-									F: user5 passwd5 3 0 0 { <span>0100:00006A</span>, <span>0622:000000:1</span>, <span>0500:000000:2</span> }
+F: user5 passwd5 3 0 0 { <span>0100:00006A</span>, <span>0622:000000:1</span>, <span>0500:000000:2</span> }
 								</div>
 								<p>V tomto příkladě má uživatel "user5":</p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
@@ -640,8 +641,8 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p><u>Popis</u></p>
 								<p></p>
 								<p><u>Příklad</u></p>
-								<div class="code">
-									F: user6 passwd6 <span>0</span> 0 0 { <span>0:0:1</span> }
+								<div class="code code_text_space">
+F: user6 passwd6 <span>0</span> 0 0 { <span>0:0:1</span> }
 								</div>
 								<p>V tomto příkladě má uživatel "user6":</p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
@@ -676,7 +677,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p></p>
 								<p><u>Příklad</u></p>
 								<div class="code code_text_space">
-									F: user7 passwd7 <span>0</span> 0 0 { <span>0:0:1</span> } { <span>0D96:000000:1F43</span> }
+F: user7 passwd7 <span>0</span> 0 0 { <span>0:0:1</span> } { <span>0D96:000000:1F43</span> }
 								</div>
 								<p>V tomto příkladě má uživatel "user7":</p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
@@ -712,7 +713,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p></p>
 								<p><u>Příklad</u></p>
 								<div class="code code_text_space">
-									F: user8 passwd8 <span>0</span> 0 0 { <span>0:0:1</span> } { <span>0D96:000000:1F43, 0D96:000000:1F44, 0D96:000000:1F47</span> }
+F: user8 passwd8 <span>0</span> 0 0 { <span>0:0:1</span> } { <span>0D96:000000:1F43, 0D96:000000:1F44, 0D96:000000:1F47</span> }
 								</div>
 								<p>V tomto příkladě má uživatel "user8":</p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
@@ -748,7 +749,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p></p>
 								<p><u>Příklad</u></p>
 								<div class="code">
-									F: user9 passwd9 0 0 0 { } { } { <span>12:00-17:00, 19:00-20:00</span> }
+F: user9 passwd9 0 0 0 { } { } { <span>12:00-17:00, 19:00-20:00</span> }
 								</div>
 								<p>V tomto příkladě má uživatel "user9":</p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
@@ -782,7 +783,7 @@ F: &lt;username> &lt;password> &lt;uphops> &lt;shareemus> &lt;allowemm> ( { caid
 								<p></p>
 								<p><u>Příklad</u></p>
 								<div class="code">
-									F: user10 passwd10 0 0 0 { } { } { } <span>friend_dns.noip.com</span>
+F: user10 passwd10 0 0 0 { } { } { } <span>friend_dns.noip.com</span>
 								</div>
 								<p>V tomto příkladě má uživatel "user10":</p>
 								<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
@@ -1216,7 +1217,7 @@ SERVER LISTEN PORT : 0
 							<p>Port pro TelnetInfo "TELNETINFO LISTEN PORT : 16000"<br>
 								Port pro Webové rozhraní "WEBINFO LISTEN PORT : 16001".</p>
 							<p><u>Popis</u></p>
-							<p>Změnou nastavujeme port pro Webové rozhraní a TelnetInfo. Např. "WEBINFO LISTEN PORT : 35000" nám změní port pro Webové rozhraní. Pro připojení zadáme do prohlížeče "http://IP_for_CCcam-Server:35000". Pokud budeme měnit číslo portů pozor na využití standartních portů linoxovými boxy. <a href="index.php?category=linuxbox&page=linuxbox"> Více o portech <span class="fa fa-long-arrow-right"> </span> </a> </p>
+							<p>Změnou nastavujeme port pro Webové rozhraní a TelnetInfo. Např. "WEBINFO LISTEN PORT : 35000" nám změní port pro Webové rozhraní. Pro připojení zadáme do prohlížeče "http://IP_for_CCcam-Server:35000". Pokud budeme měnit číslo portů pozor na využití standartních portů linoxovými boxy. <a href="index.php?category=linuxbox&page=linuxbox-index"> Více o portech <span class="fa fa-long-arrow-right"> </span> </a> </p>
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>

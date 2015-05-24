@@ -38,7 +38,7 @@
 						<h4>Binární soubory</h4>
 						<div class="dt-sc-tabs-vertical-frame-content">
 							<div class="clearfloat">
-								<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version/CCcam-2.3.0.zip">CCcam-2.3.0 (12/2011)</a></p>
+								<p>Poslední známý funkční binární soubor je  <a href="downloads/cccam/binary_version/CCcam-2.3.0.zip">CCcam-2.3.0 (12/2011)</a></p>
 								<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version/CCcam-2.2.1.zip">CCcam-2.2.1 (11/2010)</a></p>
 								<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version/CCcam-2.2.0.zip">CCcam-2.2.0 (11/2010)</a></p>
 								<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/cccam/binary_version/CCcam-2.1.4.zip">CCcam-2.1.4 (1/2010)</a></p>

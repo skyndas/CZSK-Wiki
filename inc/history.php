@@ -16,7 +16,54 @@
 			<!-- **Full-width-section - Starts** -->       
 			<div class="full-width-section">
 				<div class="container">
-					<h5>v10 (12-05-2015)</h5>
+					<h5><u>v11 (24-05-2015)</u></h5>
+					<ul class="dt-sc-fancy-list arrow" >
+						<li><strong>CCcam</strong>
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- doplněné informace v cccam-index.php o symlinku.</li>
+								<li>- přidán konfigurační soubor CCcam.cfg v německém jazyce.</li>
+								<li>- doplněny informace o CCcam.providers.</li>
+							</ul>
+						</li>
+						<li><strong>DOSCam</strong> 
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- přidán popis o telnetu.</li>
+								<li>- vytvořeno logo pro DOSCam.</li>
+								<li>- vytvořena stránka s historii DOSCamu.</li>
+								<li>- vytvořena stránka s konfigurací DOSCamu.</li>
+							</ul>
+						</li>
+						<li><strong>DynDNS</strong> - přidán 1 záznam o poskytovateli DNS.</li>
+						<li><strong>Základy cardsharingu</strong> - vytvořena sekce</li>
+						<li><strong>Cardsharing servery</strong>
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- vytvořena sekce.</li>
+								<li>- vytvořeny testy spojení pro CAID pro jednotlivé Cardservery v grafické podobě.</li>
+							</ul>
+						</li>
+						<li><strong>Radegast</strong> 
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- dopsaná historie verze 4.2</li>
+								<li>- doplněno mnoho dalších informací o Radagastu včetně instalace pod Xubuntu</li>
+							</ul>
+						</li>
+						<li><strong>Linux Box</strong> 
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- přidán popis o symlink.</li>
+							</ul>
+						</li>
+						<li><strong>Wiki</strong> 
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- přidán odkaz na GitHub do zápatí (Footer).</li>
+								<li>- přidány icony pro zobrazení jazykové mutace v případě, že odkaz odkazuje na fórum.</li>
+								<li>- vytvořeno nové rozdělení karet na titulní stránce.</li>
+								<li>- přepracovány informace o kartách.</li>
+								<li>- přidány informace o stavu vývoje jednotlivých emulátorů v úvodní stránce.</li>
+							</ul>
+						</li>
+					</ul>
+
+					<h5><u>v10 (12-05-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
@@ -33,7 +80,7 @@
 						</li>
 					</ul>
 
-					<h5>v9 (10-05-2015)</h5>
+					<h5><u>v9 (10-05-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
@@ -48,7 +95,7 @@
 						<li><strong>Wiki</strong> - nové ikony pro zobrazení typu souboru</li>
 					</ul>
 
-					<h5>v8 (08-05-2015)</h5>
+					<h5><u>v8 (08-05-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>NewCS</strong> - přidány binární soubory</li>
 						<li><strong>CCcam</strong>
@@ -80,7 +127,7 @@
 						<li><strong>Busybox</strong> - přidány další příkazy</li>
 					</ul>
 
-					<h5>v7 (24-04-2015)</h5>
+					<h5><u>v7 (24-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
@@ -96,7 +143,7 @@
 						<li><strong>MGcamd</strong> - vytvořena sekce</li>
 					</ul>
 
-					<h5>v6 (24-04-2015)</h5>
+					<h5><u>v6 (24-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
@@ -110,7 +157,7 @@
 						<li>Chybová stránka 404.php je funkční.</li>
 					</ul>
 
-					<h5>v5 (20-04-2015)</h5>
+					<h5><u>v5 (20-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>
 							<ul class="dt-sc-fancy-list caret-right">
@@ -124,7 +171,7 @@
 						<li>Opravu textů</li>
 					</ul>
 
-					<h5>v4 (18-04-2015)</h5>
+					<h5><u>v4 (18-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>sBox</strong> - přidány informace o emulátoru sBox </li>
 						<li><strong>Info</strong> - přidáno info o zápisu informací a o autorovi </li>
@@ -143,12 +190,12 @@
 						<li><strong>Cccam</strong> - přidána historie emulátoru a binární soubory</li>
 					</ul>
 
-					<h5>v3 (13-04-2015)</h5>
+					<h5><u>v3 (13-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>Instalace XAMPP</strong> - vytvořena sekce ohledně instalace XAMPPu (Apache server) - <a href="install.html"> install.html </a> </li>
 					</ul>
 
-					<h5>v2 (12-04-2015)</h5>
+					<h5><u>v2 (12-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>Radegast</strong> - utvořena správná historie emulátoru. Ve v1 se týkala historie pouze Radegast verze 4.2</li>
 						<li><strong>Radegast</strong> - historie Radegastu, přesunuta do své vlastní sekce</li>
@@ -156,7 +203,7 @@
 						<li><strong>BusyBox</strong> - vytvořena nová sekce BusyBox (unixové příkazy)</li>
 					</ul>
 
-					<h5>v1 (12-04-2015)</h5>
+					<h5><u>v1 (12-04-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>Základní struktura</strong> byla vytvořena z již naprogramovaného template</li>
 						<li><strong>Radegast</strong> - vytvořen základní popis emulátoru Radegast</li>

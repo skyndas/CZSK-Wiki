@@ -539,7 +539,13 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 								<p> <strong>ZAJÍMAVOST ke složkám:</strong><br> Pokud si spustíme CCcam přes telnet s paramtrem "-h" , zobrazí se nám nápověda kde je uvedeno že hlavní složkou pro konfigurační soubory je složka "vat/etc". Nechápu jak to vývojáři mysleli, ale platí následující:<br><br>
 								Do složky "var/etc" se umisťuje konfigurační soubor "CCcam.cfg" v případě, že instalujeme CCcam cardserver do boxu s architekturou používající Enigmu 1. Pokud instalujeme CCcam cardserver do boxu s Enigmou 2 je výchozí složka "etc". V případě, že budeme chtít uložit CCcam.cfg do složky "var/etc", budeme přesměrováni do složky "etc", protože složka "var/etc" je pouze symlink (symbolický odkaz) na složku "etc" .								
 								</p>
-								<p>Více o symlinku ve Wikipedii <a href="http://cs.wikipedia.org/wiki/Symbolick%C3%BD_odkaz" target="_blank">Wikipedia - Symbolický odkaz</a></p>
+								<p>Více o symlinku ve <a href="http://cs.wikipedia.org/wiki/Symbolick%C3%BD_odkaz" target="_blank">Wikipedia - Symbolický odkaz</a></p>
+								<p>Více o symlinku v <a href="index.php?category=linuxbox&page=linuxbox-symlink">CZSK Wiki - Symbolický odkaz</a></p>
+								<p class="dt-sc-lmarg25"  style="margin-bottom: 10px;">
+									<u>Ukázka výpisu z telnetu složky "var"</u><br>
+									<img src="images/cccam/telnet_symlink.png" alt="image"><br>
+									<span style="color: #00bbbb"><strong>Tato barva označuje symlink</strong></span>
+								</p>
 								<p><strong>POZNÁMKA o jednotlivých souborech: </strong></p>
 								<div class="dt-sc-lmarg25">
 									<p><u>Používané soubory pro CCcam</u></p>
@@ -567,6 +573,7 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Příklady hlavních složek, souborů a portů CCcamu v jednotlivých image</h4>
+							<p>V jednotlivých image se mohou hlavní složky pro soubory CCcam serveru lišit. Následná ukázka:</p>
 							<!-- **dt-sc-toggle-frame-set - Starts** -->
 						        <div class="dt-sc-toggle-frame-set dt-sc-one-half dt-sc-lmarg25 clearfloat" style="display: inline-block;">
 		                            <h5 class="dt-sc-toggle-accordion"><a href="#"><u>Enigma 2 - Image openATV</u></a></h5>
@@ -636,9 +643,11 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 							<h4>Fóra</h4>
 							<p>Stále aktuální fóra najdeme na adresách:</p>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="http://www.cccamforum.info/" target="_blank">http://www.cccamforum.info/</a><br>
-								<a href="http://www.digital-eliteboard.com/cs-cccam-402/" target="_blank">http://www.digital-eliteboard.com</a><br>
-								<a href="http://sat-sharing.us/forum/forumdisplay.php?f=53" target="_blank">http://sat-sharing.us/</a>
+								<ul>
+									<li><a href="http://www.cccamforum.info/" title="Fórum v angličtině" target="_blank"><img src="images/icons/icon_lang_en-24x24.png" class="icon-right-set" alt="" /> http://www.cccamforum.info/</a></li>
+									<li><a href="http://www.digital-eliteboard.com/cs-cccam-402/" title="Fórum v němčině" target="_blank"><img src="images/icons/icon_lang_de-24x24.png" class="icon-right-set" alt="" /> http://www.digital-eliteboard.com</a></li>
+									<li><a href="http://sat-sharing.us/forum/forumdisplay.php?f=53" title="Fórum v angličtině" target="_blank"><img src="images/icons/icon_lang_en-24x24.png" class="icon-right-set" alt="" /> http://sat-sharing.us/</a></li>
+								</ul>
 							</div>
 						</div>
 
@@ -646,9 +655,11 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Ke stažení</h4>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="http://www.world-of-files.net/index.php?directory=Emus/CCcam/CCcam%20Providers&PHPSESSID=aatn6v2d7r8uf52monvqd16243" target="_blank">CCcam.providers files</a><br>
-								<a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Prio" target="_blank">CCcam.prio files</a><br>
-								<a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Channel%20Info" target="_blank">CCcam.channelinfo files</a>
+								<ul>
+									<li><a href="http://www.world-of-files.net/index.php?directory=Emus/CCcam/CCcam%20Providers&PHPSESSID=aatn6v2d7r8uf52monvqd16243" target="_blank">CCcam.providers files</a></li>
+									<li><a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Prio" target="_blank">CCcam.prio files</a></li>
+									<li><a href="http://www.world-of-files.net/index.php?&direction=0&order=nom&directory=Emus/CCcam//CCcam%20Channel%20Info" target="_blank">CCcam.channelinfo files</a></li>
+								</ul>
 							</div>
 						</div>
 
@@ -657,8 +668,10 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 							<h4>Generátory</h4>
 							<p>Generátory generují soubory na základě veřejně dostupných databází, v případě že se program nenachází v databázi, nebude jeho SID ani vygenerován.</p>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="http://www.infosat.org/uc/?action=channelinfo">Infosat.org CCcam.channelinfo generátor</a><br>
-								<a href="http://kos.hdsat.pl/">Hdsat.pl CCcam.channelinfo, CCcam.prio generátor</a>
+								<ul>
+									<li><a href="http://www.infosat.org/uc/?action=channelinfo">Infosat.org CCcam.channelinfo generátor</a></li>
+									<li><a href="http://kos.hdsat.pl/">Hdsat.pl CCcam.channelinfo, CCcam.prio generátor</a></li>
+								</ul>
 							</div>
 						</div>
 

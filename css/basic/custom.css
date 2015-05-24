@@ -13,6 +13,14 @@
 			height: 25px;
 		}
 	/*----*****---- << Font style >> ----*****----*/
+		.development_end {
+		    color: #AF0000;
+		    font-weight: 700;
+		}
+		.development_continues {
+		    color: #00B300;
+		    font-weight: 700;
+		}
 		blockquote.type2 {
 			font-family: Arial, Helvetica, sans-serif;
 			font-size: 15px;
@@ -25,6 +33,13 @@
 		.article_number {
 			color: #C4C4C4;
 			margin-right: 10px;
+		}
+
+	/*----*****---- << Header >> ----*****----*/
+		#header-wrapper {
+		    float: left;
+		    width: 100%;
+		    z-index: 10010;
 		}
 
 	/*----*****---- << Table >> ----*****----*/
@@ -90,6 +105,25 @@
 			width:28%;
 		}
 		.cccam_wikitable_channelinfo td {
+			padding: 8px 10px;
+		}
+
+		.cardsharing_server_table {
+			
+		}
+		.cardsharing_server_table th {
+			padding: 8px 10px;
+			background-color: #F2F2F2;
+			text-align: center;
+		    font-weight: 700;
+		}
+		.cardsharing_server_table th:first-child {
+			width:20%;
+		}
+		.cardsharing_server_table th:nth-child(2) {
+			width:28%;
+		}
+		.cardsharing_server_table td {
 			padding: 8px 10px;
 		}
 

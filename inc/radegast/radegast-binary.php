@@ -32,12 +32,16 @@
 							<!-- **entry-meta-data - Starts** -->
 							<div class="entry-meta-data">
 								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 14.4.2015</p>
+								<p><span class="fa fa-calendar"> </span> Datum: 23.5.2015</p>
 							</div> <!-- **entry-meta-data - Ends** -->
 						</div>
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Binární soubory</h4>
-							<p>Poslední známý funkční binární soubor je <a href="downloads/radegast/binary_version/Radegast v4.2 rel 10.zip">Radegast v4.2 rel 10</a>.</p>
+							<p>Poslední známý funkční binární soubor je <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel10.zip">Radegast v4.2 rel 10</a>.</p>
+
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel8.zip">Radegast v4.2 rel 8</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel6.zip">Radegast v4.2 rel 6</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel6.zip">Radegast v4.2 rel 5</a></p>
 						</div>
 					</div>
 					<div class="dt-sc-hr-invisible-small"></div>

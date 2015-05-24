@@ -122,8 +122,11 @@
 							<h4>Fóra</h4>
 							<p>Stále aktuální fórum najdete na adrese:</p>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="http://www.sboxobs.tk/" target="_blank">http://www.sboxobs.tk/</a><br>
-								<a href="http://www.tododream.com/foro/sbox/" target="_blank">http://www.tododream.com/foro/sbox/</a>
+								<ul>
+									<li><a href="http://www.sboxobs.tk/" title="Fórum španělsky" target="_blank"><img src="images/icons/icon_lang_sp-24x24.png" class="icon-right-set" alt="" /> http://www.sboxobs.tk/</a></li>
+									<li><a href="http://www.tododream.com/foro/sbox/" title="Fórum španělsky" target="_blank"><img src="images/icons/icon_lang_sp-24x24.png" class="icon-right-set" alt="" /> http://www.tododream.com/foro/sbox/</a></li>
+								</ul>
+								
 							</div>
 						</div>
 
@@ -132,7 +135,7 @@
 							<h4>Tweet</h4>
 							<p>sBox má dokonce i svůj vlastní Tweet:</p>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="https://twitter.com/SBox_EMU" target="_blank">https://twitter.com/SBox_EMU</a>
+								<a href="https://twitter.com/SBox_EMU" title="Fórum španělsky" target="_blank"><img src="images/icons/icon_lang_sp-24x24.png" class="icon-right-set" alt="" /> https://twitter.com/SBox_EMU</a>
 							</div>
 						</div>
 					</div>

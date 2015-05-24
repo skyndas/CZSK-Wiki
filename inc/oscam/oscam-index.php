@@ -48,13 +48,45 @@
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">
-							<h4>Fóra</h4>
-							<p>Stále aktuální fórum najdete na adrese:</p>
+							<h4>OSCam Links</h4>
+							<p><strong>Oscam Wiki</strong></p>
 							<div class="dt-sc-tabs-vertical-frame-content">
-								<a href="http://www.streamboard.tv/wbb2/portal.php" target="_blank">http://www.streamboard.tv/wbb2/portal.php</a>
+								<a href="http://www.streamboard.tv/wiki/OSCam" target="_blank">Streamboard Wiki</a><br>
+								<hr style="margin: 10px 0;">
 							</div>
 						</div>
 
+						<div class="dt-sc-tabs-vertical-container">
+							<p><strong>Oscam Trunk</strong></p>
+							<div class="dt-sc-tabs-vertical-frame-content">
+								<a href="http://www.streamboard.tv/oscam/browser" target="_blank">Streamboard OSCamTrunk</a><br>
+								<hr style="margin: 10px 0;">
+								<ul>
+									<li><a href="http://browser.oscam.cc/listing.php?repname=oscam-mirror&path=%2F&" target="_blank">Mirror by OSCAm.CC</a></li>
+									<li><a href="https://github.com/gfto/oscam" target="_blank">Mirror by gfto on GitHub.com</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="dt-sc-tabs-vertical-container">
+							<p><strong>Oscam Fórum</strong></p>
+							<div class="dt-sc-tabs-vertical-frame-content">
+								<a href="http://www.streamboard.tv/wbb2/portal.php" title="Fórum v angličtině" target="_blank"><img src="images/icons/icon_lang_en-24x24.png" class="icon-right-set" alt="" /> https http://www.streamboard.tv/wbb2/portal.php</a><br>
+								<hr style="margin: 10px 0;">
+								<ul>
+									<li><a href="https://api-geek.com/oscam-cccam/" title="Fórum ve francouzštině" target="_blank"><img src="images/icons/icon_lang_fr-24x24.png" class="icon-right-set" alt="" /> https://api-geek.com/oscam-cccam/</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="dt-sc-tabs-vertical-container">
+							<p><strong>Ke stažení</strong></p>
+							<div class="dt-sc-tabs-vertical-frame-content">
+								<ul>
+									<li><a href="http://update.zebradem.com/feedbox/SidList/OScam_all.provid" target="_blank">Oscam provider list</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="dt-sc-hr-invisible-small"></div>
 				</section><!-- **Primary - Ends** -->
