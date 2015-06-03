@@ -1,0 +1,490 @@
+
+a) DM 500 <CARDSERVER>
+
+-Blue Panel/Addons/Download & Install/Cam/"Newcamd v6.10b-Complete"
+-Blue Panel/Addons/Download & Install/Cam-config/"Newcamd Config v6.0x Betad"
+-Blue Panel/Right-Left Buttons/Selection of the "Newcamd-Cardserver 6.10b"
+Emu/Green Button (Stop/start Cam) to activate the selected Emu
+
+** ATTENTION 1 :
+When you download the "Newcamd v6.10b-Complete" Emu , 4 components are installed into your system :
+- Newcamd 6.10b complete
+- Newcamd 6.10b betad
+- Newcamd 6.10b cardserver
+- Newcamd 6.10b spider
+YOU MUST KEEP IN YOUR SYSTEM THE "Newcamd 6.10b complete" and the "Newcamd 6.10b cardserver" emus and ACTIVATE (via the Blue Panel)
+the last one ("Newcamd 6.10b cardserver").
+YOU DON'T NEED IN YOUR SYSTEM THE other 2 emus (Newcamd 6.10b betad and Newcamd 6.10b spider) , so you can erase them :
+GO TO BLUE PANEL/ADDONS/DELETE and erase the 2 emus , TO FREE SOME SPACE IN THE MEMORY FLASH OF YOUR SYSTEM.
+
+** ATTENTION 2 :
+When you download the "Newcamd config 6.0x betad" , 3 config files (components) are installed in your system (var/tuxbox/config/newcamd/):
+
+- "betad.cfg"
+- "cardserv.cfg"
+- "newcamd.conf"
+
+You need the "cardserv.cfg" & "newcamd.conf" files.
+
+-Run the Filezilla 2.2.32 FTP Client on your PC and press "Quickconnect"
+(http://sourceforge.net/project/showf...group_id=21558)
+
+Address : DMBox's IP = 192.168.1.3 (Menu/Setup/System/Network/IP Address)
+User : root
+Password : dreambox
+Port : 21
+
+Go to "var/tuxbox/config/newcamd/" and download to your PC the 2 config files :
+
+i> the "cardserv.cfg" file &
+ii> the "newcamd.conf" file.
+
+Open them with Wordpad/Notepad and add the necessary parameters , as shown :
+
+i> This is how the "Cardserv.cfg" file must look like :
+Quote:
+"cardserv.cfg - Wordpad"
+
+DESKEY = 01 02 03 04 05 06 07 08 09 10 11 12 13 14
+SERVER_NAME = cardserv
+DEBUG_PORT = 14000
+ENTITLEMENT_PORT = 14001
+ADMIN_PORT = 14002
+ADMIN_PASSWORD = secret 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+USER = local local lan localhost au
+USER = ClientUsername ClientPwd lan LocalClientIP au
+DEBUG_INIT = no
+DEBUG_NET = no
+DEBUG_ECM = no
+DEBUG_EMM = no
+SERIAL_PORT = 1
+TCP_PORT = 10001
+EMM-G = yes
+EMM-S = yes
+EMM-U = yes
+SPECIAL_FEATURES = no
+CARD_DETECT_INVERT = yes
+Let's explain the 2 USER Lines :
+
+* USER (Cardserver/DM500)
+- local : the Cardserver's loginID (LAN connection)
+- local : the cardserver's pwd (LAN connection)
+- lan : the type of connection
+- localhost : the cardserver's local (LAN) IP address = 192.168.1.3 You could also attribute to the cardserver the following (by default) internal IP
+address : "127.0.0.1" (known as "localhost")
+- au : auto-update
+
+**USER (Client/DM7025)
+- ClientUsername : the client's loginID (exactly the same with the Client's Username appearing in the DM's 7025 "newcamd.conf" file)
+- ClientPwd : the Client's password , exactly the same with the Pwd appearing in the DM's 7025 "newcamd.conf" file)
+- lan : the type of connection between the 2 DMBoxes
+-LocalClientIP : the Client's (DM 7025) LAN IP Address = 192.168.1.4
+- au : auto-update
+
+ii> The "newcamd.conf" file is used IN ORDER TO ALLOW TO THE CARDSERVER <DM 500> TO CONNECT TO ITSELF VIA THE <ONE & ONLY> SERIAL PORT (=1) <the cardreader slot authorised in the "cardserv.cfg" file> AND ITS ASSOCIATED TCP PORT 10001 (the SHARING PORT)
+
+** THE OTHER DMBoxes (7000/7020/7025) HAVE 2 CARD SLOTS
+<SERIAL PORT=0 (Upper slot)/SERIAL PORT=1 (lower slot)-the ASSOCIATED TCP Ports are 10000 & 10001>.
+
+This is how the "Newcamd.conf" file must look like :
+Quote:
+"Newcamd.conf - Wordpad"
+
+DEMUX_API = 2
+BOX_TYPE = DM500
+CONTROL_WORD_DEVICE = CA
+CA_API = 3
+GTX_OUTPUT_MODE = 16
+PMT_UPDATE_WATCH = yes
+EMU = yes
+PREFER_EMU = yes
+DISABLE_CAM = yes
+CAM_CASYS = 17
+AU = yes
+SHOW_ALL_CA_SYSTEMS = no
+OSD = none
+OSD_WEB_LOGIN = root:dreambox
+DEBUG_ECM = yes
+DEBUG_EMM = no
+DEBUG_CWS = yes
+DEBUG_CAM = yes
+DEBUG_CAM_HEX = no
+SHOW_CW = no
+SHOW_PAT = no
+SHOW_PMT = no
+SHOW_ECM = no
+SHOW_CAT = no
+SHOW_EMM = no
+SHOW_CWS_ECM = no
+SHOW_CWS_EMM = no
+EMM_REPORT_WRONG_SIG = no
+OSD_WAIT_TIME = 0
+DEFAULT_CW_DELAY = 0
+RELOAD_CONFIG_ON_ZAP = yes
+RELOAD_KEYLIST_ON_ZAP = no
+CA_INFO_FILE = /tmp/cainfo.txt
+CWS = LocalServerIP ServPort ServerUsername ServerPwd DESKEY lan servername au
+CWS KEEP ALIVE = yes
+CWS_CONNECT_TIMEOUT = 0
+CWS_INCOMING_PORT = 12000
+CWS_DEBUG_PORT = 12001
+Let's explain the CWS <Control Word Server> Line :
+
+- LocalServerIP : The DMBox's (DM 500) <LAN> IP Address = 192.168.1.3
+You could also use the default Local Internal IP Address "127.0.0.1" <also known as "localhost">
+- ServPort : 10001 <the TCP Port associated to the "Serial Port=1">
+- ServerUsername : the Server's LoginID = local
+- ServerPwd : local
+-DESKEY : 01 02 03 04 05 06 07 08 09 10 11 12 13 14
+-Lan : lan <OPTIONAL>
+-Servername : the Cardserver's name <OPTIONAL>
+-au : auto-update
+
+b) DM 7025 <CLIENT>
+
+-Blue Panel/Addons/Download & Install/Camd/"MgCamd 1.22-Complete"
+-Blue Panel/Addons/Download & Install/Camd Config/"Mgcamd Config"
+-Blue Panel/Right-Left Buttons/Selection of the "Mgcamd 1.22" Emu/Green Button (Start/Restart Cam) to activate the selected Emu
+-Run the Filezilla 2.2.32 FTP Client on your PC and press "Quickconnect"
+(http://sourceforge.net/project/showf...group_id=21558)
+
+Address : DMBox's IP = 192.168.1.4 (Get the information from : Menu/setup/System/Network/IP Address)
+User : root
+Password : - (for the DM 7025 there's no need for pwd/however you can type "dreambox")
+Port : 21
+
+i> Go to usr/keys/ and download from the DM 7025 straight to your PC
+(double click or drag & drop) the "mg cfg" file. Open it with WordPad.
+Check the LINES G (network mode) and P (network shares priority).
+Make shure that the settings are :
+
+* G: { 01 } <newcamd netclient> &
+* P: { 00 } or P: { 02 } <network shares priority>
+
+This is how the "mg cfg" configuration file must look like :
+Quote:
+"mg cfg - WordPad"
+
+# EMM messages
+# 00 don't show any EMM's (default)
+# 01 show only valid EMM's
+# 02 show valid and bad EMM's with complete data display
+M: { 01 }
+
+# ECM messages
+# 00 don't show any ECM's
+# 01 show only valid ECM's (default)
+# 02 show valid and bad ECM's with complete data display
+C: { 01 }
+
+# AU
+# 01 enable AU
+# 02 AU Auto
+A: { 02 }
+
+# key update
+# 01 update only new keys, default setting
+# 02 update all keys (used for valid PMK checking)
+U: { 01 }
+
+# config files folder (softcam, autoroll, ignore/priority)
+# 00 files in /var/keys
+# 01 files in /tmp
+T: { 00 }
+
+# network mode, use summ for several clients
+# 00 no network (default)
+# 01 newcamd netclient
+# 02 radegast netclient
+# 04 camd3 netclient
+G: { 01 }
+
+# network retry, use summ for several options
+# 00 disable
+# 01 retry every new ecm
+# 02 try to connect to offline shares every Q: seconds
+# 04 try to detect and fast reconnect to lost (and not used atm) server
+N: { 01 }
+
+# network ecm timeout in seconds
+K: { 10 }
+
+# newcamd dead routes connect retry, sec
+Q: { 600 }
+
+# network shares priority
+# 00 newcamd, radegast, camd3 (default)
+# 01 camd3, radegast, newcamd
+# 02 newcamd, camd3, radegast
+P: { 00 } or P: { 02 }
+
+# on screen display type
+# 00 No OSD (default)
+# 01 neutrino
+# 02 enigma
+# 03 relook
+O: { 00 }
+
+# on screen display Options
+# 01 show emu ecm
+# 02 show network shares messages
+# 04 show decoding failed / fta
+# 08 show emm keys update
+S: { 03 }
+
+# cache ecm pids and data used to open channels,
+# store pids in /tmp/ca_cache.list at exit, load at startup, same syntax as restore.list
+# use summ
+# 00 Off (default)
+# 01 Ecm pids cache
+# 02 Ecm data cache
+# 04 Emm cache for network cards
+H: { 07 }
+
+# reread files on zap:
+# 00 No (default)
+# 01 config (including priority and ignore, but not replace/cache)
+# 02 config and keys
+# 03 both
+R: { 00 }
+
+# debug, use summ
+# 00 off (default)
+# 01 debug ecm
+# 02 debug emm
+# 04 debug network ecm
+# 08 debug network emm
+# 16 debug network login
+D: { 00 }
+
+# box type
+# 00 autodetect, change only if you think wrong type detected.
+# 01 dbox2
+# 02 dreambox
+# 03 triple-dragon
+# 04 relook
+# 05 openbox
+# 06 dreambox 7025
+B: { 06 }
+
+# keep ecm cache, seconds
+E: { 15 }
+Close the session and upload from the PC straight to the DM 7025 (usr/keys) the "mg cfg" file.
+
+ii> Go to etc/tuxbox/config/ and , via FTP , download to your PC (folder of your choice) the "newcamd.conf" file. Open it with WordPad (or Notepad) and add the
+following LINE :
+
+CWS = ServerIP ServerPort ClientUsername ClientPwd DESKEY lan servername au
+
+Control Word Server ("CWS") :
+*"ServerIP" : The Cardserver's (DM 500) <LAN> IP Address = 192.168.1.3
+*"ServerPort" = 10001 {The Administrator <who shares the original subscription> defines the Cardsharing Port Number (TCP Port) and informs the Client about it}
+* "ClientUsername" : The Administrator defines a " Client Login ID" and informs the Client about it <the "loginID" is CASE SENSITIVE>
+*"ClientPwd" : The Administrator defines a "Login password" and informs the Client about it <the "login password" is CASE SENSITIVE">
+*DESKEY : 01 02 03 04 05 06 07 08 09 10 11 12 13 14 (this is used for coding packets while sharing)
+*"lan" (OPTIONAL for 1 subscription/1 card slot) : to caracterise the nature of the connection between the 2 DMBoxes
+*"servername" (OPTIONAL for 1 shared subscription/1 card slot) : the Administrator defines it and informs the client about it
+*"au" : autoupdate
+
+This is how the "newcamd.conf" file must look like :
+Quote:
+"newcamd.conf - Wordpad"
+
+SHOW_ALL_CA_SYSTEMS = no
+OSD = none
+CA_INFO_FILE = /tmp/cainfo.txt
+CWS = LocalServerIP ServerPort ClientUsername ClienPwd DESKEY lan servername au {ACCORDING TO THE EXAMPLE GIVEN , the CWS Line is :
+CWS = 192.168.1.3 10001 ClientUsername ClientPwd 01 02 03 04 05 06 07 08 09 10 11 12 13 14 lan servername au}
+Close the session and upload <overwrite> the modified "newcamd.conf" file straight to the appropriate directory of the DM 7025 (etc/tuxbox/config/"newcamd.conf").
+
+ATTENTION 1 :
+If you were using the emulators ("newcamd 6.10b cardserver" & "mgcamd 1.22-complete") BEFORE the modifications made to the associated config files , you must restart the emus (Blue Panel-Green button: start/restart cam) , in order to apply the changes.
+
+ATTENTION 2 :
+Right after the activation or reactivation of the emus , the "cardsharing process" begins. If something went wrong and you didn't succeed , GO TO
+BLUE PANEL-ADDONS-DELETE and erase the config files associated to the used Camd Emulator (STEP BY STEP : FIRST THE "CLIENT CONFIG" FILES ,THEN THE "CARDSERVER CONFIG" FILES). DOWNLOAD & REINSTALL THE SAME CONFIG FILES , REFRESH THE VIEW OF FILEZILLA FTP (to get the right information) AND RECONFIGURE AS ALREADY DESCRIBED.
+
+**ALTERNATIVE SOLUTION (3+1)**
+
+YOU COULD ALSO USE THE COMBINATION OF "MGcamd 1.22/NewCS 1.20" EMU , WITH EXACTLY THE SAME CONFIGURATIONS (NOTHING ELSE TO ADD OR REMOVE) AND THE SAME RESULTS (A LITTLE BIT SLOWER IN THE RECOGNITION PROCESS OF ****** 2 , BUT FULLY FUNCTIONAL).
+AFTER HAVING ACTIVATED THE ABOVE CONFIGURATIONS , JUST GO TO BLUE PANEL AND SELECT THE "MGcamd 1.22/NewCS 1.20" Emu instead of the "MGcamd 1.22" emu. PRESS THE GREEN BUTTON TO ACTIVATE THE SELECTED EMU.
+{The "MGcamd 1.22/NewCS 1.20" emu is installed in your system (DM 7025) , SINCE YOU DOWNLOAD THE "MGcamd 1.22-complete" emu file :
+/usr/script/"MGcamd1.22 newcs 1.20 cam.sh"}
+
+II> 2nd WAY
+
+* DM 500 <CARDSERVER> : as already described
+
+** DM 7025 <CLIENT> :
+-Blue Panel/Addons/Download & Install/Camd/"Evocamd 2.14-Complete"
+-Blue Panel/Addons/Download & Install/Camd Config/"Evocamd-Config 2.14"
+-Blue Panel/Right-Left Buttons/Selection of the "Evocamd 2.14" Emu/Green Button (Start/Restart Cam) to activate the selected Emu
+-Run the Filezilla 2.2.32 FTP Client on your PC and press "Quickconnect" (http://sourceforge.net/project/showf...group_id=21558)
+
+Address : DMBox's IP (Get the information from : Menu /setup/ System/ Network/IP Address)
+User : root
+Password : - (for the DM 7025 there's no need for pwd/however you can type "dreambox")
+Port : 21
+
+i> Go to usr/keys/ and download from the DM 7025 straight to your PC (double click or drag & drop) the "camd cfg" file. Open it with WordPad.
+Check the LINE G (share mode) & make shure that the setting is :
+* G: { 03 } <alle network clients> or G: { 04 } <newcamd share>
+
+This is how the "camd cfg" configuration file must look like :
+Quote:
+"camd cfg - Wordpad"
+
+# debug messages level
+
+# EMM messages
+# 00 don't show any EMM's
+# 01 show only valid EMM's, default setting
+# 02 show valid and bad EMM's with complete data display
+M: { 01 }
+
+# ECM messages
+# 00 don't show any ECM's
+# 01 show only valid ECM's, default setting
+# 02 show valid and bad ECM's with complete data display
+C: { 00 }
+
+# AU
+# 00 is ignored (default)
+# 01 enable AU
+# 02 AU Auto
+A: { 02 }
+
+# Key update
+# 01 update only new keys, default setting
+# 02 update all keys (used for valid PMK checking)
+U: { 01 }
+
+# Key files folder
+# 00 keyfiles in /var/keys
+# 01 keyfiles in /var/tmp
+T: { 00 }
+
+# # Hash pids
+# 00 hash all pids
+# 01 hash only pids with implemented algos (default)
+H: { 00 }
+
+# share Mode
+# 00 Pure emu
+# 01 Pure emu
+# 02 Pure emu
+# 03 alle network clients
+# 04 newcamd share
+# 05 radegast share
+# 06 camd35 share(not in use)
+G: { 03 } or G: { 04 }
+
+# On Screen Display for Multicam
+# 00 No OSD (default)
+# 01 display Smartcard messages, box IP required
+# 02 display Smartcard messages new nhttpd format, box IP required
+O: { 00 }
+
+USER = root
+PWD = dreambox
+Close the session and upload from the PC straight to the DM 7025 (usr/keys) the "camd cfg" file.
+
+ii> Go to usr/keys/ and download from the DM 7025 straight to your PC (double click or drag & drop) the "newcamd-client.txt" file.
+THE "Newcamd-client.txt" FILE CAN BE CONSIDERED AS A SERVER LIST , DIRECTING THE CLIENT-RECEIVER <DM7025> TO THE APPROPRIATE SERVER.
+
+Open the file with Notepad and add the information needed as shown :
+Quote:
+"newcamd-client.txt - Notepad"
+
+[Server IP address] {the Server's LAN IP Address} = [192.168.1.3]
+port = Server port {the Cardsharing Port} = TCP Port = 10001
+key = 01 02 03 04 05 06 07 08 09 10 11 12 13 14 {the DESKEY}
+username = {Client's Username , as defined by the Administrator}
+password = {Client's Login ID , as defined by the Administrator}
+IT'S LIKE YOU HAVE THE 5 BASIC ELEMENTS OF THE "CWS" LINE <"Newcamd.conf" File> PRESENTED IN A VERTICAL WAY.
+
+Close the session and upload from the PC straight to the DM 7025 (usr/keys) the modified "newcamd-client.txt" file.
+
+BLUE PANEL/SELECTION of the "Evocamd 2.14-Complete" EMU/GREEN BUTTON : stop/start "Evocamd" emu to reactivate and apply the modifications.
+
+**ALTERNATIVE SOLUTION (3+2)**
+
+** YOU COULD ALSO USE THE COMBINATION OF "Evocamd 2.14/NewCS 1.20" EMU , WITH EXACTLY THE SAME CONFIGURATIONS (NOTHING ELSE TO ADD OR REMOVE) AND THE SAME RESULTS (A LITTLE BIT SLOWER IN THE RECOGNITION PROCESS OF ****** 2 , BUT FULLY FUNCTIONAL).
+AFTER HAVING ACTIVATED THE ABOVE CONFIGURATIONS , JUST GO TO BLUE PANEL AND SELECT THE "Evocamd 2.14/NewCS 1.20" Emu instead of the "Evocamd 2.14" emu. PRESS THE GREEN BUTTON TO ACTIVATE THE SELECTED EMU.
+{The "Evocamd 2.14/NewCS 1.20" emu is installed in your system (DM 7025) , SINCE YOU DOWNLOAD THE "Evocamd 2.14-complete" emu file :
+/usr/script/"Evocamd 2.14 newcs 1.20 cam.sh"}
+
+III> 3rd WAY
+
+* DM 500 <CARDSERVER> : as already described
+
+** DM 7025 <CLIENT> :
+-Blue Panel/Addons/Download & Install/Camd/"CCcam 1.7.1"
+-Blue Panel/Addons/Download & Install/Camd Config/"CCcam-Config 1.7.1"
+-Blue Panel/Right-Left Buttons/Selection of the "CCcam 1.7.1" Emu/Green Button (Stop/start Cam) to activate the selected Emu
+-Run the Filezilla 2.2.32 FTP Client on your PC and press "Quickconnect" (http://sourceforge.net/project/showf...group_id=21558)
+
+Address : DMBox's IP (Get the information from : Menu /setup/ System/ Network/IP Address) = 192.168.1.4
+User : root
+Password : - (for the DM 7025 there's no need for pwd/however you can type "dreambox")
+Port : 21
+
+a> CONFIGURATION OPTION 1 {1 Config File : the "CCcam cfg"}
+
+Go to /etc/ and download from the DM 7025 straight to your PC (double click or drag & drop) the "CCcam cfg" file. Open it with WordPad.
+YOU MUST DEFINE "CCcam" Emu as a "NEWCAMD NETCLIENT" , in order to make it COMPATIBLE with the cardserver emulator used
+("Newcamd cardserver 6.10b") by the Administrator.
+
+Just add the following N ("Newcamd") Line :
+
+N: ServerIP ServerPort ClientUsername ClientPwd DESKEY lan servername au
+
+ServerIP : the Server's LAN IP ADDRESS = 192.168.1.3
+ServerPort : the Cardsharing Port Number <TCP PORT = 10001>
+Username : the Client's name
+Pwd : the Client's LoginID
+DESKEY : 01 02 03 04 05 06 07 08 09 10 11 12 13 14
+lan : lan <OPTIONAL>
+servername : cardservername <OPTIONAL>
+au : auto-update
+
+This is how the "CCcam cfg" file must look like :
+Quote:
+"CCcam cfg - Wordpad"
+
+N: 192.168.1.3 10001 ClientUsername Clientpwd 01 02 03 04 05 06 07 08 09 10 11 12 13 14 lan servername au
+Close the session and upload to the DM 7025 (/etc/) the modified file.
+BLUE PANEL/SELECTION of the "CCcam 1.7.1" EMU/GREEN BUTTON : stop/start "CCcam 1.7.1" emu to reactivate and apply the modifications.
+
+b> CONFIGURATION OPTION 2 {2 Config Files : i) the "CCcam cfg" & ii) the "Newcamd.conf"}
+
+i) "CCcam cfg" File.
+
+INSTEAD of inserting the "N Line" , you can JUST add the following command line : <NEWCAMD CONF : yes>
+
+This is how the "CCcam cfg" file must look like :
+Quote:
+"CCcam cfg - Wordpad"
+
+NEWCAMD CONF : yes
+ii) "Newcamd.conf" File.
+
+- Go to Blue Panel/Addons/Download & Install/Camd Config/"Mgcamd Config". Two (2) Config Files have been installed into your system :
+1> The "mg cfg" file (usr/keys/). You don't need it. Go to Blue Panel/Addons/Delete and erase it from the list.
+2> The "Newcamd.conf" file (etc/tuxbox/config/). YOU DEFINITELY NEED IT , IN ORDER TO MAKE "CCcam 1.7.1" Emu FULLY COMPATIBLE with the "Newcamd protocol" used by the Administrator.
+Run Fillezilla FTP Client on your PC and modify the "Newcamd.conf" file , by adding the CWS Line (follow the instructions prementioned in the 2nd WAY of Cardsharing process configurations).
+Close the session and upload to the DM 7025 (/etc/) the modified file.
+BLUE PANEL/SELECTION of the "CCcam 1.7.1" EMU/GREEN BUTTON : stop/start "CCcam 1.7.1" emu to reactivate and apply the modifications.
+
+**ALTERNATIVE SOLUTION (3+3)**
+
+** YOU COULD ALSO USE THE COMBINATION OF "CCcam 1.7.1/NewCS 1.20" EMU , WITH EXACTLY THE SAME CONFIGURATIONS (NOTHING ELSE TO ADD OR REMOVE) AND THE SAME RESULTS (A LITTLE SLOWER IN THE RECOGNITION PROCESS OF ****** 2 , BUT FULLY FUNCTIONAL).
+AFTER HAVING ACTIVATED THE ABOVE CONFIGURATIONS JUST GO TO BLUE PANEL AND SELECT THE "CCcam 1.7.1/NewCS 1.20" Emu instead of the "CCcam 1.7.1" emu. GREEN BUTTON TO ACTIVATE THE SELECTED EMU.
+{The "CCcam 1.7.1/NewCS 1.20" emu is installed in your system (DM 7025) , SINCE YOU DOWNLOAD THE "CCcam 1.7.1" emu file :
+/usr/script/"CCcam 1.7.1 Newcs 1.20 cam.sh"}
+
+
+MY REGARDS TO :
+- MY COMPATRIOTS IN GREECE
+- THE FORUM ADMIN TEAM
+Reply With Quote

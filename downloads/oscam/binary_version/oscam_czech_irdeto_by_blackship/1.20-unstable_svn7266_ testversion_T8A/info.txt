@@ -1,0 +1,47 @@
+Oscam pro I2 - 0624, 0666, 0653 - nejsou potøeba camkey/camdata TEST verze
+
+Oscam 1.20-unstable_svn build #7266 testovací verze t8a
+
+:arrow: Diskusi stále zde: http://ab-forum.info/viewtopic.php?p=373283#p373283
+
+Dùležité!!!
+Je potøeba si pøeèíst následující popis, protože nìkteré zmìny vyžadují úpravu konfigurace.
+
+Upraveno:
+
+1. Zjednodušení konfigurace
+V pøípadì použití jedné karty, pøíp. 2 karet od rùzných poskytovatelù (napø. skylink a upc) není potøeba oscam.dvbapi (možno zakomentovat øádky s prioritami a ignore). Oscam se snaží dekódovat z karty, i když momentálnì nemá platné záznamy a posílá na ni stále zápisy (instrukce emm). Je možné použít request_mode = 0 nebo 1.
+V pøípadì použítí priorit a ignore v oscam.dvbapi mají tyto pøednost a oscam je pak funkèní stejnì jako orig. verze (rozdíl je pouze v tom, že pokud nenajde odpovídající èteèku, pokouší se ji stále hledat). Pro irdeto karty cslink a skylink je nutné použít parametr force (P: 06xx 1).
+
+2. Úprava filtrù Irdeto
+- snížení poètu procházejících emm
+-> snížení poètu chybných zápisù
+-> snížení zatížení cpu
+-> zrychlení odezvy
+
+3. Opravy pro nìkteré conax karty
+
+4. Plnì funkèní dvbapi filtry na ipbox400 s Neumo
+- podstatné zlepšení stability na ipbox400 a snížení zatížení cpu
+
+5. Zlepšení stability interních èteèek
+- týká se pøedevším VU+ s image na kernelu 3.1.1
+
+6. Autorestart èteèky s IO chybou
+Pokud se objeví IO chyba pøi komunikaci s interní èteèkou boxu, dojde k jejímu restartu. Na nìkterých architekturách došlo k významnému zkrácení doby restartu èteèky (napø. na 3 až 4 sec. u ipbox400 nebo VU+). Tím je velká šance, že nedojde k výpadku ecm požadavkù.
+
+Cesty ke konfiguraèním souborùm:
+MIPS=/etc/tuxbox/config
+PPC=/var/tuxbox/config
+PPC_OLD=/var/tuxbox/config
+SH4_DVBAPI=/var/keys
+
+Podpora protokolù:
+Pouze newcamd (mgcamd) na LAN.
+
+Ostatní stejné jako u verze test5e
+zde - viewtopic.php?p=391074#p391074
+
+Diskuse k tìmto binárkám byla založena zde: http://ab-forum.info/viewtopic.php?f=18&t=41489 . Pokud máte problémy s konfigurací, použijte sekci dle vašeho boxu. Toto vlákno není urèeno k diskusi, ale k downloadùm.
+
+P.S. Verze pro další architektury budou dodány až budou otestovány.

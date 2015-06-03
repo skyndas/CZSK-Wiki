@@ -1,0 +1,65 @@
+
+How to guide: Installing Hypercam (mipsel) on the Dreambox DM800/DM8000 & DM500
+
+    How to guide: Installing Hypercam (mipsel) on the Dreambox DM800/DM8000 & DM500.
+
+
+
+    Short how to guide on how to install Hypercam on the Dreambox DM800, DM500, Dm8000 and compatible clones.
+
+
+    Installing Hypercam (mipsel) on the
+
+    Dreambox DM800/DM8000 & DM500
+
+
+
+
+    Hypercam version to run on your DM800 and Mipsel DM8K, ??here’s what to do:
+
+
+
+        Create a folder hypercam at the root of the DM, telnet to the root, do: 
+
+
+
+    cd / mkdir hypercam
+
+
+        Take a bit hypercam.mipsel.xxxx (xxxx = full / tiny / lite), put it in the directory /hypercam previously created
+        Transfer the file hypercam.cfg also present in the archive in the /hypercam
+        Rename hypercam.mipsel.xxxx in hypercam.mipsel in telnet in the /hypercam : 
+
+
+
+    mv hypercam.mipsel.xxxx hypercam.mipsel
+
+    - Put the rights to hypercam.mipsel 755, telnet, always in the /hypercam :
+
+    chmod 755 hypercam.mipsel
+
+    - Put the file in the directory hypercam.cfg
+
+    /hypercam
+
+    -Then you need to tell where the hypercam.mipsel hypercam.cfg file to function. To do this, you type in telnet :
+
+    /hypercam/hypercam.mipsel -c /hypercam/hypercam.cfg
+
+    Finally, for hypercam that starts automatically at each reboot of the demo, you must do so (AHF Thanks for the tip) :
+
+    Edit the :
+
+    /etc /init.d/bootup
+
+    You’ll find this :
+
+
+    echo 22 > /proc/progress
+    /usr/bin/dccamd
+
+    Change the second line like this :
+
+    echo 22 > /proc/progress
+    /hypercam/hypercam.mipsel -c /hypercam/hypercam.cfg
+

@@ -1,0 +1,6 @@
+
+<name>RqCS-Config - 28.01.2011</name>
+<description>RqCS-Config for actual RqCS</description>
+<creator>raton craquero</creator>
+
+### edit by root: Fr 28. Jan 23:10:18 CET 2011

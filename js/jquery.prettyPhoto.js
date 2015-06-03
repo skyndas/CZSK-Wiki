@@ -54,11 +54,12 @@
 										</div> \
 										<div id="pp_full_res"></div> \
 										<div class="pp_details"> \
+											<!--  \
 											<div class="pp_nav"> \
 												<a href="#" class="pp_arrow_previous">Previous</a> \
 												<p class="currentTextHolder">0/0</p> \
 												<a href="#" class="pp_arrow_next">Next</a> \
-											</div> \
+											</div> -->\
 											<p class="pp_description"></p> \
 											<div class="pp_social">{pp_social}</div> \
 											<a class="pp_close" href="#">Close</a> \

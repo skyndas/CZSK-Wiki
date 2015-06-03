@@ -120,7 +120,7 @@
 								<li><strong>Softcam:</strong> Oscam r10630</li>
 								<li><strong>Protocol na server:</strong> Newcamd</li>
 							</ul>
-							<p>Měření ECM časů bylo provedeno v časovém rozmezí 5 minut. Pro CAID 0D97 je ECM odezva každých 10s.</p>
+							<p>Měření ECM časů bylo provedeno v časovém rozmezí 5 minut. <br>Pro CAID 0D97 je ECM odezva každých 10s. Pro CAID 098C je ECm odezva každých 7s.</p>
 							<hr>
 							<div class="dt-sc-lmarg25">
 								<h5>CAID 0D97 - SID: 7596 (Nova) - ECM time v ms</h5>
@@ -152,6 +152,33 @@
 								<p>Test proveden dne 24.5.2015</p>
 								<div style="width: 100%" >
 									<canvas id="canvas6" height="160" width="1200"></canvas>
+								</div>
+							</div>
+							<div class="dt-sc-hr-invisible-very-small"></div>
+							<h4>CardsharingServer.com - test spojení CAID 098C (Sky Deutschland)</h4>
+							<h5>Parametry testů</h5>
+							<ul class="dt-sc-lmarg25">
+								<li><strong>Box: </strong>VU+ UNO</li>
+								<li><strong>Wan:</strong> 100Mb</li>
+								<li><strong>Softcam:</strong> Oscam r10630</li>
+								<li><strong>Protocol na server:</strong> Newcamd</li>
+							</ul>
+							<hr>
+							<div class="dt-sc-lmarg25">
+								<h5>CAID 098C - SID: 0068 (Sky Sport News) - ECM time v ms</h5>
+								<p>Test proveden dne 25.5.2015</p>
+								<div style="width: 100%" >
+									<canvas id="canvas7" height="150" width="1200"></canvas>
+								</div>
+								<h5>CAID 098C - SID: 1012 (Sport 1 US HD) - ECM time v ms</h5>
+								<p>Test proveden dne 24.5.2015</p>
+								<div style="width: 100%" >
+									<canvas id="canvas8" height="160" width="1200"></canvas>
+								</div>
+								<h5>CAID 098C - SID: 01F7 (Sky Sport Austria) - ECM time v ms</h5>
+								<p>Test proveden dne 24.5.2015</p>
+								<div style="width: 100%" >
+									<canvas id="canvas9" height="160" width="1200"></canvas>
 								</div>
 								<script type="text/javascript">
 									// BarChart by http://www.chartjs.org/
@@ -233,6 +260,46 @@
 										],
 									}
 
+									// BarChart by http://www.chartjs.org/
+									var barChartData7 = {
+										labels : ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],
+										datasets : [
+											{ 	// Blue color
+												fillColor : "rgba(151,187,205,0.5)",
+												strokeColor : "rgba(151,187,205,0.8)",
+												highlightFill : "rgba(151,187,205,0.75)",
+												highlightStroke : "rgba(151,187,205,1)",
+												data: [155,78,105,71,80,67,100,69,74,68,69,67,107,70,72,88,77,112,77,71,67,76,108,78,87,83,68,68,106,75]													  
+											}
+										],
+									}
+
+									var barChartData8 = {
+										labels : ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],
+										datasets : [
+											{	// Light grey color
+												fillColor: "rgba(220,220,220,0.5)",
+												strokeColor: "rgba(220,220,220,0.8)",
+												highlightFill: "rgba(220,220,220,0.75)",
+												highlightStroke: "rgba(220,220,220,1)",
+												data: [67,68,68,67,67,67,68,67,72,68,68,70,71,67,68,69,75,67,68,69,68,68,67,67,67,68,68,75,75,72]
+											}
+										],
+									}
+
+									var barChartData9 = {
+										labels : ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],
+										datasets : [
+											{ 	// Green color
+												fillColor: "rgba(70,191,189,0.2)",
+												strokeColor: "rgba(70,191,189,1)",
+												highlightFill: "rgba(70,191,189,0.5)",
+												highlightStroke: "rgba(70,191,189,0.8)",
+												data: [193,161,162,162,161,162,165,162,159,160,159,161,165,162,162,161,158,172,160,163,163,165,160,158,160,165,162,162,162,161]
+											}
+										],
+									}
+
 									window.onload = function(){
 										var ctx1 = document.getElementById("canvas1").getContext("2d");
 										window.myBar1 = new Chart(ctx1).Bar(barChartData1, {
@@ -266,6 +333,24 @@
 
 										var ctx6 = document.getElementById("canvas6").getContext("2d");
 										window.myBar6 = new Chart(ctx6).Bar(barChartData6, {
+											responsive : true,
+											tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> ms",
+										});
+
+										var ctx7 = document.getElementById("canvas7").getContext("2d");
+										window.myBar7 = new Chart(ctx7).Bar(barChartData7, {
+											responsive : true,
+											tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> ms",
+										});
+
+										var ctx8 = document.getElementById("canvas8").getContext("2d");
+										window.myBar8 = new Chart(ctx8).Bar(barChartData8, {
+											responsive : true,
+											tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> ms",
+										});
+
+										var ctx9 = document.getElementById("canvas9").getContext("2d");
+										window.myBar9 = new Chart(ctx9).Bar(barChartData9, {
 											responsive : true,
 											tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> ms",
 										});

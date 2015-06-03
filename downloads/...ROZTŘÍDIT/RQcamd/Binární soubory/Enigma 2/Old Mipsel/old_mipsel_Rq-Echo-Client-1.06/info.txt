@@ -1,0 +1,8 @@
+
+<name>Rq-Echo-Client 1.06</name>
+<description>Rq-Echo-Client 1.06 is a multi-platform client from North America that enables Echostar IRD's. No Configs and Keys included!</description>
+<creator>raton_craquero</creator>
+not_for=500plus,600,7020
+maxV=0410
+
+### edit by root: Fr 28. Jan 21:26:27 CET 2011

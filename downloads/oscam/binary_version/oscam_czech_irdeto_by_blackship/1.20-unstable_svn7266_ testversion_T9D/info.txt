@@ -1,0 +1,53 @@
+Oscam pro I2 - 0624, 0666, 0653 - nejsou potøeba camkey/camdata TEST verze
+
+Oscam 1.20-unstable_svn build #7266 testovací verze t9d
+
+:arrow: Diskusi stále zde: http://ab-forum.info/viewtopic.php?p=373283#p373283
+
+
+Upraveno a doplnìno:
+
+1. MR - maturity rating
+Funkèní zatím jen pro cryptoworks mód (ICE karta caid 0D96).
+Postup:
+- pøes webif na kartì èteèky zadat pin a nastavit MR na žádanou hodnotu
+- nebo pøimo v oscam.server, sekce [reader], pro 18+ pøidat
+Kód:
+maturity_rating = 15
+
+Save a restart èteèky nebo celého oscamu. Po ATR sledovat v logu hlášku - buï že byl MR zapsán nebo že je špatný pin nebo že je blokovaný - pak je nutné resetovat pøes web skylinku.
+
+2. Zvýšená stabilita èteèky (odzkoušeno s 0D96, 0624 a 0666). Možnost navíc - povolit autorestart èteèky:
+- pøes webif na kartì èteèky dole - Autorestart:
+- nebo pøimo v oscam.server, sekce [reader] pøidat
+Kód:
+auto_restart = 0 nebo 1
+
+Pro VU (mùže fungovat i na jiných boxech) pøidán patch. Odezvy se zkrátí o cca 10%:
+- pøes webif na kartì èteèky dole - VU reader patch:
+- nebo pøimo v oscam.server, sekce [reader] pøidat
+Kód:
+vu_reader_patch = 1
+
+
+3. Možnost zmìny frekvence hodin karty na ipbox400 s Neumo
+Je nutné posílat jiné parametry:
+- pøes webif na kartì èteèky dole - Clock setting: nastavit na roletce "1 - By Hz"
+Pøi clk = 10,5 MHz (nastavení mhz = 1050) jsou odezvy ecm pro 0624 kolem 40msec.
+Je ale lepší radìji frekvenci snížit (standardní je 4,5MHz) na 3,5MHz, zlepší se stabilita.
+
+Cesty ke konfiguraèním souborùm:
+MIPS=/etc/tuxbox/config
+SH4 DVBAPI a STAPI=/var/keys
+PPC a PPC OLD=/var/tuxbox/config
+
+Podpora protokolù:
+Pouze newcamd (mgcamd) na LAN.
+
+Ostatní stejné jako u verze test8a
+zde - viewtopic.php?p=391074#p391074
+
+Diskuse k tìmto binárkám byla založena zde: http://ab-forum.info/viewtopic.php?f=18&t=41489 . Pokud máte problémy s konfigurací, použijte sekci dle vašeho boxu. Toto vlákno není urèeno k diskusi, ale k downloadùm.
+
+EDIT: Omlouvám se všem, kdo si už stáhli binárky SH4. Chyba vznikla na poslední chvíli mojí nepozorností a projevila se velmi dlouhými odezvami. Vše je už opraveno.
+

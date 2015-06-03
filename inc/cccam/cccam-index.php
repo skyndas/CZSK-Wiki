@@ -63,6 +63,9 @@
 										</div>
 									</div>
 								</div>
+							<p><strong>Síťový protokol</strong></p>
+							<p>CCcam využívá síťový protokol <a href="http://cs.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank">TCP (Transmission Control Protocol)</a> .</p>
+
 							<p><u>Výhody a nevýhody CCcamu:</u> </p>
 							<ul class="dt-sc-lmarg25">
 								<li><i class="fa fa-plus size14px margright5px"></i> CCcam pracuje jako cardserver i klient</li>
@@ -362,17 +365,93 @@
 											<td class="limit">?</td>
 											<td>Netestováno - asi neprochází EMM</td>
 										</tr>
+										<tr>
+											<td>RTVS</td>
+											<td>0668</td>
+											<td>Irdeto</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td class="notworks">X</td>
+											<td class="cfg">
+												<!-- The trigger to open the modal --> 
+												<a href="#Modal1">CCcam.cfg</a>
+												<!-- Your Modal, style it however you will! -->
+												<div id="Modal1" class="Modal" style="display:none;">
+													<h2>CCcam.cfg</h2>
+													<p>
+														# 01 - sa blocked<br>
+														# 02 - ua blocked<br>
+														# 04 - ga blocked<br>
+														# and sum of for combinations
+													</p>
+													<p>B: /dev/sci0 00</p>
+													<p>#######RTVS#######</p>
+													<p>
+														DISABLE EMM : no<br>
+														EXTRA EMM LEVEL : yes<br>
+														EMM THREADS : 1<br>
+														TRY ALL CHIDS : /dev/sci0<br>
+														CAMKEY: /dev/sci0 B1 B2 B3 B4 B5 B6 B7 B8<br>
+														CAMDATA: /dev/sci0 AB 72 2A 8C AA 9F 58 DE 0D 1C BB 6F F3 29 C9 61 ED 9D D7 59 B1 03 08 2D 1B AE 64 C2 7A 86 1D 42 E7 F6 31 89 1C 26 60 EF A5 74 84 F8 0B BB 4E 0E 82 49 A8 36 8E 31 BD 3F FC 36 9F BE 95 16 05 28<br>
+														#SMARTCARD CLOCK FREQUENCY: /dev/sci0 3570000<br> 
+													</p>
+													<p>##################</p>
+													<h2>CCcam.prio</h2>
+													<p>
+														P: 0668:000000:132A ;<br>
+														P: 0668:000000:1329 ;<br>
+														P: 0668:000000:13F1 ;<br>
+														P: 0668:000000:13F2 ;<br>
+														P: 0668:000000 ;<br>
+														P: 0668 ;<br>
+														I: 0624:000000:132A ;<br>
+														I: 0624:000000:1329 ;<br>
+														I: 0624:000000:13F1 ;<br>
+														I: 0624:000000:13F2 ;<br>
+														I: 0D96:000004:132A ;<br>
+														I: 0D96:000004:1329 ;<br>
+														I: 0D96:000004:13F1 ;<br>
+														I: 0D96:000004:13F2 ;<br>
+													</p>
+													<h2>CCcam.providers</h2>
+													<p>06680000 "[I2] RTVS (23°E)"</p>
+													<h2>CCcam.channelinfo</h2>
+													<p>
+														0668:000000:13F1 "RTVS - STV1 SD [I2]"<br>
+														0668:000000:13F2 "RTVS - STV2 SD [I2]"<br>
+														0668:000000:1329 "RTVS - STV1 HD [I2]"<br>
+														0668:000000:132A "RTVS - STV2 HD [I2]"<br>
+													</p>
+													<p style="text-align: right; margin-bottom: 20px;">
+														<a href="#Modal1" class="button">Zavřít</a>
+													</p>
+												</div>
+
+												<script>
+													$('#Modal1').modality({
+														effect: 'scale-up'
+													});
+												</script>												
+											</td>
+											<td>Nutná úprava v CCcam.cfg</td>
+										</tr>
 									</tbody>
 								</table>
 							</div>
+
 							<p><u>Podporované typy karet pro CCcam 2.1.2 (staré info, neplatí pro CCcam 2.3.0) - poslední update z 14.08.09:</u> </p>
 							<div class="dt-sc-three-fifth dt-sc-lmarg25 clearfloat">
 								<!-- **dt-sc-toggle-frame-set - Starts** -->
-						        <div class="dt-sc-toggle-frame-set dt-sc-one-half clearfloat" style="display: inline-block;">
-		                            <h5 class="dt-sc-toggle-accordion "><a href="#">Karty které pracují v CCcamu pouze přes NewCS:</a></h5>
-		                            <div class="dt-sc-toggle-content">
-		                                <div class="block">
-		                                    <ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right" style="margin-bottom: 10px;">
+								<div class="dt-sc-toggle-frame-set dt-sc-one-half clearfloat" style="display: inline-block;">
+									<h5 class="dt-sc-toggle-accordion "><a href="#">Karty které pracují v CCcamu pouze přes NewCS:</a></h5>
+									<div class="dt-sc-toggle-content">
+										<div class="block">
+											<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right" style="margin-bottom: 10px;">
 												<li>BskyB (UK, NDS3 - new white card - CAID 0963 - works only with newcs version 1.66)
 - D+ (Spain, N3, Rom 180)</li>
 												<li>DigiTV (Romania, N3, Rom 142?)</li>
@@ -383,12 +462,12 @@
 												<li>Tntsat(France, viaccess3, 30b00 (19))</li>
 												<li>Zon Tv Cabo (Portugal, N3, Rom 142)</li>
 											</ul>
-		                                </div>
-		                            </div>
-		                            <h5 class="dt-sc-toggle-accordion"><a href="#">Funkční typy karet</a></h5>
-		                            <div class="dt-sc-toggle-content">
-		                                <div class="block">
-		                                   <ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right" style="margin-bottom: 10px;">
+										</div>
+									</div>
+									<h5 class="dt-sc-toggle-accordion"><a href="#">Funkční typy karet</a></h5>
+									<div class="dt-sc-toggle-content">
+										<div class="block">
+										   <ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right" style="margin-bottom: 10px;">
 												<li>AKTA (ex Max-Tv) (Romania, on 4,8°, Viaccess [which version??]) card works in CCcam on DM500 but doesn't make AU.</li>
 												<li>ABS-CBN (Irdeto2, CAID 0604 ACS605)</li>
 												<li>AlJazeera Sport (Irdeto, CAID 603, ACS 606)</li>
@@ -451,12 +530,12 @@
 												<li>TV Vlaanderen (Belgium, Seca 3 v10)</li>
 												<li>Viasat 5E (Scandinavia, NDS2, CAID 90F - new card NDS3 does not work in sharing yet. HD channels also don't work in sharing.)</li>
 											</ul>
-		                                </div>
-		                            </div>
-		                            <h5 class="dt-sc-toggle-accordion "><a href="#">Karty které nefungují</a></h5>
-		                            <div class="dt-sc-toggle-content">
-		                                <div class="block">
-		                                    <ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+										</div>
+									</div>
+									<h5 class="dt-sc-toggle-accordion "><a href="#">Karty které nefungují</a></h5>
+									<div class="dt-sc-toggle-content">
+										<div class="block">
+											<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
 												<li>Cabovisao Portugal HD & SD - Conax CAS7</li>
 												<li>Digitalb Albania HD - Conax CAS7</li>
 												<li>Digiturk Turkey - Irdeto v5.7</li>
@@ -465,10 +544,10 @@
 												<li>Boom TV Romania - ***</li>
 												<li>Vision TV Ukraine - ***</li>
 											</ul>
-		                                </div>
-		                            </div>
-		                        </div> <!-- **dt-sc-toggle-frame-set - Ends** -->
-	                        </div>
+										</div>
+									</div>
+								</div> <!-- **dt-sc-toggle-frame-set - Ends** -->
+							</div>
 							<br><br>
 							<div class="dt-sc-three-fourth">
 								<p><u>Podporované typy čteček:</u> </p>
@@ -487,13 +566,13 @@
 									<p>O CCcamu kolují fámy na různých fórech, že má "Backdoor". Jedná se pouze o spekulace a vzhledem k tomu, že se jedná o uzavřený kód tak potvrdit či vyvrátit je mohou pouze vývojáři CCcamu (<i>Potvrzeno od kvalitních vývojářů ze Streamboardu</i>).</p>
 
 										<blockquote class="type2"> 
-			                                <span class="fa fa-quote-left"></span> 
-			                                <q> Der ursprüngliche Auslöser des Gerüchts war doch dieses Video:
+											<span class="fa fa-quote-left"></span> 
+											<q> Der ursprüngliche Auslöser des Gerüchts war doch dieses Video:
 <a href="http://www.youtube.com/watch?v=zyY0KqlYouc&fmt=22" target="_blank">http://www.youtube.com/watch?v=zyY0KqlYouc&fmt=22</a>
 und dieser Post: http://www.dreambox.info/showpost.php?p ... stcount=17
 Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekannte Komandos entdeckt wurden. Ob sowas nun tatsächlich möglich ist oder ein Fake ist können letztlich nur die CCCam-Entwickler beantworten. </q> 
-			                                <span class="fa fa-quote-right"></span> 
-			                            </blockquote>
+											<span class="fa fa-quote-right"></span> 
+										</blockquote>
 									
 								</div>
 							</div>
@@ -575,12 +654,12 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 							<h4>Příklady hlavních složek, souborů a portů CCcamu v jednotlivých image</h4>
 							<p>V jednotlivých image se mohou hlavní složky pro soubory CCcam serveru lišit. Následná ukázka:</p>
 							<!-- **dt-sc-toggle-frame-set - Starts** -->
-						        <div class="dt-sc-toggle-frame-set dt-sc-one-half dt-sc-lmarg25 clearfloat" style="display: inline-block;">
-		                            <h5 class="dt-sc-toggle-accordion"><a href="#"><u>Enigma 2 - Image openATV</u></a></h5>
-		                            <div class="dt-sc-toggle-content">
-		                                <div class="block">
-		                                	<p>DOPLNIT DALŠÍ INFO O JEDNOTLIVÝCH SOUBORECH !!!</p>
-		                                    <ul>
+								<div class="dt-sc-toggle-frame-set dt-sc-one-half dt-sc-lmarg25 clearfloat" style="display: inline-block;">
+									<h5 class="dt-sc-toggle-accordion"><a href="#"><u>Enigma 2 - Image openATV</u></a></h5>
+									<div class="dt-sc-toggle-content">
+										<div class="block">
+											<p>DOPLNIT DALŠÍ INFO O JEDNOTLIVÝCH SOUBORECH !!!</p>
+											<ul>
 												<li><strong>CCcam.Binary</strong> = chmod 755 (DOPLNIT TYP BINÁRNÍHO SOUBORU)
 													<ul>
 														<li><strong>/usr/bin</strong></li>
@@ -604,12 +683,12 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 												</li>
 												<li><strong>Web Interface (WebIf)</strong> - ANO / základní port 16001</li>
 											</ul>
-		                                </div>
-		                            </div>
-		                            <h5 class="dt-sc-toggle-accordion"><a href="#"><u>Enigma 2 , architektura "mips"- OpenPli (např.: pro DM7025 s image OpenPli)</u></a></h5>
-		                            <div class="dt-sc-toggle-content">
-		                                <div class="block">
-		                                    <ul>
+										</div>
+									</div>
+									<h5 class="dt-sc-toggle-accordion"><a href="#"><u>Enigma 2 , architektura "mips"- OpenPli (např.: pro DM7025 s image OpenPli)</u></a></h5>
+									<div class="dt-sc-toggle-content">
+										<div class="block">
+											<ul>
 												<li><strong>CCcam.Binary</strong> = chmod 755 (CCcam.mips)
 													<ul>
 														<li><strong>/usr/bin</strong></li>
@@ -633,10 +712,10 @@ Und daraufhin gab es eben weitere Untersuchungen bei denen tatsächlich unbekann
 												</li>
 												<li><strong>Web Interface (WebIf)</strong> - ANO / základní port 16001</li>
 											</ul>
-		                                </div>
-		                            </div>
-		                        </div> <!-- **dt-sc-toggle-frame-set - Ends** -->
-                        </div>
+										</div>
+									</div>
+								</div> <!-- **dt-sc-toggle-frame-set - Ends** -->
+						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
 						<div class="dt-sc-tabs-vertical-container">

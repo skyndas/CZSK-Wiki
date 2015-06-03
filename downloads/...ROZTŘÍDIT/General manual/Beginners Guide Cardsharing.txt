@@ -1,0 +1,78 @@
+Hallo,
+
+möchte hier mal etwas Info geben für Anfänger da ich die Fragen immer wieder gesehen habe (teils auch in anderen Foren). 
+Hier geht es darum (in der Theorie, keine Configs) welcher Emu und welcher Cardserver genutzt werden können und wie sich diese miteinander verbinden lassen.
+Kritik, positiv wie negativ kann gerne geäußert werden. Weitere Infos über Cams die hier nicht beschrieben werden können eventuell von anderen Usern ergänzt werden. Ich werde mich hier auf mpcs,newcs, camd3, cccam, mgcamd erstmal beschränken.
+
+Was kann ich alles als Server nutzen?
+-------------------------------------
+MPCS, NewCS, CCcam, Camd3
+
+Was kann ich alles als Client verwenden?
+---------------------------------------
+CCcam, camd3, mgcamd
+
+Was ist zu beachten?
+--------------------
+Generell wählt man den Server nach seinem Geschmack aber insbesondere nach seinen Karten. Soll heißen man muss erstmal abklären ob der verwendete Server die Karte überhaupt lesen kann. Ist dies der Fall steht dem ganzen nichts mehr im Wege....
+
+Allgemein gültiges
+------------------
+Die aufgeführten Server können mit einem internen Kartenslot oder mit einem externen Cardreader (seriell/USB) verwendet werden. Auch kann eine Serverbox gleichzeitig als Client verwendet werden. Bei Verwendung von mpcs/newcs wird ein entsprechender Client installiert. Logischerweise kann ein USB Cardreader nur verwendet werden wenn die Serverbox einen USB Port bietet! Bitte beachtet auch das zu viele Clients auf einer schwachen Box zu Problemen führen kann.
+
+Server
+------------
+MPCS und Newcs sind reine Server. Diese können keinesfalls als Client verwendet werden. CCcam und Camd3 können sowohl als Server als auch als Client verwendet werden. Dies wird in den Configs entsprechend konfiguriert.
+
+Wie verbinde ich? Kann ich den einen auf den anderen verbinden?
+----------------------------------------------------------------
+Um diese Frage zu beantworten werde ich erstmal etwas mehr ausholen und auf die vorhandenen, mir bekannten, Protokolle eingehen.
+
+Gängige Protokolle
+---------------------
+Ein Protokoll könnte man als eine Art "Sprache" bezeichnen. Es ist also wichtig das der Server und der Client das gleiche Protokoll können und auch verwenden (Kann in den configs eingestellt werden). Nicht jeder Server oder Client kann alle Protokolle. Ein Client ist im Regelfall aber flexibler als ein Server. Folgende Protokolle gibt es:
+- newcamd
+- camd (version 3.3 und 3.5)
+- radegast
+- gbox
+- reine cccam 
+
+Welcher Server/Client kann was?
+-------------------------------
+Server:
+MCPS: newcamd, radegast, camd (3.3 / 3.5), gbox
+Newcs: radegast, newcamd
+Camd3: camd (nicht 100% sicher)
+CCcam: reines CCcam (nicht 100% sicher)
+
+Client, auch Emu oder Cams genannt: (nicht sicher ob Clients eventuell noch mehr Protokolle machen)
+CCcam: CCcam, newcamd (mit Sicherheit nicht vollständig!)
+Camd3: newcamd, camd (3.3/3.5)
+mgcamd: newcamd
+
+Verbindung herstellen...
+------------------------
+Generell gilt: Der Client verbindet sich auf den Server. Beachtet man die Protokolle und versucht nicht mit camd auf newcamd zu verbinden erzielt man doch recht schnell erste Erfolge. 
+Es ist zu empfehlen nach Möglichkeit überalle das gleiche Protokoll und den gleichen Client Emu einzusetzen. Dies erleichtert die Pflege. 
+Ein Server liest im Regelfall die Karte selbst. Somit kann man eine Karte nicht von mehreren Servern auslesen lassen. 
+MPCS ist unter den genannten das Multitalent. Zum einen kann er eine Karte selbst lesen oder aber sich z.B. über das newcamd Protokoll weitere Karten von einem Server holen. Es besteht auch die Möglichkeit 2 verschiedene Karten direkt zu lesen und 2 weitere von einem Newcs Server zu bekommen. Newcs z.B. bietet diese Möglichkeit hingegen nicht.
+
+Beispiele:
+Server: newcs | client: cccam/camd3
+Über das Newcamd Protokoll können cccam und camd3 auf den newcs verbinden. Es ist egal wieviele Karten newcs einliest. Alle können wahlweise auf die Clients verteilt werden. newcs muss die Karten lesen können.
+
+Server: mpcs | client: cccam/camd3
+Im mpcs kann wahlweise das camd oder newcamd Protokoll gestartet werden (es geht auch beides). CCcam und camd3 können auf beide der Protokolle verbinden. Man muss sich also entscheiden wohin man seinen Client verbindet oder welches Protokoll man einsetzt.
+
+Server: mpcs, cccam | Client: cccam
+mpcs liest die Karte. cccam macht die verteilung auf die clients über sein eigenes cccam Protokoll. Man kann so recht genau bestimmen ob der Client an weitere teilnehmer sharen darf oder nicht (hops). nachteil man muss als Client auch die CCcam verwenden. Auf manchen Boxen läuft diese eventuell nicht. cccam könnte man hier auch direkt einsetzen um die karte zu lesen (erspart mpcs). 
+
+Server: newcs, mpcs | Client: cccam, camd3, mgcamd
+newcs liest eine Karte die sonst kein Server lesen kann. mpcs liest eine weitere Karte und holt die Infos von newcs über das newcamd Protokoll. Alle Clients verbinden auf den mpcs (die Clients sollen ja beide Karten bekommen) entweder über das newcamd oder camd Protokoll. 
+
+Abschlusswort:
+-------------------
+Oft wird das newcamd oder das camd (3.5) Protokoll verwendet. 
+Es ist wichtig sich damit zu beschäftigen, viel zu lesen und viel zu testen bevor ein solches Unterfangen fehlerfrei läuft. Ein gewisses Grundverständnis von Technik (bzw. technischem denken) und von Config Files bearbeiten ist natürlich von Vorteil bzw. eigentlich schon erforderlich. Kennt man Linux Befehle (nicht zwingend erforderlich) vom Terminal, kann Server/Clients dort (neu)starten kann dies die Fehlersuche enorm erleichtern. Wichtig ist es ebenfalls Logfiles zu betrachten und zumindest manche Dinge davon zu verstehen!
+
+mfg

@@ -1,0 +1,197 @@
+# gbox config file
+
+# Trace, Debug
+#    xx yz ; xx=00 no konsole output
+#    xx yz ; xx=01 konsole output
+#    xx yz ; y=0 debug output (dont use)
+#    xx yz ; y=1 no debug output
+#    xx yz ; z=0 ouput to konsole
+#    xx yz ; z=1 output to /var/tmp/debug.txt
+#    xx yz ; z=2 Output to UDP (to capture with gboxt)
+Z: { 01 10 } 192.168.1.2 8024
+
+# gbox working mode
+#    00 pure Emu
+#    01 pure SoftCam (when card inside), Emu (when no card inside)
+#    02 pure Net Client
+#    03 Mixed mode !!!!! always use this !!!!!
+G: { 03 }
+
+# Display ECM messages on Konsole
+#    00 dont show any ECMs
+#    01 show only valid ECMs
+#    02 show valid and bad ECMs with complete data display
+#    1X show ca access
+#    2X use nagra aladin 1801 in betacrypt mode (for UM-I02)
+C: { 02 }
+
+# Display EMM messages on Konsole
+#    00 dont show any EMMs
+#    01 show only valid EMMs
+#    02 show valid and bad EMMs with complete data display
+#    1* Log any tier change on PW-Nagra-17xx cards into /var/keys/pwupdate.log
+M: { 12 }
+
+# Auto Update
+#    00 is ignored (default)
+#    01 enable AU
+#    02 Auto AU !!!!! always use this !!!!!
+A: { 02 }
+
+# Key Update
+#    01 update only new keys, default setting
+#    02 update all keys (used for valid PMK checking)
+U: { 01 }
+
+# Hash pids
+#    00 hash all pids, DO NOT USE THIS OPTION, IT IS ONLY FOR TESTING STUFF
+#    01 hash only pids with implemented algos and available keys !!!!! always use this
+H: { 01 }
+
+# Key files folder
+#    00 keyfiles in /var/keys
+#    01 keyfiles in /var/tmp
+T: { 00 }
+
+# On Screen Display for the Multysystemcam on com1/com2
+#    00 No OSD (default)
+#    01 display Smartcard messages in Neutrino
+#    02 display Smartcard messages in Neutrino new nhttpd format
+#    03 display Smartcard messages in Enigma
+#    04 display Smartcard messages in Enigma2
+O: { 00 } 192.168.0.3 coolstream
+
+# Logger and NET-mode UDP port Init
+#    00 do not init UDP port
+#    01 Init UDP port for IP, port, UDP
+L: { 01 } 192.168.0.251 7025
+
+# demux, multicam/comport configuration
+# example: yz = 0x0A = 00001010 (use com2 with inverted CTS detection line)
+#    *x ** ; x = device nummber to be used (0= default)
+#    D* ** ; force use of /proc/bus/gtx for cw write operations
+             (in the dbox2 the gbox writes directly the CWs, 00 is the
+             recommended mode ! No drivers are required) use D* ** ONLY if
+             you have Problems. 0* ** should be prefered !!!
+#    F* ** ; write CWs in both devices (used for PVR in STB04xxx devices)
+#    ** y* ; y=0001b (0x1*) use slot1 as Multicam (only on STB04xxx)
+#    ** y* ; y=0010b (0x2*) use slot2 as Multicam (only on STB04xxx)
+#    ** y* ; y=0011b (0x3*) use slot1 and slot2 as Multicams (only on STB04xxx)
+#    ** *z ; z=0001b (0x*1) use com1 as Multicam
+#    ** *z ; z=0010b (0x*2) use com2 as Multicam
+#    ** *z ; z=0011b (0x*3) use com1 and com2 as Multicams
+#    ** yz ; yz=00110011b (0x33) use slot1+slot2+com1+com2 as Multicams
+#    ** *z ; z=0100b (0x*4) invert CTS detection on com1
+#    ** *z ; z=1000b (0x*8) invert CTS detection on com2
+V: { 00 10 }
+
+# RS232 SSSP mode
+#    x    debug messages, 1=on, 0=off
+#     y   com port to use (0=none, 1=com1, 2=com2)
+R: { 00 }
+
+# Task type
+#    00 **  normal mode gbox mode (no season, use Multicam instead)
+#    01 **  Season Emulation in a Irdeto allcam chid 0602 nonZ
+#    10 **  Season Emulation in a Irdeto allcam chid 1702 nonZ
+#    11 **  Season Emulation in a Irdeto allcam chid 1702 Z
+#    12 **  Season Emulation in a Irdeto allcam chid 1722 Z
+#    13 **  Season Emulation in a Irdeto allcam chid 1762 Z
+#    ** *1  Com port to use for season emulatiom (1 or 2)
+#    ** 0*  Use CTS for RST detection
+#    ** 1*  Use DCD for RST detection
+#    ** **   9600 = Baudrate to be used (working only on dbox2)
+W: { 00 00 } 9600
+
+# =============================================================================
+# extra options to override default seting in case you expirience Problems,
+# normaly these setings are not required.
+
+# GboxTwin mode
+# this options for the 2nd gbox ONLY
+# you must have an extra gbox, gbox_cfg and cwshare.cfg running on /tmp,
+# all other files can linked to the org. files
+#F: { A6 } 5
+
+# cpu, api, cw write method
+#     00 auto
+#     01 80X86
+#     02 MPC823
+#     03 IBM STB04xxx
+#        00 auto
+#        01 ibm
+#        02 api2
+#        03 api3
+#           00 cw write style = use internal routine (only dbox2)
+#           01 cw write style = CA_SET_DESCR type1 (dbox2, vdr)
+#           02 cw write style = CA_SET_DESCR type2
+#           03 cw write style = CA_SET_DESCR type3
+#           04 cw write style = 16 byte /proc/bus/gtx
+#           05 cw write style = 4096 byte /proc/bus/gtx, cw offset=0x04D0
+#              xx write cw in 1st device with index=xx
+#                 yy write cw in 2nd device with index=yy
+#                    01 means with .index=0 (default)
+#                    02 means with .index=1
+#                    03 means with .index=0 and .index=1
+#                    .. any bitwise combination ...
+#                    FF means with all 8 indexes (0-7)
+#J: { 00 03 01 00 00 }
+
+# Files, folders, devices
+#          folder/device             comment
+#F: { 01 } /var/tmp/pmt.gbx		// pmt file
+#F: { 02 } /var/tmp/emm.info		// key update log file
+#F: { 03 } /var/tmp/ecm.info		// ecm info file
+#F: { 04 } /var/tmp/atack.txt		// atack info file
+#F: { 08 } 1				// pmt mode (0 - pmt file mode, 1 - pmt socket mode)
+#F: { 11 } /var/keys			// folder for config files
+#F: { 12 } /var/tmp			// folder for temporary file
+#F: { 13 } /var/tmp			// folder for keyfiles
+#F: { 21 } /dev/null			// ca device
+#F: { 22 } /dev/null			// dvr device
+#F: { 23 } /dev/null			// demux device
+#F: { 31 } /dev/null			// second ca device to write cw's (recording)
+#F: { 41 } /dev/sci0			// STB04xxx slot1
+#F: { 42 } /dev/sci1			// STB04xxx slot1
+#F: { 43 } /dev/tts/0			// rs232 com1
+#F: { 44 } /dev/tts/1			// rs232 com2
+
+# For overclocking freaks, Clocking internal STB04xxx slots with:
+# 1=7.80MHz 2=6.30MHz 3=5.25MHz 4=4.50MHz 5=3.94MHz 6=3.50MHz 7=3.15MHz
+# Irdeto works fine on 7.8MHz, all other fine on 6.30MHz or 5.25MHz
+# The Dream has not a clean clock signal, some cards that are sensitive will
+# refuse to work even on 3.5MHz, thats why 3.15MHz is the default value there.
+# On other STB04xxx recievers the same cards work with 6.30MHz
+#F: { 51 } 02                        // irdeto
+#F: { 52 } 03                        // seca
+#F: { 53 } 03                        // viaccess
+#F: { 54 } 03                        // nagra
+#F: { 55 } 03                        // crypto
+#F: { 57 } 03                        // conax
+#F: { 58 } 03                        // nds
+
+# force a name change of the season or sssp rs232 device
+#F: { 45 } /dev/ttyS1
+
+# set stay alive ping time in seconds (default is 300)
+#F: { A0 } 300
+
+# disable direct serial port I/O access on 80x86cpus (win and linux)
+# direct port i/o is used to set unusual Baudrates, if you want to
+# a 3.579MHz card in a 6.000MHz reader etc ...
+#
+# Enabled (A1=0) is the default setting, has always been !!!
+#
+# Disable (set to 1) it ONLY if you have problems with ioperm or you want
+# to use a usb-to-rs232 smartcard reader
+F: { A1 } 1
+
+# change for running on octagon 1008 IRD firmware
+F: { 01 } /tmp/pmt2_1.tmp
+F: { 02 } /tmp/emm.info
+F: { 03 } /tmp/ecm.info
+F: { 04 } /tmp/atack.txt
+F: { 12 } /tmp
+F: { 21 } PTI1
+F: { 22 } PTI1
+F: { 23 } PTI1

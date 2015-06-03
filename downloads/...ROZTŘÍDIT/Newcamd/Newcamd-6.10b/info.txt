@@ -1,0 +1,6 @@
+
+<name>Newcamd 6.10b - Complete</name>
+<description>Newcamd 6.10b incl. Cardserver/Spider-6.10b-Startscript, No Configs and Keys included!</description>
+<creator>unknown</creator>
+
+### edit by root: Fr 28. Jan 23:47:11 CET 2011

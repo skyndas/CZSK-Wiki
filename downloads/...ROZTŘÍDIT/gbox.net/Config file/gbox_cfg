@@ -1,0 +1,127 @@
+#gbox config file
+
+# Trace/Debug
+# xx yz ; xx=00 no konsole output
+# xx yz ; xx=01 konsole output
+# xx yz ; y=0 debug output (don´t use)
+# xx yz ; y=1 no debug output
+# xx yz ; z=0 ouput to konsole
+# xx yz ; z=1 output to /var/tmp/debug.txt
+# xx yz ; z=2 Output to UDP (to capture with gboxt)
+Z: { 01 02 } 192.168.1.123 8111
+#     00 auto
+#     01 80X86
+#     02 MPC823
+#     03 IBM STB04xxx
+#        00 auto
+#        01 ibm
+#        02 api2
+#        03 api3
+#           00 cw write style = use internal routine (only dbox2)
+#           01 cw write style = CA_SET_DESCR type1 (dbox2, vdr)
+#           02 cw write style = CA_SET_DESCR type2
+#           03 cw write style = CA_SET_DESCR type3
+#           04 cw write style = 16 byte /proc/bus/gtx
+#           05 cw write style = 4096 byte /proc/bus/gtx, cw offset=0x04D0
+#              xx write cw in 1st device with index=xx
+#                 yy write cw in 2nd device with index=yy
+#                      01 means with .index=0 (default)
+#                      02 means with .index=1
+#                      03 means with .index=0 and .index=1
+#                      .. any bitwise combination ... 
+#                      FF means with all 8 indexes (0-7)
+
+# PPC files,folders,devices
+#          folder/device             comment
+#F: { 01 } /var/tmp/pmt.tmp          // pmt file
+#F: { 02 } /var/tmp/emm.info         // key update log file
+#F: { 03 } /var/tmp/ecm.info         // ecm info file
+#F: { 11 } /var/keys                 // folder for config files
+#F: { 12 } /var/tmp                  // folder for temporary file
+#F: { 13 } /var/tmp                  // folder for keyfiles
+#F: { 21 } /dev/dvb/adapter0/ca0     // ca device
+#F: { 22 } /dev/dvb/adapter0/dvr0    // dvr device
+#F: { 23 } /dev/dvb/adapter0/demux0  // demux device
+#F: { 31 } /dev/dvb/adapter0/ca1     // second ca device to write cw´s (recording)
+#F: { 41 } /dev/sci0                 // STB04xxx slot1
+#F: { 42 } /dev/sci1                 // STB04xxx slot2
+#F: { 43 } /dev/tts/0                // rs232 com1
+#F: { 44 } /dev/tts/1                // rs232 com2
+
+#gbox working mode
+#    00 pure Emu
+#    01 pure SoftCam (when card inside), Emu (when no card inside)
+#    02 pure Net Client
+#    03 Mixed mode !!!!! always use this !!!!!
+G: { 03 }
+
+# Display ECM messages on Konsole
+#    00 don´t show any ECM´s
+#    01 show only valid ECM´s
+#    02 show valid and bad ECM´s with complete data display
+C: { 01 }
+
+# Display EMM messages on Konsole
+#    00 don´t show any EMM´s
+#    01 show only valid EMM´s
+#    02 show valid and bad EMM´s with complete data display
+#    1* Log any tier change on PW-Nagra-17xx cards into /var/keys/pwupdate.log
+M: { 01 }
+
+# AutoUpdate
+#    00 is ignored (default)
+#    01 enable AU
+#    02 Auto AU !!!!! always use this !!!!!
+A: { 02 }
+
+# Key update
+#    01 update only new keys, default setting
+#    02 update all keys (used for valid PMK checking)
+U: { 01 }
+
+# Hash pids
+#    00 hash all pids, DO NOT USE THIS OPTION, IT IS ONLY FOR TESTING STUFF
+#    01 hash only pids with implemented algos and available keys !!!!! always use this
+H: { 01 }
+
+# Key files folder
+#    00 keyfiles in /var/keys
+#    01 keyfiles in /var/tmp
+T: { 00 }
+
+# On Screen Display for the Multysystemcam on com1/com2
+#    00 No OSD (default)
+#    01 display Smartcard messages in Neutrino
+#    02 display Smartcard messages in Neutrino new nhttpd format
+#    03 display Smartcard messages in Enigma
+O: { 03 } 192.168.1.111
+
+# Logger and NET-mode UDP port Init
+#    00 do not init UDP port
+#    01 Init UDP port for IP, port, UDP
+#L: { 00 } 192.168.1.116 8017
+
+# Use SSSP over rs232 port
+# a0     a=1 debug on, a=0 normal operatiuon
+# 0b     b=1 for com1, b=2 for com2
+
+# Option for Seasons-Interface
+W: { 00 00 } 9600
+
+# *x ** ; x = device nummber to be used (0= default)
+# D* ** ; force use of /proc/bus/gtx for cw write operations
+          (in the dbox2 the gbox writes directly the CW´s, 00 is the
+           recommended mode ! No drivers are required) use D* ** ONLY if
+           you have Problems. 0* ** should be prefered !!!
+# F* ** ; write CW´s in both devices (used for PVR in STB04xxx devices)
+# ** y* ; y=0001b (0x1*) use slot1 as Multicam (only on STB04xxx)
+# ** y* ; y=0010b (0x2*) use slot2 as Multicam (only on STB04xxx)
+# ** y* ; y=0011b (0x3*) use slot1 and slot2 as Multicams (only on STB04xxx)
+# ** *z ; z=0001b (0x*1) use com1 as Multicam
+# ** *z ; z=0010b (0x*2) use com2 as Multicam
+# ** *z ; z=0011b (0x*3) use com1 and com2 as Multicams
+# ** yz ; yz=00110011b (0x33) use slot1+slot2+com1+com2 as Multicams
+# ** *z ; z=0100b (0x*4) invert CTS detection on com1
+# ** *z ; z=1000b (0x*8) invert CTS detection on com2
+# example: yz = 0x0A = 00001010 (use com2 with inverted CTS detection line)
+V: { F0 35 }

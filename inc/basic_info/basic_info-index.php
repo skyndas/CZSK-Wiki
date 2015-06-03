@@ -35,6 +35,12 @@
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Základy cardsharingu - slovník</h4>
 							<ul class="dt-sc-fancy-list dt-sc-lmarg25 caret-right">
+								<li><strong>ECM</strong><br>
+								 - instrukce pro generování Control Word, kterým se dekódují přijímaná data. CW vytvoří karta přepočítáním "zadání", které přide ze satelitu v ECM a vrátí ho zpet do dekodéru přijímače.<br><br>
+								 - ECM is short for Entitlement Control Message. These are commands which are used to control the working of your card. ECM's are always sent as packets. Such a packet is called a Control Word(CW) and it contains coded keys, ID's etc. needed to decode the signal. In other words, the ECM identifies the service and the conditions that have to be met in order to use that service. Providers will also use fake ECM's to disable pirate cards. That is why a lot of people translate ECM as Electronic Counter Measure.</li>
+								<li><strong>EMM</strong><br>
+								 - instrukce pro úpravu oprávnění karty. Tyto instrukce zachytává bloker a nepropouští je na kartu. Oprávění lze "na dálku" například i mazat.<br><br>
+								 - EMM is short for Entitlement Management Messages. EMM's are composed of the information, contained in the SASand will always be sent together with the ECM. EMM's contain information about the subscriber and the status of the subscription. They are used to transfer information about authorization, but they will also carry new keys, or modify or delete existing keys.</li>
 								<li><strong>EMU</strong> - softwarová emulace karty (tato technologie je téměř mrtvá)</li>
 							</ul>
 						</div>

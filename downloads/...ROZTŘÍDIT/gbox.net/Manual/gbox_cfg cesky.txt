@@ -1,0 +1,182 @@
+#######################################gbox_cfg#####################################
+#gbox configuracni slozka
+
+# sledovat/proskoumat
+# xx yz ; xx=00 bez vystupu na konsolu 
+# xx yz ; xx=01 vystup konsoly
+# xx yz ; y=0 kontrola vystupu(nepouzivat)
+# xx yz ; y=1 nekontrolovat vystup
+# xx yz ; z=0 vystup na  konsolu
+# xx yz ; z=1 vystup zapsat do /var/tmp/debug.txt
+# xx yz ; z=2 vystup zapsat do UDP (k jisteni s gboxu)
+Z: { 01 01 } 192.168.1.200 8024
+
+# Druh ukolu
+# 00 ** normalni rezim gboxu (bez season, misto neho pouzit Multicam)
+# 01 ** Season Emulace v Irdeto allcam chid 0602 nonZ
+# 10 ** Season Emulace v Irdeto allcam chid 1702 nonZ
+# 11 ** Season Emulace v Irdeto allcam chid 1702 Z
+# 12 ** Season Emulace v Irdeto allcam chid 1722 Z
+# 13 ** Season Emulace v Irdeto allcam chid 1762 Z
+# ** *1 Com port pouzit pro season emulace (1 or 2)
+# ** 0* pouzit CTS pro RST detekci
+# ** 1* pouzit DCD pro RST detekci
+# ** ** 9600 = pouzit Baudrate (pracuje pouze v dbox2)
+#W: { 00 00 } 9600
+
+#gbox rezim
+# 00 pouze Emu
+# 01 pouze SoftCam (kdyz jsou karty ve slotech), Emu (kdyz je bez karet)
+# 02 pouze Net Client
+# 03 smiseny rezim !!!!! toto pouzivat !!!!!
+G: { 03 }
+
+# Znazornrni ECM v konzoli
+# 00 neznazornovat ECM存
+# 01 znazornovat pouze platne ECM存
+# 02 znazornovat platne i neplatne ECM存 completni znazornrni
+
+C: { 01 }
+
+# Znazorneni EMM v konzoli
+# 00 neznazornovat EMM存
+# 01 znazornovat pouze platne EMM存
+# 02 znazornovat platne i neplatne EMM妄omplet
+# 1* vsechny mozne poradi kart PW-Nagra-17xx into /var/keys/pwupdate.log
+M: { 01 }
+
+# AutoUpdate
+# 00 vypnuto
+# 01 zapnuto AU
+# 02 Auto AU !!!!! toto pouzivat !!!!!
+A: { 02 }
+
+# Key update
+# 01 update pouze nove klice, default setting
+# 02 update vsech klicu (pro platne PMK controla)
+U: { 01 }
+
+# Hash pidu
+# 00 hash vsech pidu, NEPOUZIVAT TUTO FUNKCI POUZEPRO TESTOVANI!!!
+# 01 hash pouze pidy s implemented algos and available keys !!!!! always use this
+H: { 01 }
+
+# Slozka klicu se nachazi v
+# 00 klice ve /var/keys
+# 01 klice ve /var/tmp
+T: { 00 }
+
+# Pro znazornrni multicamu na obrazovce z portu com1/com2
+# 00 vypnuto)
+# 01 znazorneni Smartcard v Neutrinu
+# 02 znazornrni Smartcard v Neutrino novy nhttpd format
+# 03 znazorneni in Enigma
+O: { 03 } 192.168.1.200
+
+# Logger a sitovy modus UDP port nastaveni
+# 00 neni otevren UDP port
+# 01 pri otevreni UDP portu pro IP, UDP
+L: { 00 } 192.168.1.200 8017
+
+# *x ** ; x = device nummber to be used (0= default)
+# D* ** ; force use of /proc/bus/gtx for cw write operations
+              (in the dbox2 the gbox writes directly the CW存, 00 is the
+              recommended mode ! No drivers are required) use 
+               D* ** pouzivat pouze pri problemech 
+               0* ** DOPORUCENE NASTAVENI !!!
+# F* ** ; write CW存 in both devices (pouze pro PVR v STB04xxx devices)
+# ** y* ; y=0001b (0x1*) pro slot1 jako Multicam (jen pro STB04xxx)
+# ** y* ; y=0010b (0x2*) pro slot2 as Multicam (jen proSTB04xxx)
+# ** y* ; y=0011b (0x3*) pro slot1 a slot2 jako Multicams (jen pro STB04xxx)
+# ** *z ; z=0001b (0x*1) pro com1 jako Multicam
+# ** *z ; z=0010b (0x*2) pro com2 jako Multicam
+# ** *z ; z=0011b (0x*3) pro com1 a com2 jako Multicams
+# ** yz ; yz=00110011b (0x33) pro slot1+slot2+com1+com2 jako Multicams
+# ** *z ; z=0100b (0x*4) zmena CTS detekce na com1
+# ** *z ; z=1000b (0x*8) zmena CTS detekce na com2
+# priklad: yz = 0x0A = 00001010 (pro com2 se zmenou CTS detekcni linky)
+V: { F0 30 }
+
+# ==================================================
+# zvlastni nastaveni pri problemech, jinak neni potreba nastavovat   #
+# cpu, api, cw zapisovaci metoda
+#
+# 00 auto
+# 01 80X86
+# 02 MPC823
+# 03 IBM STB04xxx
+# 00 auto
+# 01 ibm
+# 02 api2
+# 03 api3
+# 00 cw pise styl = use internal routine (jen dbox2)
+# 01 cw pise styl = CA_SET_DESCR type1 (dbox2, vdr)
+# 02 cw pise styl = CA_SET_DESCR type2
+# 03 cw pise styl = CA_SET_DESCR type3
+# 04 cw pise styl = 16 byte /proc/bus/gtx
+# 05 cw pise styl = 4096 byte /proc/bus/gtx, cw offset=0x04D0
+# xx pise cw in 1st device with index=xx
+# yy pise cw v 2nd device s index=yy
+# 01 pro             .index=0 (default)
+# 02 pro             .index=1
+# 03 pro             .index=0 and .index=1
+# ..  bitove kombinace ...
+# FF pro vsech 8 indexu (0-7)
+#J: { 01 00 00 01 01 }
+
+# Klice, slozky,vysvetlivky
+#
+#F: { 01 } /var/tmp/pmt.tmp // pmt slozka
+#F: { 02 } /var/tmp/emm.info // informace o updat klicu
+#F: { 03 } /var/tmp/ecm.info // ecm info soubor
+#F: { 04 } /var/tmp/atack.txt // informace o sitovych utocich
+#F: { 11 } /var/keys // slozka pro konfiguracni soubory
+#F: { 12 } /var/tmp // slozka pro temporary soubory
+#F: { 13 } /var/tmp // slozka na  keyfiles
+#F: { 21 } /dev/dvb/adapter0/ca0 // ca zarizeni
+#F: { 22 } /dev/dvb/adapter0/dvr0 // dvr zarizeni
+#F: { 23 } /dev/dvb/adapter0/demux0 // demux device
+#F: { 31 } /dev/dvb/adapter0/ca1 // secundarni ca zarizeni k psani cw's (recording)
+#F: { 41 } /dev/sci0 // STB04xxx slot1
+#F: { 42 } /dev/sci1 // STB04xxx slot1
+#F: { 43 } /dev/tts/0 // rs232 com1
+#F: { 44 } /dev/tts/1 // rs232 com2
+
+# Pro taktovaci freaks:
+# Vnitrni frekvence STB04xxx slotu s:
+# 1=7.80MHz 2=6.30MHz 3=5.25MHz 4=4.50MHz 5=3.94MHz 6=3.50MHz 7=3.15MHz
+# Irdeto pracuje s 7.8MHz, vsechny ostatni 6.30MHz nebo 5.25MHz
+# Dreambox nema stabilni taktovaci signal, proto nektere citlive karty pracuji dokonce s            
+# 3.5MHz, kvuli tohoje tato moznost tady.
+# V jinych STB04xxx prijimacich funguji stejne karty na 6,30MHz. 
+#
+#F: { 51 } 02 // irdeto
+#F: { 52 } 03 // seca
+#F: { 53 } 03 // viaccess
+#F: { 54 } 03 // nagra
+#F: { 55 } 03 // crypto
+#F: { 57 } 03 // conax
+F: { 58 } 02 // nds
+
+# Nove moznosti gbox_cfg Vers. 2.21
+
+
+# zmena napajeni a oznaceni seasonu nebo sssp rs232 
+F: { 45 } /dev/ttyS1
+
+# delka pingu(normal je 300)
+F: { A0 } 300
+
+
+# vypina seriovy port na I/O pristup 80x86cpus pro (win i linux)
+# primy port I/O je pouzivan pro zvlastni nastaveni, pro pouziti karty s 3.579MHz v 
+# ctecce s 6.000MHz.    
+# zapnout (A1=0) zpetne nastaveni 
+#
+# vypnout (nastavit 1) pouze kdyz jsou problemy s ?ioperm? anebo kdyz se pouziva jako 
+# ctecka  programator usb-rs232 
+#
+F: { A1 } 0
+
+
+

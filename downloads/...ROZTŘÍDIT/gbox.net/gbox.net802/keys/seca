@@ -1,0 +1,25 @@
+####################################################################
+# [CAS] Seca Pin
+# UA - card unique address (6 byte)
+# CX - pin (4 byte) ascii based (eg. 31 32 33 34 for pin 1234)
+#
+# P: { UA UA UA UA UA UA { C0 C1 C2 C3 }}
+#
+#
+
+####################################################################
+# [EMU] Seca ECM/EMM keyset
+# 
+#
+#
+M: { 00 2A 00 00 04 00 00 { 17 C6 0E 0F 45 75 EE 80 }}
+M: { 00 2A 00 00 04 00 01 { 17 C6 0E 0F 45 75 EE 80 }}
+M: { 00 30 00 00 02 00 01 { 08 01 30 4F ED E6 DB 48 }}
+M: { 00 30 00 00 02 00 11 { B3 E7 17 5E CC DF 56 65 }}
+#
+S: { 00 2A 0C { 73 46 31 85 A2 95 63 61 }} ProvID:002A, PPUA:00000400, MK:01=17C60E0F4575EE80, expire date:20110731, caid:0100, pid:0000, time: Tue Jun 14 20:19:21 2011
+S: { 00 2A 0D { BB 04 C5 9B B7 3D B1 61 }} ProvID:002A, PPUA:00000400, MK:01=17C60E0F4575EE80, expire date:20110731, caid:0100, pid:0000, time: Tue Jun 14 20:19:21 2011
+S: { 00 2A 0E { 45 78 D3 99 FB 03 D7 E4 }} ProvID:002A, PPUA:00000400, MK:01=17C60E0F4575EE80, expire date:20110731, caid:0100, pid:0000, time: Tue Jun 14 20:19:21 2011
+S: { 00 30 0C { C7 9A 6C 39 92 3B AA 77 }} ProvID:0030, PPUA:00000210, MK:01=0801304FEDE6DB48, expire date:20110731, caid:0100, pid:0000, time: Tue Jun 14 21:53:54 2011
+S: { 00 30 0D { 9C 57 0B 3E 2D B2 FC 6C }} ProvID:0030, PPUA:00000210, MK:01=0801304FEDE6DB48, expire date:20110731, caid:0100, pid:0000, time: Tue Jun 14 21:53:54 2011
+S: { 00 30 0E { 57 32 7D C2 A8 62 B1 FB }} ProvID:0030, PPUA:00000210, MK:01=0801304FEDE6DB48, expire date:20110731, caid:0100, pid:0000, time: Tue Jun 14 21:53:54 2011

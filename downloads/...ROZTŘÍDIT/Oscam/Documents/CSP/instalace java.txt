@@ -1,0 +1,20 @@
+Jak v Ubuntu nainstalovat Sun Java 6 JDK
+
+Ubuntu od verze 11.10 neposkytuje balíèky pro Sun Java 6 JDK. Z licenèních dùvodù je souèástí instalace pouze OpenJDK, se kterým ale nìkteré programy nebìhají správnì.
+
+Pokud chcete nainstalovat pùvodní JDK od Sunu, pøidejte si repozitáø ppa:ferramroberto/java
+	
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ferramroberto/java
+sudo apt-get update
+
+A pak nainstalujte JDK
+	
+sudo apt-get install sun-java6-jdk sun-java6-plugin
+
+nebo pokud chcete jen pouštìt programy v Javì a nebudete vyvíjet, staèí vám JRE
+
+	
+sudo apt-get install sun-java6-jre
+
+Takto zkontrolujete, jakou Javu používáte.

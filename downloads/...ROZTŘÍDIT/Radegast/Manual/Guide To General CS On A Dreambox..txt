@@ -1,0 +1,454 @@
+======================================================================================================
+				Guide To General CS On A Dreambox.
+======================================================================================================
+
+7 Cardsharing
+7.1 Basics
+How does it work I suggest you begin with the Hydra Installation part first, as it gives some basics on the two mains EMUs.
+Basically, instead of sending commands and getting back answers from the official card locally in the local card reader, datas are sent through the network to the other dreambox which has the card.
+So, we have a server, with the card on one dreambox, which is waiting for client(s) to connect. Then you have one client running on both dreambox, sending commands and awaiting answers to the server, which forward to the card.
+You imagine easily this is a bit more complex, but this is the global idea.
+Of course, if you want to try that, you need 2 dreambox on a single network, Ethernet crossed cable in direct connection, or through a hub.
+Let’s start with a easy-to-setup share, that you can easily set up with 2 dreambox.
+For this example I choosed the standard dreambox7000, plus the wonderful Dreambox500, which costs about a third of the DM7000+HD but offers the same features on channel view and decoding
+
+7.2 Radegast on Hydra
+
+I start with this method, as it’s the easiest to set up, everything is done with the remote control.
+I clearly suppose you have Hydra installed an running on both dreambox.
+We set up on IP 192.168.0.24 the server with the official card on the DM7000, and the 192.168.0.25 for the client in your bedroom, on the DM500.
+Telnet to one dreambox and ping the other, this must work with small latency.
+0.6 ms is a standard latency on a LAN.
+Hydra Angharad & Zeus and Radegast 3 b14 are used for this tutorial.
+
+Let’s configure the DM7000 server :
+Blue Button, choose radegast, then press OK.
+You first need to enable the card reader where you put your official card. Let’s allow both top and bottom slots. let ports on default values.
+Also tick “multiple connections” as two clients will connect on it.
+
+Put ECM and EMM to “both”, keep default settings for Timeouts.
+At this stage do not tick “Server Authentification Enabled”. This allow login/password and crypting securities, but keep it simple at the beginning.
+
+Just press the green button to validate this last page, then to validate the general settings page, then to confirm you understand that’s the Emu needs to be start again, then again the green button to start (or re-start) Radegast.
+Press the Lame button (or exit depending your remote control) and that is , you are ready on the server side.
+Now, change to the other dreambox, the DM500,, to configure the client. Blue button, choose Radegast and press Ok to enter settings pages.
+On this dreambox, no card inserted, so just let Disabled on the three card readers, and no reason to tick “Multiple Connection” here.
+
+Press the yellow button to access the next page.
+Put ECM and EMM to “both”, keep default settings for Timeouts.
+At this stage do not tick “Server Authentification Enabled” as we did not choose to use that on the server. Again, keep it simple at the beginning.
+Press the green button to exit to the previous page.
+Press the blue button to access the next page.
+Here we are going to tell to the radegast client where it can find the server, and for which type of card etc..
+So, choose the type of card you have in the server, SECA here, then the IP address of your server, 192.168.0.24 here and the port to be used, 678 here.
+Do not use the “Auth” button, this is for login/password and key for crypting, and we don’t use it here.
+As usual now, press the green button until you start radegast.
+You can select a crypted channel and you should have the clear picture on your TV. That’s is, you’ve done your first CS.
+To finish this chapter on radegast, if you prefer to secure a bit your data transmission, with all your personal datas on decrypting your provider, you should better tick “Server Authentification Enabled” on both side, server and client.
+On the client you have a simple way to configure it by clicking on “Auth” button.
+So, put Login, password and a 16 digit key for crypting.
+You of course need to put the same on the client side.
+
+
+ 
+On the server you first need to tick “Server Authentification Enabled” using the Hydra Menus.
+But you also need to configure login/password access to the server, and this is not included in Hydra Menus.
+So you need to edit config files.
+FTP to /var/etc/ and get radegast****ers
+Edit it with a Unix compatible editor like UltraEdit, and simply put loginasswordESKey
+in our case, simply klona:secret:0102030405060708
+That’s it, your server is configured.
+The only default is that you absolutely need radegast on both side, and that radegast is slower than newcamd when it comes to zap time.
+One small trick also is to change your EMU for MGcamd, which will use all Radegast config but is faster on zapping and also stable.
+So let’s move on a newcamd config, more complex, but faster and where you can use both radegast and newcamd server with a newcamd client.
+
+7.3 Newcamd
+
+
+ 
+Newcamd is another solution. Newcamd 5.25 is used for this tutorial. Be cautious, as the CS protocol changed with this version and you CANNOT share between newcamd 5.25 and older versions.
+First have a look at the Hydra installation part to get some basics on newcamd.
+So, we need to configure first cardserver.dream (/var/tuxbox/config/cardserver.cfg is the associated config file) and the client newcamd.ppc (/var/tuxbox/config/newcamd.cfg is the associated config file).
+Filename used here are those used on Hydra images and it can change from one image to another. Mainly other than Hydra images, like Rudream, simply use newcamd and cardserver as filename. Have a look to /var/bin to find the correct filename for your image.
+First job is to configure the server part.
+So first edit the file cardserver.cfg from the DM7000
+First step is to allow Auto Update for the card, and enable card readers to work, so at the end of the file you must have :
+SERIAL_PORT = 0
+TCP_PORT = 10001
+EMM-G = yes
+EMM-S = yes
+EMM-U = yes
+SPECIAL_FEATURES = yes
+SERIAL_PORT = 1
+TCP_PORT = 10000
+EMM-G = yes
+EMM-S = yes
+EMM-U = yes
+SPECIAL_FEATURES = yes
+Then you need to set up network and security settings :
+DESKEY = 12 34 56 78 90 12 34 56 78 90 12 34 56 78
+SERVER_NAME = My_Server
+DEBUG_PORT = 14000
+ENTITLEMENT_PORT = 14001
+ADMIN_PORT = 14002
+ADMIN_PASSWORD = secret 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Just put the DES key you want and a unique server_name on the network. Be careful, there cannot be two server with the same name in the network.
+Last point is to add clients authorized to connect and which password logging they need.
+You need to build a line for each user like this : USER = login password wan IP_client admin_port au. In our case, we have the server dreambox that will connect to itself and the second dreambox with klona as login and secret as password, the client IP is 192.168.0.25 :
+USER = local local lan localhost 12000 au
+USER = klona secret wan 192.168.0.25 12000 au
+In fact, if you get together all these lines, you have a simple working cardserver.cfg file :
+DESKEY = 12 34 56 78 90 12 34 56 78 90 12 34 56 78
+SERVER_NAME = My_Server
+DEBUG_PORT = 14000
+ENTITLEMENT_PORT = 14001
+ADMIN_PORT = 14002
+ADMIN_PASSWORD = secret 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+USER = local local lan localhost 12000 au
+USER = klona secret wan 192.168.0.25 12000 au
+SERIAL_PORT = 0
+TCP_PORT = 10001
+EMM-G = yes
+EMM-S = yes
+EMM-U = yes
+SPECIAL_FEATURES = yes
+SERIAL_PORT = 1
+TCP_PORT = 10000
+EMM-G = yes
+EMM-S = yes
+EMM-U = yes
+SPECIAL_FEATURES = yes
+
+Now let’s configure the client newcamd.ppc (with his associated settings file newcamd.cfg) , on the dreambox server, so still the DM7000.
+There are quite some line in this file, but you only need in fact to add the details to connect to the server.
+Line that define everything are built that way : CWS = server_IP server_port login password DESkey wan cardserver_name. In this case, the server connect to itself on port 10000 and 10001 (the 2 card readers we authorized) and login/password is local/local and the cardserver name is My_Server, so :
+CWS = localhost 10000 local local 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan My_Server
+CWS = localhost 10001 local local 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan My_Server
+localhost returns the local internal IP that is 127.0.0.1, that also can be used directly in the config file. In our case, we can also change the IP to 192.168.0.24 as this is another valid IP address of the dreambox. It’s better anyway to use 127.0.0.1.
+Just check now you have CWS_INCOMING_PORT = 12000 in the end of the file.
+I did not yet explain about this port that is in the cardserver config and in the newcamd config. Sharing is done on ports 10000 and 10001, so what is the port 12000 used for In easy terms, it’s the way to send data back to the server.
+It’s useful when the server was down and get online again, after a reboot for example; Through this port, the server tell to clients that it’s back online. This way, the client does not have to reboot or restart the EMU newcamd to get again access to the server.
+Let’s now move on the client dreambox, the DM500, and configure newcamd. Edit the other newcamd.cfg (I suggest you make separated directories on your PC with clear names like server_192_168_0_24 and client_192_168_0_25 or you will probably mix files and nothing will work !)
+This time, we need to connect on 192.168.0.25 , ports 10000 and 10001, login/password is klona/secret, DESkey is the same, and server name also.
+CWS = 192.168.0.24 10000 klona secret 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan My_Server
+CWS = 192.168.0.24 10001 klona secret 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan My_Server
+Still check CWS_INCOMING_PORT = 12000 in the end of the file.
+That is, both clients and server are configured. This should work once you put your official card inside the server dreambox.
+Anyway, there is still again an improvement we can do. What about a third dreambox , but this time with a radegast server.
+
+7.4 : Radegast server and Newcamd client
+
+Our third dreambox has the IP address 192.168.0.99 and is a DM7000
+So, just configure normally your radegast server on this new dreambox7000 as explained in the previous part .
+Just untick “Server Authentification Enabled” as radegast is only able to handle one client in crypted DES mode.
+
+
+ 
+Let’s move now on the two clients configuration, the first DM7000 and the DM500. Newcamd and radegast are not directly compatible in sharing. We are going to use a radegast code to convert data to newcamd format. For this purpose, copy from the original newcamd package the file radegast.ppc from the radegast folder to /var/bin and change attributes to 755. If you don’t know what means “chmod 755” check here.
+Then copy from the same folder of the newcamd package the file radegast.cfg to /var/tuxbox/config and NOT to /var/etc which is the standard directory for radegast EMU config files. In this case, this is not the radegast EMU but the radegast converter for newcamd that we use. Quite confusing isn’t
+Let’s configure the radegast converter for the first client, the dreambox DM500 192.168.0.25 that has no card at all, already client of the cardserver.dream on the 192.168.0.24 dreambox. FTP /var/tuxbox/config/radegast.cfg and edit the file.
+Here is what you need in this file :
+SERVER_NAME = rdgd_server
+DESKEY = 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+DEBUG_PORT = 15000
+RADEGAST_SERVER_CONNECT_TIMEOUT = 40
+CLIENT_CONNECT_TIMEOUT = 30
+USER = internal share localhost 12000
+CARD = 0100:00246A
+TCP_PORT = 16001
+RADEGAST_SERVER = 01:0:192.168.0.99:678:0
+DEBUG = yes
+We use a zero DESkey as it is purely local, USER allowed is in fact the local newcamd client only, with internal as login and share as password, on port 16001, and connect to the radegast server on 192.168.0.99, port 678, that share a card type 0100 (seca) for the provider 00246A
+We now need to add a server to connect to newcamd , so edit newcamd.cfg from dreambox 192.168.0.25
+Simply add :
+CWS = 127.0.0.1 16001 internal share 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 lan rdgd_server
+Last thing to do is to start the radegast converter. Either manually by telnet and /var/bin/radegast.ppc &, or by adding this line into /var/etc/init.
+Do not forget the “&” and use a Unix editor like UltraEdit or your dreambox won’t boot anymore…
+In fact you just need to do the configuration on the other dreambox which is already a newcamd server, the 192.168.0.24.
+So to summarize.
+On the DM500 192.168.0.25, no card inserted, newcamd connects to the newcamd server of the 192.168.0.24 dreambox and to local radegast converter which connects to the radegast server of the 192.168.0.99
+On the DM7000 192.168.0.24, 1 card inserted, newcamd connects to the local newcamd server and to local radegast converter which connects to the radegast server of the 192.168.0.99
+On the DM7000 192.168.0.99, 1 card inserted, the radegast client connects to the local radegast server and that’s all.
+This seems quite nice, but some radegast sharing cannot be converted to newcamd, mainly because newcamd do not support every provider.
+So there is still one other solution, explained in the next part.
+
+B]7.5 : Newcamd and Evocamd
+
+On this tutorial we use EvoCamd 4.1 which is compatible with newcamd 5.25 CS protocol. If using older versions of newcamd, you need to use evocamd 4.0.
+The idea is to use evocamd as client, as it’s able to connect directly to a radegast and a newcamd server, while serving with cardserver.dream from newcamd package.
+You can use the cardserver.dream configuration from the 7.3 part as there is no difference on the server.
+You then need to configure evocamd as client on the 2 other dreambox. Evocamd client , whatever dreambox is concerned, will connect to the radegast server from the 192.168.0.99 dreambox, and from 192.168.0.24 for the newcamd sharing.
+Newcamd sharing are defined in /var/key/newcamd-client.txt
+[192.168.0.24] #Newcamd server
+port = 10000
+key = 12 34 56 78 90 12 34 56 78 90 12 34 56 78
+username = klona
+password = secret
+Radegast sharing are defined in the standard radegast config file, /var/etc/radegast.cfg (NOT the /var/tuxbox/config/radegast.cfg this time !!)
+net routes = 1
+net route 1 = 05::192.168.0.99:678:0:::
+05 is the CAID for Viacess. If you have some trouble with this config line, simply use the radegast config display of radegast as explained in the part 7.2, client configuration . It will create the line for you. You can edit the file after and check what is inside, modify or complete it but it gives a nice hand to start with.
+That’s it. Simply use these config files in the dreambox 192.168.0.24 & 25.
+
+Telnet to dreambox DM7000 192.168.0.24 :
+- kill old processes that can run
+Killall newcamd.ppc
+killall radegast.ppc
+killall cardserver.dream
+
+- Start the newcamd server
+/var/bin/cardserver.dream &
+
+- Start evocamd client
+/var/bin/evocamd.ppc &
+
+Telnet to dreambox DM500 192.168.0.25 :
+- kill old processes that can run
+Killall newcamd.ppc
+killall radegast.ppc
+killall cardserver.dream
+
+- Start evocamd client
+/var/bin/evocamd.ppc &
+
+Telnet to dreambox DM7000 192.168.0.99 :
+- kill old processes that can run
+Killall newcamd.ppc
+killall radegast.ppc
+killall cardserver.dream
+
+- Start radegast server
+/var/bin/netpilot 678 666 &
+
+- Start radegast client
+/var/bin/rdgd &
+
+
+Or easier, use the EMU interface of Hydra
+to restart Radegast client & server.
+
+================================================================================
+        Chcete-li prùvodce Všeobecné CS (sdílení karet) Na satelitu Dreambox
+================================================================================
+
+7 Cardsharing 
+7,1 Základy 
+Jak to funguje, doporuèuji vám zaèít s èástí instalace Hydra první, protoe to dává nìjaké základy o dvou hlavních EMU. 
+Zjednodušenì øeèeno, namísto posílání pøíkazù a dostat zpìt odpovìdi od oficiálního karty lokálnì v místní karet, jsou údaje zasílány prostøednictvím sítì s ostatními Dreambox, kterı má karty. 
+Take, máme server, s kartou na jedné Dreambox, kterı èeká na klienta (y) pro pøipojení. Pak máte jeden klient bìí na obou Dreambox, posílání pøíkazù a èeká na odpovìdi na server, kterı pøedá na kartu. 
+Jednoduše si pøedstavit, je to trochu sloitìjší, ale to je globální nápad. 
+Samozøejmì, pokud chcete zkusit, budete potøebovat 2 Dreambox na jedné síti, Ethernet køíenı kabel v pøímé souvislosti, nebo pøes rozboèovaè. 
+Zaènìme s Easy-to-setup sdílení, které lze snadno nastavit s 2 Dreambox. 
+Pro tento pøíklad jsem zvolil standardní dreambox7000, plus nádherné Dreambox500, které stojí asi tøetinu DM7000 + HD, ale nabízí stejné funkce na zobrazení kanálù a dekódování 
+
+7 0.2 Radegast na Hydra
+
+Mám zaèít s touto metodou, jak je to nejjednodušší nastavení, vše je dìláno s dálkovım ovládáním. 
+Jasnì e jste Hydra nainstalován bìí na obou Dreambox. 
+Vytvoøili jsme na IP 192.168.0.24 server s oficiální karty na DM7000 a 192.168.0.25 pro klienta ve vaší lonici, na DM500. 
+Telnet do jednoho Dreambox a ping ostatní, musí pracovat s malım zpodìním. 
+0,6 ms je standardní èekací doba na LAN. 
+Hydra Angharad & Zeus a Radegast 3 b14 se pouívají pro tento tutoriál.
+
+Pojïme konfigurovat server DM7000: 
+Modré tlaèítko, zvolte Radegast, poté stisknìte tlaèítko OK. 
+Nejprve musíte povolit èteèku, kde si dát oficiální karty. Pojïme umonit tak horní a spodní otvory. nechal porty na vıchozí hodnoty. 
+Také zaškrtnìte "vícenásobné pøipojení" jako dva klienti se budou pripojovat na to.
+
+Dejte ECM a EMM na "jak", aby vıchozí nastavení pro oddechového èasu. 
+V této fázi nemají zaškrtnìte "Server pravosti Enabled". To umoní login / heslo a šifrovací cennıch papírù, ale aby to jednoduché na zaèátku.
+
+Staèí stisknout zelené tlaèítko pro potvrzení této poslední stránce, pak k ovìøení obecné nastavení stránky, pak pro potvrzení, abyste pochopili, e je to Emu je tøeba zaèít znovu, pak znovu na zelené tlaèítko pro start (nebo re-start) Radegast. 
+Stisknìte tlaèítko Lame (nebo vıstupu v závislosti dálkové ovládání), a to je, jste pøipraveni na stranì serveru. 
+Nyní zmìna jinıch Dreambox, DM500,, nakonfigurovat klienta. Modré tlaèítko, vyberte Radegast a stisknìte tlaèítko OK pro vstup nastavení stránky. 
+Na tomto Dreambox, vloena ádná karta, tak jen a tìlesnì na tøech karet, a není dùvod, aby zaškrtnout "více Connection" zde.
+
+Stisknutím lutého tlaèítka pro pøístup na další stránku. 
+Dejte ECM a EMM na "jak", aby vıchozí nastavení pro oddechového èasu. 
+V této fázi nemají zaškrtnìte "Server pravosti Enabled", jak jsme se rozhodnete pouívat, e na serveru. Opìt, aby to jednoduché na zaèátku.
+Stisknìte zelené tlaèítko pro vstup na pøedchozí stránku. 
+Stisknìte modré tlaèítko pro pøístup na další stránku. 
+Tady jsme ti to øíct, aby Radegast klient, kde mùete najít na serveru, a pro kterı typ karty, atd.. 
+Take, zvolte typ karty, kterou máte v serveru, SECA tady, pak IP adresu serveru, 192.168.0.24 a port zde mají bıt pouity, 678 zde. 
+Nepouívejte "Auth" tlaèítko, je to pro jméno / heslo a klíè pro zašifrování, a nepouíváme ho zde. 
+Jako obvykle nyní, stisknìte zelené tlaèítko, dokud zaènete Radegast. 
+Mùete si vybrat šifrovanıch kanálù a mìli byste mít jasnou pøedstavu o vašem televizoru. e je, co jste udìlal svùj první CS. 
+Chcete-li dokonèit tuto kapitolu o Radegast, pokud si pøejete zabezpeèit svá data bit pøenos, všechny vaše osobní údaje na dešifrování poskytovateli, mìli byste lépe zaškrtnìte "Server pravosti Enabled" na obou stranách, server a klient. 
+Na stranì klienta máte jednoduchı zpùsob, jak nastavit kliknutím na tlaèítko "Auth" tlaèítko. 
+Take, dal jméno, heslo a 16 místnı klíè pro zašifrování. 
+Budete samozøejmì muset dát stejnı na stranì klienta.
+
+Na serveru musíte nejprve zaškrtnout "Server pravosti Enabled" pomocí menu Hydra. 
+Ale musíte také nakonfigurovat login / heslo pøístup k serveru, a to není zahrnuta v Hydra nabídky. 
+Take budete muset upravit konfiguraèní soubory. 
+FTP do / var / etc / a dostat Radegast **** ERS 
+Úpravy se s Unix kompatibilní editor jako UltraEdit, a jednoduše øeèeno loginasswordESKey 
+v našem pøípadì, prostì klona: tajemství: 0102030405060708 
+To je to, je nakonfigurován server. 
+Jedinou vıchozí je, e nezbytnì potøebují Radegast na obou stranách, a e Radegast je pomalejší, ne newcamd, pokud jde o èas zap. 
+Jeden malı trik je také zmìnit EMU pro MGcamd, které budou pouívat všechny Radegast config, ale je rychlejší na pøepínání a také stabilní. 
+Take pojïme se pøesunout na newcamd config, sloitìjší, ale rychlejší a kde mùete pouít i Radegast a newcamd server s newcamd klient.
+
+7,3 newcamd
+
+Newcamd je další øešení. Newcamd 5,25 se pouívá pro tento tutoriál. Buïte opatrní, protoe protokol CS zmìnila s touto verzí a vy nemùete sdílet mezi newcamd 5.25 a staršími verzemi. 
+První se podívat na tu èást zaøízení Hydra získat nìjaké základy na newcamd. 
+Take, musíme nastavit první cardserver.dream (/ var / tuxbox / config / cardserver.cfg je spojena konfiguraèním souboru) a klientem newcamd.ppc (/ var / tuxbox / config / newcamd.cfg je spojena konfiguraèním souboru) . 
+Název souboru zde pouívá, jsou pouity na obrázky Hydra a to mùe zmìnit z jednoho obrazu do druhého. Hlavnì jinıch ne Hydra obrazy, jako Rudream, staèí pouít newcamd a cardserver jako název souboru. Podívejte se do / var / bin najít správnı název souboru pro váš image. 
+První úkolem je nastavit serverové èásti. 
+Take nejprve upravit soubor cardserver.cfg z DM7000 
+Prvním krokem je umonit automatické aktualizace pro karty, a umoní èteèky karet do práce, take na konci souboru, kterı musí mít: 
+SERIAL_PORT = 0 
+TCP_PORT = 10001 
+EMM-G = yes 
+EMM-S = yes 
+EMM-U = yes 
+SPECIAL_FEATURES = yes 
+SERIAL_PORT = 1 
+TCP_PORT = 10000 
+EMM-G = yes 
+EMM-S = yes 
+EMM-U = yes 
+SPECIAL_FEATURES = yes 
+Pak musíte nastavit sí a nastavení zabezpeèení: 
+DESKEY = 12 34 56 78 90 12 34 56 78 90 12 34 56 78 
+SERVER_NAME = my_server 
+DEBUG_PORT = 14000 
+ENTITLEMENT_PORT = 14001 
+ADMIN_PORT = 14002 
+ADMIN_PASSWORD = tajné 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+Staèí dát klíèe DES chcete a unikátní server_name na síti. Buïte opatrní, nemùe bıt dvì server se stejnım názvem v síti. 
+Poslední bod je pøidat klientùm povolení k pøipojení a pøihlášení heslem, které potøebují. 
+Musíte vytvoøit linku pro kadého uivatele, jako je tento: USER = pøihlašovací heslo wan IP_client admin_port au. V našem pøípadì jsme server Dreambox, e se bude pøipojovat k sobì a druhım Dreambox s klona jako pøihlašovací jméno a heslo jako tajné, IP adresy je 192.168.0.25: 
+User = místní lokální LAN localhost 12000 cz 
+User = klona tajné wan 192.168.0.25 12000 cz 
+Ve skuteènosti, pokud se dostanete dohromady všechny tyto øádky, máte jednoduchı pracovní cardserver.cfg souboru: 
+DESKEY = 12 34 56 78 90 12 34 56 78 90 12 34 56 78 
+SERVER_NAME = my_server 
+DEBUG_PORT = 14000 
+ENTITLEMENT_PORT = 14001 
+ADMIN_PORT = 14002 
+ADMIN_PASSWORD = tajné 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+User = místní lokální LAN localhost 12000 cz 
+User = klona tajné wan 192.168.0.25 12000 cz 
+SERIAL_PORT = 0 
+TCP_PORT = 10001 
+EMM-G = yes 
+EMM-S = yes 
+EMM-U = yes 
+SPECIAL_FEATURES = yes 
+SERIAL_PORT = 1 
+TCP_PORT = 10000 
+EMM-G = yes 
+EMM-S = yes 
+EMM-U = yes 
+SPECIAL_FEATURES = yes
+
+Nyní pojïme nakonfigurovat klienta newcamd.ppc (s jeho související nastavení souboru newcamd.cfg), na Dreambox serveru, take stále DM7000. 
+Tam jsou docela øádek v tomto souboru, ale staèí ve skuteènosti pøidat údaje pro pøipojení k serveru. 
+Øádek, kterı definuje vše, co jsou postaveny tak, e: CWS = server_IP SERVER_PORT pøihlašovací heslo DESkey wan cardserver_name. V tomto pøípadì server pøipojit k sobì na portu 10000 a 10001 (dále jen "2 èteèky karet jsme oprávnìni) a pøihlašovací jméno / heslo je lokální / místní a cardserver jméno je my_server, tak: 
+CWS = localhost 10000 místní lokální 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan my_server 
+CWS = localhost 10001 místní lokální 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan my_server 
+localhost se vrací lokální vnitøní IP, která je 127.0.0.1, e také mohou bıt pouity pøímo v konfiguraèním souboru. V našem pøípadì mùeme také zmìnit IP 192.168.0.24, protoe to je další platnou IP adresu Dreambox. Je lepší pouívat stejnì 127.0.0.1. 
+Staèí si pøeèíst teï máte CWS_INCOMING_PORT = 12000 na konci souboru. 
+Já jsem ještì vysvìtlit, o tento port, kterı je v cardserver config a v newcamd config. Sdílení se provádí na portech 10000 a 10001, tak co je port 12000 pro V vıhodnıch podmínek, je to zpùsob, jak poslat data zpìt na server. 
+Je to uiteèné, kdy byl server dolù a dostanete znovu on-line, po restartu napøíklad; Prostøednictvím tohoto portu, server øíci klientùm, e je to zpìt do reimu online. Tímto zpùsobem, klient nemusí restartovat nebo restartovat EMU newcamd získat znovu pøístup k serveru. 
+Pojïme nyní pøesunout na klienta Dreambox, DM500, a nakonfigurovat newcamd. Úpravy ostatních newcamd.cfg (doporuèuji si vytvoøit oddìlené adresáøe na poèítaèi s jasnımi jmény jako server_192_168_0_24 a client_192_168_0_25 nebo budete pravdìpodobnì mix soubory a nic nebude fungovat!) 
+Tento èas, musíme se pøipojit na 192.168.0.25, porty 10000 a 10001, login / heslo je klona / tajemství, DESkey je stejnı, a také jméno serveru. 
+CWS = 192.168.0.24 10000 klona tajné 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan my_server 
+CWS = 192.168.0.24 10001 klona tajné 12 34 56 78 90 12 34 56 78 90 12 34 56 78 wan my_server 
+Ještì zkontrolovat CWS_INCOMING_PORT = 12000 na konci souboru. 
+To znamená, e klienti i server jsou nakonfigurovány. To by mìlo fungovat, jakmile si dát oficiální kartu uvnitø serveru Dreambox. 
+Mimochodem, je stále znovu zlepšení, co mùeme udìlat. Co asi tøetina Dreambox, ale tentokrát s Radegast server.
+
+7,4: Radegast server a newcamd klient
+
+Naše tøetí Dreambox má IP adresu 192.168.0.99 a DM7000 
+Take, jen nastavit normálnì si Radegast server na této nové dreambox7000, jak je vysvìtleno v pøedchozí èásti. 
+Staèí zrušit volbu "Server pravosti Enabled", jak Radegast je jen schopen zvládnout jednoho klienta v kryptované reimu DES.
+
+Pojïme nyní na dvou klientù konfiguraci, první DM7000 a DM500. Newcamd a Radegast nejsou pøímo kompatibilní ve sdílení. Budeme pouívat Radegast kód pro konverzi dat do formátu newcamd. Pro tento úèel, zkopírovat z pùvodního obalu newcamd soubor radegast.ppc od Radegast sloky do / var / bin a zmìnit atributy 755. Pokud nevíte, co znamená "chmod 755" zkontrolovat zde. 
+Poté zkopírujte ze stejné sloky newcamd balíèku soubor radegast.cfg do / var / tuxbox / config a ne do / var / etc, kterı je standardní adresáø pro konfiguraèní soubory EMU Radegast. V tomto pøípadì to není Radegast EMU, ale Radegast konvertor pro newcamd, které pouíváme. Matoucí není 
+Pojïme konfiguraci Radegast konvertor pro prvního klienta, Dreambox DM500 192.168.0.25, e nemá platební kartu, ji klient cardserver.dream na 192.168.0.24 Dreambox. FTP / var / tuxbox / config / radegast.cfg a upravte soubor. 
+Zde je to, co potøebujete v tomto souboru: 
+SERVER_NAME = rdgd_server 
+DESKEY = 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+DEBUG_PORT = 15000 
+RADEGAST_SERVER_CONNECT_TIMEOUT = 40 
+CLIENT_CONNECT_TIMEOUT = 30 
+User = vnitøní podíl localhost 12000 
+KARTY = 0100:00246 
+TCP_PORT = 16001 
+RADEGAST_SERVER = 01:0:192.168.0.99:678:0 
+DEBUG = yes 
+Pouíváme nulu DESkey jak to je èistì lokální, USER povoleno je ve skuteènosti místní newcamd klient pouze s vnitøními jako pøihlašovací jméno a heslo podílu, na portu 16001, a pøipojit k serveru na 192.168.0.99 Radegast, port 678, kterı sdílet kartu typu 0100 (SECA) pro poskytovatele 00246A 
+Nyní je tøeba pøidat server pro pøipojení k newcamd, tak upravit newcamd.cfg od 192.168.0.25 Dreambox 
+Staèí pøidat: 
+CWS = 127.0.0.1 16001 vnitøního podílu 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 lan rdgd_server 
+Poslední vìc, kterou musíte udìlat, je zaèít Radegast pøevodník. Buï manuálnì telnet a / var / bin / radegast.ppc &, nebo pøidáním tohoto øádku do / var / etc / init. 
+Nezapomeòte "&" a pouít editor Unix jako UltraEdit nebo Dreambox nespustí u ... 
+Ve skuteènosti staèí provést konfiguraci na stranì druhé Dreambox, kterı je ji newcamd server, 192.168.0.24. 
+Take ve zkratce shrnout. 
+Na DM500 192.168.0.25, není vloena ádná karta, newcamd pøipojí k newcamd server 192.168.0.24 Dreambox a místní Radegast pøevodník, kterı se pøipojí na Radegast server 192.168.0.99 
+Na DM7000 192.168.0.24, 1 vloená karta, newcamd pøipojí k lokální newcamd server a místní Radegast pøevodník, kterı se pøipojí na Radegast server 192.168.0.99 
+Na DM7000 192.168.0.99, 1 vloena karta, Radegast klient pøipojí k serveru a místní Radegast to je vše. 
+To se zdá bıt docela pìkné, ale nìkteré Radegast sdílení nelze pøevést na newcamd, hlavnì proto, newcamd nepodporují všechny poskytovatele.
+Take tam je ještì jeden další øešení, je vysvìtleno v další èásti.
+
+B] 7,5: newcamd a Evocamd
+
+Na tomto tutoriálu pouíváme EvoCamd 4,1, kterı je kompatibilní s protokolem newcamd 5,25 CS. Pokud pouíváte starší verze newcamd, musíte pouít evocamd 4.0. 
+Hlavní myšlenkou je vyuití evocamd jako klient, jak je to moné pøipojit pøímo k Radegast a newcamd server, zatímco slouí s cardserver.dream z newcamd balíèku. 
+Mùete pouít cardserver.dream konfigurace z 7,3 èásti, není tam ádnı rozdíl na serveru. 
+Potom je tøeba nakonfigurovat evocamd jako klient na další 2 Dreambox. Evocamd klienta, bez ohledu na Dreambox tıká, se pøipojí k serveru, Radegast z 192.168.0.99 Dreambox, a od 192.168.0.24 pro newcamd sdílení. 
+Newcamd sdílení jsou definovány v / var / klíè / newcamd-client.txt 
+[192.168.0.24] # newcamd server 
+port = 10000 
+klíè = 12 34 56 78 90 12 34 56 78 90 12 34 56 78 
+username = klona 
+password = tajemství 
+Radegast sdílení jsou definovány v normì Radegast konfiguraèní soubor / var / etc / radegast.cfg (NOT / var / tuxbox / config / radegast.cfg této dobì!) 
+èisté cesty = 1 
+èistá cesta 1 = 05:: 192.168.0.99:678:0::: 
+05 je CAID pro Viacess. Pokud máte nìjaké potíe s tímto config øádek, staèí pouít Radegast config zobrazení Radegast, jak je vysvìtleno v èásti 7.2, konfigurace klienta. Se vytvoøí øádek pro vás. Mùete upravit soubor po a zkontrolovat, co je uvnitø, pozmìnit nebo doplnit, ale to dává pìknı ruku zaèít. 
+To je všechno. Staèí pouít tyto konfiguraèní soubory v 192.168.0.24 Dreambox a 25.
+
+Dreambox DM7000 telnet na 192.168.0.24: 
+- Zabíjet staré procesy, které lze spustit 
+Killall newcamd.ppc 
+killall radegast.ppc 
+killall cardserver.dream
+
+
+ 
+- Zaènìte newcamd server 
+/ Var / bin / cardserver.dream &
+
+- Start evocamd klienta 
+/ Var / bin / evocamd.ppc &
+
+Dreambox DM500 telnet na 192.168.0.25: 
+- Zabíjet staré procesy, které lze spustit 
+Killall newcamd.ppc 
+killall radegast.ppc 
+killall cardserver.dream
+
+- Start evocamd klienta 
+/ Var / bin / evocamd.ppc &
+
+Dreambox DM7000 telnet na 192.168.0.99: 
+- Zabíjet staré procesy, které lze spustit 
+Killall newcamd.ppc 
+killall radegast.ppc 
+killall cardserver.dream
+
+- Start Radegast server 
+/ Var / bin / netpilot 678 666 &
+
+
+ 
+- Start Radegast klienta 
+/ Var / bin / rdgd &
+
+Nebo lépe, pouití rozhraní EMU Hydra 
+restartovat Radegast klient a server.

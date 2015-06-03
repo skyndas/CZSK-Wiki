@@ -34,12 +34,19 @@
 			color: #C4C4C4;
 			margin-right: 10px;
 		}
+		.intro-text.type4 h2 {
+		    margin-bottom: 0;
+		}
 
 	/*----*****---- << Header >> ----*****----*/
 		#header-wrapper {
 		    float: left;
 		    width: 100%;
 		    z-index: 10010;
+		}
+
+		.megamenu-child-container {
+			padding: 10px 10px 10px;
 		}
 
 	/*----*****---- << Table >> ----*****----*/
@@ -365,6 +372,10 @@
 		}
 		.generator input[type="submit"] {
 			padding: 9px 16px 10px;
+		}
+	/*----*****---- << prettyPhoto >> ----*****----*/
+		.pp_gallery {
+		    margin-top: 10px;
 		}
 	/*----*****---- << Other settings >> ----*****----*/
 		.clearfloat {

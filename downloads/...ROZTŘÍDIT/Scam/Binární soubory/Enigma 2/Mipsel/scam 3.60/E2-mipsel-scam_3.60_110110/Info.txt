@@ -1,0 +1,13 @@
+Beschreibung:
+Addon nach /tmp/ kopieren und über BluePanel manuell installieren
+
+Dies ist eine Completversion.
+Dies enthält nun als folgendes:
+
+- scam (bin)
+- delscript-complete
+
+Die Config der Emus würden ausgesondert,
+somit kann / muss man diese bei einer Neuinstallation entweder einmalig installieren oder manuell erstellen.
+
+Dies hat dann dem Vorteil das man nun Sofcam gefahrlos updaten kann, ohne das eine individuell vorhandene Einstellung überschrieben werden.ps  only 

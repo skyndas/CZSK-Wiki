@@ -1,0 +1,53 @@
+####################################################################
+# [CAS] Irdeto Boxkey/Camkey
+# UA - card unique address (3 byte)
+# BX - boxkey (4 byte)
+# CX - camkey (8 byte)
+# DX - camkey message (64 byte)
+#
+# C: { UA UA UA { C0 C1 C2 C3 C4 C5 C6 C7 }} |--- 64 byte camkey message ---|
+# C: { 00 00 00 { 00 00 00 00 00 00 00 00 }} 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+# B: { UA UA UA { B0 B1 B2 B3 }}
+# B: { 00 00 00 { 00 00 00 00 }}
+#
+####################################################################
+# [EMU] Irdeto1/2 ECM keyset
+# ID - system id (eg. 1101,4101,...)
+# PR - provider
+# KS - key set (eg. 91,02)
+#	91 - Syskey
+#	02 - Opkey
+# KN - key number (eg. 01,02,03,...)
+#	if KS=91 then
+#		02 - IV   /M2/
+#		03 - Seed /M1/
+# 
+# I2 ECM Key (16 byte)
+# I: { ID ID PR KS KN { 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F }}
+#
+I: { 06 03 00 91 02 { 87 A3 DB FC 22 B1 99 E7 62 C6 49 E0 8F 2A 5E 65 }} # JSC Sport ECM IV
+I: { 06 03 00 91 03 { 90 3C 33 79 A8 69 8C E1 D8 29 CE 82 01 0C 2F 31 }} # JSC Sport ECM Seed
+
+I: { 06 04 00 91 02 { AE 65 2B 21 0B F8 9F C6 95 07 60 98 42 FD 30 3E }} # Bulsat ECM IV
+I: { 06 04 00 91 03 { 98 B4 DC AD 44 E8 C9 50 4C 3F 4E 51 69 2A 70 47 }} # Bulsat ECM Seed
+#I: { 06 04 00 02 02 { FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF }}
+I: { 06 04 00 02 04 { E3 1A 2D E0 01 21 38 62 36 D3 64 1F D1 52 D4 B4 }}
+I: { 06 04 00 02 06 { 00 5B 53 0E 49 DB 50 57 CA DA D8 BC BB E7 9D B1 }}
+
+I: { 06 04 10 91 02 { AF B0 49 FC 40 8D 4D 2C 91 B8 58 8E 3B 69 1C 47 }} # Nova Cyprus ECM IV
+I: { 06 04 10 91 03 { 8E 28 5D 3E DB 3E 2B CB 98 16 4E 21 BA 25 BC 10 }} # Nova Cyprus ECM Seed
+
+I: { 06 08 00 91 02 { F5 0B 86 C4 FA BA EA D6 57 8B 82 1D CA 2A 22 2E }} # ZeeTV ECM IV
+I: { 06 08 00 91 03 { EE BA 6D E0 DE 7C BE 7A C5 2A D4 92 52 23 F4 22 }} # ZeeTV ECM Seed
+I: { 06 08 00 02 02 { 7F 97 76 78 13 29 72 7C DB FA C7 DB 87 F5 48 2F }}
+#I: { 06 08 00 02 04 { E1 8D 07 CE 14 76 F0 B8 24 C2 7D 97 B7 68 CD 84 }}
+#I: { 06 08 00 02 06 { 6F 1D 0A 2F BB EC 73 59 CA 06 AD 07 26 12 85 C0 }}
+
+I: { 06 22 00 91 02 { 68 86 F8 A0 59 80 8A 9A 4D F7 00 00 00 00 00 00 }} # Canal Digitaal NL ECM IV
+I: { 06 22 00 91 03 { 94 B2 49 D7 D8 73 C0 4C 43 29 49 37 9C B4 96 4C }} # Canal Digitaal NL ECM Seed
+I: { 06 22 00 02 02 { 15 4A 1A 86 5D F4 8D ED 71 15 CD FF 51 97 77 85 }}
+I: { 06 22 00 02 04 { 66 55 25 DE 6C 86 5B 96 0C 04 E3 90 4F 91 EC B1 }}
+I: { 06 22 00 02 06 { 47 FD 26 7C 17 0E A3 D8 DB E3 A4 88 43 C5 C8 F4 }}
+
+#I: { 06 64 00 91 02 { C1 AD 67 6F A2 3C AB 3F 66 AB 88 CD 4C 11 6C 6A }} # Digiturk ECM IV
+#I: { 06 64 00 91 03 { 53 9C 3A AB AC AF 68 9A B2 FC ED 45 9A B5 FF EA }} # Digiturk ECM Seed

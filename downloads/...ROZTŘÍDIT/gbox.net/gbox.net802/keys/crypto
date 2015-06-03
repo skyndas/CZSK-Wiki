@@ -1,0 +1,42 @@
+####################################################################
+# [CAS] Cryptoworks Pin (disable pin after init)
+# UA - card unique address (5 byte)
+# CX - pin (4 byte) ascii based (eg. 30 31 32 33 for pin 1234)
+#
+# P: { UA UA UA UA UA { C0 C1 C2 C3 }}
+#
+####################################################################
+# [EMU] Cryptoworks ECM keyset
+#    OP-Keys                              TYPE: CE20 ECM Key
+#                                         TYPE: CE20 EMM-C Key
+#                                         TYPE: CE21 EMM-S Key
+#                                         TYPE: CE30 EMM-G Key
+#    CAID  TYPE  ID NR   Key, 16 bytes
+# Kingston
+K: { 0D 00 CE 20 20 00 { A4 04 03 14 3E CB 62 20 DA 18 0E 54 85 14 51 EF }}
+K: { 0D 00 CE 20 20 01 { 5C E8 14 B0 0F F5 D5 D9 E0 41 19 39 23 53 D6 6B }}
+K: { 0D 00 CE 20 30 00 { BD D3 A8 E9 37 64 FF DB 1D 38 66 CF 97 4A 40 77 }}
+K: { 0D 00 CE 20 30 01 { 4D 05 18 0E AE 0B 9D 10 23 52 1A 61 37 79 69 55 }}
+# JSTV
+K: { 0D 01 CE 20 E4 00 { 00 00 00 00 00 00 00 00 FF FF FF FF FF FF FF FF }}
+K: { 0D 01 CE 20 E4 01 { 00 00 00 00 00 00 00 00 FF FF FF FF FF FF FF FF }}
+# ORF
+K: { 0D 05 CE 20 04 00 { A9 D7 32 F5 E7 38 E4 8A 91 C8 63 8B 12 74 66 61 }}
+K: { 0D 05 CE 20 04 01 { 00 00 00 00 00 00 00 00 F0 47 84 EF AB CA 98 E8 }}
+K: { 0D 05 CE 20 10 00 { 00 00 00 00 00 00 00 00 C2 E0 17 77 E6 9B 85 0D }}
+K: { 0D 05 CE 20 10 01 { C2 29 A4 03 61 00 E8 1A 42 BA C3 C7 0E BB C8 52 }}
+# -------------------------------------------------------------------------
+#    RSA modulus
+#
+#    CAID  ID   RSA modulus, 64 bytes
+#
+R: { 0D 05 10 { 59 72 0F 3F 1B 74 A4 DB F7 26 44 6C CB EE AB 49 A9 6E F2 D2 08 40 A2 1F 1C 0B D7 29 13 E6 3C 97 EA 3B E2 F0 4D 3D 27 DA 1F BF C5 BD AD 5D 98 49 50 1F 83 D3 C2 0C F9 84 C0 1F 72 E0 38 A4 00 80 }}
+
+# -------------------------------------------------------------------------
+#    System Keys
+#
+#    CAID    Providers     System key
+#
+S: { 0D 00 { 20 30 00 00 { 23 90 91 78 1C 7E }}}
+S: { 0D 01 { E4 E8 EC F0 { C2 3F FA 92 19 AB }}}
+S: { 0D 05 { 04 08 0C 10 { 09 87 CF 2A 61 1D }}}

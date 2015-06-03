@@ -1,0 +1,8 @@
+
+<name>Scam 3.57 - Complete</name>
+<description>Scam 3.57. No Configs and Keys included!</description>
+<creator>unknown</creator>
+not_for=500plus,600,7020
+maxV=0410
+
+### edit by root: Fr 28. Jan 21:49:55 CET 2011

@@ -1,0 +1,9 @@
+Addon nach /tmp/ kopieren und über Blue Panel manuell installieren
+
+2.0.9
+-improved system selection
+-fixed irdeto chid selection
+-dm800 detection
+-fixed minor memleak
+
+--read CCcam.cfg for details--

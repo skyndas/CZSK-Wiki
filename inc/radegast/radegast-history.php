@@ -39,7 +39,7 @@
 						<div class="dt-sc-tabs-vertical-frame-content">
 							<h5>-- v 4.2 --</h5>
 							<div class="dt-sc-lmarg clearfloat">
-								<h5><u>rel10 (2009-01-06)</u></h5>
+								<h5><u>rel10 (06.01.2009)</u></h5>
 								<p>See BUGS.txt for known bugs which will be fixed in new v5 line only </p>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[newcamd proto]</strong>
@@ -52,7 +52,7 @@
 									<li><strong>[webmin plugin]</strong> cosmetic fixes</li>
 								</ul>
 
-								<h5><u>rel9 (2008-12-21)</u></h5>
+								<h5><u>rel9 (21.12.2008)</u></h5>
 								<p>See BUGS.txt for known bugs which will be fixed in new v5 line only (even it is true it can take ages)</p>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[module]</strong> API version 4.16 (added sharing decision cache)</li>
@@ -94,7 +94,7 @@
 									<li><strong>[rdgd proto]</strong> fixed internal v4->v3 remap (for those using old rdgd servers)</li>
 								</ul>
 
-								<h5><u>rel8 (2008-06-02)</u></h5>
+								<h5><u>rel8 (02.06.2008)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[nds]</strong>
 										 <ul class="dt-sc-fancy-list caret-right">
@@ -152,7 +152,7 @@
 									<li><strong>[sci reader]</strong> enabled in sh4 build because of Sandali's sci api compatibility layer on ipbox </li>
 								</ul>
 
-								<h5><u>rel7 (2007-06-29)</u></h5>
+								<h5><u>rel7 (29.06.2007)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[nagra]</strong> fixed provider 1101 (KabelDe) </li>
 									<li><strong>[sharing]</strong> fixed serious bug in newcamd routing decision</li>
@@ -160,7 +160,7 @@
 									<li><strong>[plugin]</strong> changed API version to 4.14 (added userdb api calls)</li>
 								</ul>
 
-								<h5><u>rel6 (2007-06-20)</u></h5>
+								<h5><u>rel6 (20.06.2007)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[via]</strong> removed internal nonworking TPSCrypt support</li>
 									<li><strong>[mod-emu-nagraus]</strong> added autoroll support for ROM102 (B1 update) </li>
@@ -181,7 +181,7 @@
 									<li><strong>[nagra]</strong> added MECM60 support for Premiere </li>
 								</ul>
 
-								<h5><u>rel5 (2007-04-03)</u></h5>
+								<h5><u>rel5 (03.04.2007)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[distro]</strong> 
 										<ul class="dt-sc-fancy-list caret-right">
@@ -245,7 +245,7 @@
 									<li><strong>[nagra]</strong> fixed MAP57 on ppc </li>
 								</ul>
 
-								<h5><u>beta4 (2006-12-08)</u></h5>
+								<h5><u>beta4 (08.12.2006)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[module]</strong> added support for plugin module versioning, so from now is better practice to use mod-name.so.x.y (x.y = major.minor module API version, for ex. mod-con-webmin.so.4.11) </li>
 									<li><strong>[rdgd proto]</strong> fixed detection of nagra CAID/provid pair on client side (for routing decision) </li>
@@ -257,14 +257,14 @@
 									</li>
 								</ul>
 
-								<h5><u>beta3 (2006-12-07)</u></h5>
+								<h5><u>beta3 (07.12.2006)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[module]</strong> fixed crashing if emu module doesn't have emm_update() API call</li>
 									<li><strong>[newcamd proto]</strong> fixed passing SA data</li>
 									<li><strong>[nagra]</strong> fixed MAP3b on ppc </li>
 								</ul>
 
-								<h5><u>beta2 (2006-12-05)</u></h5>
+								<h5><u>beta2 (05.12.2006)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[tpscrypt]</strong>fixed BF, added multiple file support</li>
 									<li><strong>[card config]</strong> card boxkey subsystem rewritten - no more static boxkey on every reader config. From now rdgd link good BK with card on every reader slot, so config not need to be changed if you are swapping cards with two slots. See config options "boxkeys" & "card boxkey ii = caid:ua:bk:optional-rsa"</li>
@@ -330,7 +330,7 @@
 									</li>
 								</ul>
 
-								<h5><u>beta1 (2006-08-24)</u></h5>
+								<h5><u>beta1 (24.08.2006)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[seca card]</strong> moved PPV magic command to configurable option ("card xx special = seca-ppv-magic") </li>
 									<li><strong>[viaccess]</strong> fixed BF for TPSv2 </li>
@@ -346,10 +346,117 @@
 							<h5>-- v 4.1.0 --</h5>
 							<p>Informace jsou těžko dostupné, jednotlivé beta verze jsou vyčtené s fór</p>
 							<div class="dt-sc-lmarg clearfloat">
-								<h5><u>beta43 (unknow)</u></h5>
-								<h5><u>beta47 (unknow)</u></h5>
-								<h5><u>beta11 (unknow)</u></h5>
+								<h5><u>beta14 (07.08.2006)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[nagra]</strong> camd: fixed ECM timeout bug</li>
+								</ul>
+
+								<h5><u>beta13 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[cryptoworks]</strong> added camcrypt support (for 0d0320 & 0d2204 only for now)</li>
+									<li><strong>[core]</strong> added pluggable subsystem</li>
+									<li><strong>[webmin]</strong> removed from main app and moved to plugin mod-con-webmin.so</li>
+									<li><strong>[netconsole]</strong> removed</li>
+									<li><strong>[distro]</strong> simplyfied configs as much as possible to not confuse users</li>
+								</ul>
+
+								<h5><u>beta12 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[netclient]</strong> fixed timeout detection on read() from server</li>
+									<li><strong>[core]</strong> added timer subsystem</li>
+									<li><strong>[via card]</strong> better error check on init</li>
+									<li><strong>[sharing]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>changed fixed network timeout to configurable one</li>
+											<li>added check for expired client connections</li>
+											<li>added sending KEEPALIVE command</li>
+										</ul>
+									</li>
+									<li><strong>[netclient]</strong> added newcamd client mode ("net share iii = ip:port:2:username:passw:deskey")</li>
+									<li><strong>[newcamd proto]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>fixed possible transional bug in session init part</li>
+											<li>fixed reading user data for client mode</li>
+											<li>added sending signature during newcamd sess init to differentiate rdgd client</li>
+										</ul>
+									</li>
+									<li><strong>[nagra card]</strong> fixed nagra card init on dreambox (accidentally disabled)</li>
+									<li><strong>[webmin]</strong> added http-like managemment interface ("webmin port = 9999")</li>
+									<li><strong>[sharing]</strong> added possibility to disable network connection checkings in config ("share checking = no") to restore old behaviour</li>
+								</ul>
+
+								<h5><u>beta11 (25.07.2006)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[config]</strong> added new option "card name prefix = blabla-" to differentiate card info files in case of multi daemon mode</li>
+									<li><strong>[rdgd proto]</strong> some preliminary work on auth mode v5</li>
+									<li><strong>[nagra card]</strong> added note to card.info file about successfull session init dialog</li>
+									<li><strong>[rdgd proto]</strong> fixed freezing rdgd if remote server's conection is freezed</li>
+									<li><strong>[via card]</strong> fixed reading provider name length from card</li>
+									<li><strong>[camd]</strong> fixed parsing conax pids in case on multiple occurence inside PMT</li>
+								</ul>
+
 								<h5><u>beta10 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[newcamd proto]</strong> added sending cryptoworks' card serial if emm enabled (note: dangerous & unneeded!)</li>
+									<li><strong>[nagra card]</strong> added detection if session was not established and then not send ECMs to the card</li>
+									<li><strong>[conax card init]</strong> added workaround if card won't return UA/SA (probably only black cards?)</li>
+								</ul>
+
+								<h5><u>beta9 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[nagra]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>fixed autoroll for DISH & BEV</li>
+											<li>added MECM postprocessing (tested on DISH/BEV)</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta8 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[nagra card & newcamd proto]</strong> fixes for BEV card sharing (CAID 1234 passing for newcamd proto)</li>
+									<li><strong>[nagra & newcamd protoco]</strong> fixed provid parsing</li>
+									<li><strong>[nagra]</strong> enabled DigiTV MOD for emu</li>
+								</ul>
+
+								<h5><u>beta7 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[viaccess]</strong> added BF for TPSv2 AES key finding (with caching)</li>
+								</ul>
+
+								<h5><u>beta6 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd proto]</strong> many fixes in card data init dialog (ie. passing more provids, tunelling, etc)</li>
+								</ul>
+
+								<h5><u>beta5 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[nagra]</strong> added PW MOD for emu (prov 0501)</li>
+									<li><strong>[conax card]</strong> fixed tunelling mode when passing CAID over newcamd proto</li>
+								</ul>
+
+								<h5><u>beta4 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[nagra card]</strong> enabled EMM-only mode for card if boxkey is not set/correct</li>
+								</ul>
+
+								<h5><u>beta3 (unknow)</u></h5>
+								<p>Info neznámé - možná privátní verze</p>
+
+								<h5><u>beta2 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[newcamd proto]</strong> fixed provid/keyno parsing for cryptoworks ECM</li>
+								</ul>
+
+								<h5><u>beta1 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[crw]</strong> 0D035C Turner added</li>
+									<li><strong>[nagra]</strong> fixed DigiTV</li>
+									<li><strong>[conax card]</strong> added support for tuneling over conax</li>
+									<li><strong>[card manager]</strong> changed to close->reopen on BAD ATR error</li>
+									<li><strong>[dragon cardreader]</strong> added special option to lower clock ("card xx special = clock0")</li>
+								</ul>
+
 							</div>
 						</div>
 
@@ -357,9 +464,17 @@
 							<h5>-- v 4.0 --</h5>
 							<p>Informace jsou těžko dostupné, jednotlivé beta verze jsou vyčtené s fór</p>
 							<div class="dt-sc-lmarg clearfloat">
+								<h5><u>beta49 (unknow)</u></h5>
+								<p>Od verze 4.0 beta49 existuje plná podpora jak pro Triple Dragon tak i Dreambox</p>
+								<br>
+								<h5><u>beta47 (unknow)</u></h5>
+								<h5><u>beta46 (unknow)</u></h5>
 								<h5><u>beta40 (unknow)</u></h5>
-								<h5><u>beta29 (unknow)</u></h5>
+								<h5><u>beta29 (27.08.2005)</u></h5>
+								<h5><u>beta27 (8/2005 - přibližné datum)</u></h5>
+								<h5><u>beta23 (unknow)</u></h5>
 								<h5><u>beta18 (unknow)</u></h5>
+								<h5><u>beta10 (unknow)</u></h5>
 							</div>
 						</div>
 
@@ -389,6 +504,178 @@
 							</ul>
 							<p>-------- BETA report testings are welcome -------</p>
 							<div class="dt-sc-lmarg clearfloat">
+								<h5><u>final (13.12.2004)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>"external app = " - added support for managemment of external app (hint: for ex. netpilot ;) )</li>
+											<li>"reader x type = dragon" - added support for Triple-Dragon's card readers</li>
+											<br>
+											<li>Via1 fix for uncorrectly specified internal buffer</li>
+											<li>TPSCrypt v2 added</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta14 (24.10.2004)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[camd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>fix for some simulcrypt lazy cleaning (again)</li>
+											<li>"ecm one shot = n" - added config option</li>
+										</ul>
+									</li>
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>S2 provider 65 - added 9x table</li>
+											<li>Fix for conax new card's "no access" detection</li>
+											<li>netclient code rewritten</li>
+											<br>
+											<li>"internal delay = on|off" - possibility to use system's delay routine (and therefore lower down system load)</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta13 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd]</strong> S2 fixed handling mixed tables in algo.</li>
+								</ul>
+
+								<h5><u>beta12 (31.08.2004)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[camd]</strong> 'simulshare' kludge gets configurable (enabled by default)</li>
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>S2: Fixed key managemment (was prob with keys starting on 00..)</li>
+											<li>Fixed reseting readers on DB</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta11 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[camd]</strong> PW EMM support</li>
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>PW EMM support</li>
+											<li>S2 provider 65 added (only Bx)</li>
+											<li>NAGRA_BEV card support fix</li>
+											<li>Fix for lazy picture cleaning when simulcrypt & sharing is used</li>
+											<p>!WARNING! !WARNING! !WARNING!<br>
+												* "reader 1 type = sc" -> "reader 1 type = dream"<br>
+												* Temporarily removed nagra autorolling - needs rewrite</p>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta10 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[camd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>duplicate ECM reading fix</li>
+											<li>enhanced CAT passing</li>
+											<li>"fta waiting = 1" - added config option</li>
+											<li>"descr mode = off" - added support for EMM-only mode</li>
+										</ul>
+									</li>
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>S2 support for 51 02 algo mod (prov 70)</li>
+											<li>S2 support for 51 01 (prov 64)</li>
+											<li>EMM-U support for S2</li>
+											<li>optimized phoenix reader i/o</li>
+											<li>fixed server sharing</li>
+											<li>fixed /var/tmp/rdgd.pid creating</li>
+											<li>ird card info in /var/tmp/cardxx.info added</li>
+										</ul>
+									</li>
+									<li><strong>[netpilot]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>"hosts allow = ip1, ip2 ..." - added config option</li>
+											<li>"hosts deny = ip1, ip2 ..." - added config option</li>
+											<li>"shared port = 678" - starts working again</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta9 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd]</strong> S2 fix for 64 provider (only Bx channels!)</li>
+									<li><strong>[camd]</strong> Dual ECM pids support added</li>
+								</ul>
+
+								<h5><u>beta8 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd, camd]</strong> Fixed crashing when netclient mode is invoked</li>
+								</ul>
+
+								<h5><u>beta7 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>CHANGED CONFIG: Added "auth" stuff to the end of "net route" (see radegast.cfg for example)</li>
+											<li>Added retry for card ECM for the rest of card</li>
+											<li>Cryptow EMM finished</li>
+											<li>Fixed Ird phoenix support</li>
+											<li>Fixed locking of conax card ECM when NAK was reached</li>
+											<li>Fixed S2 for d2/51</li>
+											<br>
+											<li>Added support for tiny-rdgd compilation</li>
+											<li>Added support for FreeBSD</li>
+										</ul>
+									</li>
+									<li><strong>[netpilot]</strong> Fixed fd leaking</li>
+								</ul>
+
+								<h5><u>beta6 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>Ird EMM fix (should work with all card again)</li>
+											<li>Removed need of SHA1_xxx external symbols (from libcrypto)</li>
+											<li>Inverse mode card support (Via, Nagra) for phoenix fixed</li>
+											<li>Fixed locking rdgd if no sec2 rsa keys were found (v3beta6fix)</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta5 (unknow)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>Seca 0f/51 nano implementation added</li>
+											<li>Ird card i/o retrying added (experimental)</li>
+										</ul>
+									</li>
+								</ul>
+
+								<h5><u>beta4 (04.06.2004)</u></h5>
+								<ul class="dt-sc-fancy-list arrow" >
+									<li><strong>[netpilot]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>"stat time = mins" transaction statistics (0 = disable) </li>
+											<li>fixed network timeout</li>
+										</ul>
+									</li>
+									<li><strong>[camd]</strong> Beta EMM workaround</li>
+									<li><strong>[rdgd]</strong>
+										<ul class="dt-sc-fancy-list caret-right">
+											<li>(reader layer was rewritten again, it needs a deep testing)</li>
+											<li>"reader xx special = tunnel" - support for Conax card tunneled by Viaccess</li>
+											<li>"reader xx type = sc8in1" - added preliminary support for nice sc8in1 multiphoenix</li>
+											<li>"reader xx type = pcsc" - added preliminary support for PC/SC middleware (NOTE: need a special compiled version linked with pcsclite library!) (NOTE2: supports only T0 cards yet)</li>
+											<li>"reader xx speed = " - added support for non-standard readers or card oveclocking</li>
+											<li>"ecm preffer = card | emu" - possibility to change ECM processing order</li>
+											<br>
+											<li>revived showing decoding source in ecm.info</li>
+											<li>S2 provider 68 was added</li>
+											<li>Cryptow EMM _partial_ (UA, GA) support added</li>
+											<li>Connection tracking added to card & net</li>
+											<li>BEV/DISH MECM support fixed</li>
+										</ul>
+									</li>
+								</ul>
+
 								<h5><u>beta3 (unknow)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li><strong>[camd]</strong>
@@ -441,13 +728,13 @@
 							<h5>-- v 2.2 --</h5>
 							<p>Informace jsou těžko dostupné, jednotlivé beta verze jsou vyčtené s fór</p>
 							<div class="dt-sc-lmarg clearfloat">
-								<h5><u>2.2 final-p1 (unknow)</u></h5>
+								<h5><u>2.2 final-p1 (22.12.2003)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li>Conax emu fix</li>
 									<li>netpilot fixes/enh (shared.info support)</li>
 								</ul>
 
-								<h5><u>2.2 final (unknow)</u></h5>
+								<h5><u>2.2 final (12.12.2003)</u></h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li>Via card EMM support fix</li>
 									<li>fixed problems when connection to remote server hangs rdgd</li>
@@ -489,6 +776,14 @@
 								</ul>
 
 								<h5><u>2.2 alpha 1 (unknow)</u></h5>
+							</div>
+						</div>
+
+						<div class="dt-sc-tabs-vertical-frame-content">
+							<h5>-- v 2.1 --</h5>
+							<p>Informace jsou těžko dostupné, jednotlivé beta verze jsou vyčtené s fór</p>
+							<div class="dt-sc-lmarg clearfloat">
+								<h5><u>final (unknow)</u></h5>
 							</div>
 						</div>
 

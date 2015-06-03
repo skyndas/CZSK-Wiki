@@ -1,0 +1,6 @@
+
+<name>MgCamd 1.35a - Complete</name>
+<description>Incl. NewCS 1.67 and RonaldCS Startscript. patched for ecm.info. No Configs, Keys, NewCS(bin) and RonnaldCS(bin) included!</description>
+<creator>Unknown, patched by 20kl25</creator>
+
+### edit by root: Fr 28. Jan 23:46:47 CET 2011

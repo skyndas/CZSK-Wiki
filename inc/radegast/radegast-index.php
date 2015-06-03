@@ -50,8 +50,9 @@
 							<p>Radegast používá základní soubor klíčů "SoftCam.Key", který najdeme v adresáři /var/keys/SoftCam.Key</p>
 							<p>Radegast byl perfektně funkční na velmi stabilních receiverech "Triple Dragon" ale funguje i na Dreamboxech.</p>
 							<p>Logo emulátoru Radegast bylo v duchu piva Radegast</p>
-							<p><strong>LOGO</strong></p>
-							<span class="fa icon-logo_radegast" style="font-size: 30px"></span>
+							<p><strong>Síťový protokol</strong></p>
+							<p>Radegast využívá síťový protokol <a href="http://cs.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank">TCP (Transmission Control Protocol)</a> .</p>
+							
 						</div>
 
 						<div class="dt-sc-hr-invisible-very-small"></div>
@@ -64,6 +65,7 @@
 								<li>- mod-con-webmin.so - plugin (pro spuštění umístit do stejného adresáře jak Radegast "rdgd" a Radegast ho sám spustí).</li>
 								<li>- Radegast umí pracovat s externí Phoenix čtečkou</li>
 								<li>- Radegast umožňuje sdílet EMU v síti</li>
+								<li>- Radegast neumí reshare.</li>
 								<li>- Byla plánovaná i v5.0 s možností instalací rozšiřujících pluginů. Bohužel tuto variantu "Kindzadza" započal ve verzi 4, ale vývoj byl s verzí 4.2 ukončen.</li>
 							</ul>
 						</div>

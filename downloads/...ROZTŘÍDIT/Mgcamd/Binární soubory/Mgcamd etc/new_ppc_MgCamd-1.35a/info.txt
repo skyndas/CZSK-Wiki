@@ -1,0 +1,8 @@
+
+<name>MgCamd 1.35a - Complete</name>
+<description>MgCamd 1.35a incl. NewCS 1.67-Startscript, patched for ecm.info. No Configs, Keys or NewCS (bin) included!</description>
+<creator>Unknown, patched by 20kl25</creator>
+only_for=500plus,600,7020
+minV=0420
+
+### edit by root: Fr 28. Jan 20:58:42 CET 2011

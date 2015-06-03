@@ -1,0 +1,8 @@
+
+<name>RqCS 1.10</name>
+<description>RqCS 1.10 is a card server from North America. No Configs and Keys included!</description>
+<creator>raton_craquero</creator>
+only_for=500plus,600,7020
+minV=0420
+
+### edit by root: Fr 28. Jan 21:26:12 CET 2011

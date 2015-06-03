@@ -1,0 +1,20 @@
+Mgcamd binaries based on the last public version 1.35a patched by D2MAC.
+
+1.38 -	Added STN support (Macedonian channels with CaID 0x0616 on 16E)
+	SH4 binary needs replace.list - see the attached example key files
+	Fixed Nagra2 Kabel Deutschland decoding - there must be "X: { 18 01 }" in your priority.list to let mgcamd
+	select the correct ECM pid value corresponding to nagra2 ECM stream. If you still have problems with crashes
+	on KD channels (especially new E2 images), use previous version of libcrypto.so library in /usr/lib/.
+
+1.37 -	Removed this very annoying log message: "[mgcam] read error error 145: Connection timed out"
+	Added Zee TV support
+	Small fixes in the ppc binary
+	Added ppc_old and SH4 binaries
+	The SH4 binary is based on the version 1.35 and has its own replace.list !!!
+	See the attached replace.list and example SoftCam.Key files for Zee TV and C+NL (SH4)
+		
+1.36 -	Added support for ICE EMM stream with both headers (8X 40 and 8X 70)
+	19.2E Canalsat (022610), 39E ANT1 Europe (021110)
+	Fixed ORF provider 10
+	Added support for Irdeto2 providers: 13E JSC Sports (0x0603), 19.2E C+NL (0x0622), 39E Bulsat (0x0604)
+	Removed some annoying log messages like: [newcamd] ... new card.... or RSA nagra2 key not found for ID...

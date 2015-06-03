@@ -1,0 +1,7 @@
+
+<name>Scam-Config - 28.01.2011</name>
+<description>Scam-Config for Scam, This is so long valid to a new Config appears</description>
+<creator>unknown</creator>
+minV=0500
+
+### edit by root: Fr 28. Jan 23:11:57 CET 2011

@@ -20,12 +20,9 @@
 				<div class="dt-sc-margin70"></div>
 				<!-- **secondary - starts** --> 
 				<section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
-					<aside class="widget widget_product_categories">
-						<h3>Kategorie</h3>
-						<ul>
-							<li> <a href="index.php?category=mgcamd&page=mgcamd-index">O MGcamdu</a> </li>
-						</ul>   
-					</aside>     
+
+<?php include ("inc/html_content/mgcamd-menu.html"); ?>
+
 				</section> <!-- **secondary - Ends** --> 
 				
 				<!-- Primary Starts -->

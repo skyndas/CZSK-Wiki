@@ -1,0 +1,6 @@
+
+<name>RqCamd-Config - 28.01.2011</name>
+<description>RqCamd-Config for actual rqcamd</description>
+<creator>raton craquero</creator>
+
+### edit by root: Fr 28. Jan 23:10:08 CET 2011

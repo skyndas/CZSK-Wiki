@@ -1,0 +1,9 @@
+####################################################################
+# [CAS] Irdeto Boxkey/Camkey
+# UA - card unique address (3 byte)
+# BX - boxkey (4 byte)
+# CX - camkey (8 byte)
+# DX - camkey message (64 byte)
+#
+# C: { UA UA UA { C0 C1 C2 C3 C4 C5 C6 C7 }} |--- 64 byte camkey message ---|
+# B: { UA UA UA { B0 B1 B2 B3 }} 

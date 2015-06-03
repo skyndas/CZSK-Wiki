@@ -20,10 +20,10 @@
 					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
 						<div class="dt-sc-ico-content type9">
 							<div class="icon">
-								<span class="fa fa-square"></span>
+								<span class="fa fa-calendar-o"></span>
 							</div>
-							<h4> <a href="#"> XXXX </a> </h4>
-							<p>Info text. </p>
+							<h4> <a href="index.php?category=timeline&page=timeline-index"> Timeline </a> </h4>
+							<p>Vývoj emulátorů v časové ose. </p>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -31,8 +31,8 @@
 							<div class="icon">
 								<span class="fa fa-square"></span>
 							</div>
-							<h4> <a href="#"> XXXX </a> </h4>
-							<p>Info text. </p>
+							<h4> <a href="index.php?category=protocol&page=protocol-index"> Cardsharing protokoly </a> </h4>
+							<p>Info o jednotlivých protokolech. </p>
 						</div>
 					</div>
 					<div class="column dt-sc-one-fourth fadeInLeft" data-animation="fadeInLeft" data-delay="100">
@@ -143,10 +143,10 @@
 							<div class="icon">
 								<span class="fa icon-logo_doscam"></span>
 							</div>
-							<h4> <a href="index.php?category=doscam&page=doscam-index"> DOSCam </a> </h4>
+							<h4> <a href="index.php?category=dos_cam&page=dos_cam-index"> DOSCam </a> </h4>
 							<p> DOSCam je karetní server (cardserver) i klient. </p>
 							<p class="development_continues"> Vývoj pokračuje </p>
-							<a class="read-more" href="index.php?category=doscam&page=doscam-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
+							<a class="read-more" href="index.php?category=dos_cam&page=dos_cam-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 
@@ -229,6 +229,16 @@
 							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
+					<div class="column dt-sc-one-fifth fadeInUp" data-animation="fadeInUp" data-delay="100">
+						<div class="dt-sc-ico-content type8">
+							<div class="icon">
+								<span class="fa fa-tint"></span>
+							</div>
+							<h4> <a href="index.php?category=newcamd&page=newcamd-index"> Newcamd </a> </h4>
+							<p> Klient. </p>
+							<a class="read-more" href="index.php?category=newcamd&page=newcamd-index"> Více <span class="fa fa-long-arrow-right"></span> </a>
+						</div>
+					</div>
 
 					<div class="dt-sc-margin30"></div>
 					<div class="hr-title">
@@ -286,6 +296,25 @@
 							<h4> <a href="index.php?category=card&page=card-etc"> Ostatní karty </a> </h4>
 							<p> Informační text. </p>
 							<a class="read-more" href="index.php?category=card&page=card-etc"> Více <span class="fa fa-long-arrow-right"></span> </a>
+						</div>
+					</div>
+
+					<div class="dt-sc-margin30"></div>
+					<div class="hr-title">
+						<h2>Kódovací systémy</h2>
+						<!-- **title-sep - Starts** -->
+						<div class="title-sep">
+						</div> <!-- **title-sep - Ends** -->
+					</div>
+					<div class="dt-sc-margin30"></div>
+					<div class="column dt-sc-one-fifth first fadeInLeft" data-animation="fadeInLeft" data-delay="100">
+						<div class="dt-sc-ico-content type4">
+							<div class="icon">
+								<span class="fa fa-square"></span>
+							</div>
+							<h4> <a href="#"> Cryptoworks </a> </h4>
+							<p> Informační text. </p>
+							<a class="read-more" href="#"> Více <span class="fa fa-long-arrow-right"></span> </a>
 						</div>
 					</div>
 				</div>

@@ -1,0 +1,80 @@
+CCcam - seznam vydaných verzí
+----------------------------------------
+
+
+Radegast - seznam vydaných verzí
+----------------------------------------
+
+Newcamd - seznam vydaných verzí
+----------------------------------------
+
+
+Newcs - seznam vydaných verzí
+----------------------------------------
+
+newcs-1.71.rar					ULOŽENO V DATABÁZI
+newcs-1.70.zip					ULOŽENO V DATABÁZI
+newcs-1.67_RC1.zip				ULOŽENO V DATABÁZI
+newcs-1.66_RC1.zip				ULOŽENO V DATABÁZI
+newcs-1.65.zip					ULOŽENO V DATABÁZI
+newcs-1.64.zip					ULOŽENO V DATABÁZI
+newcs-1.63.zip					ULOŽENO V DATABÁZI
+newcs-1.62.zip					ULOŽENO V DATABÁZI
+newcs-1.61.zip					ULOŽENO V DATABÁZI
+newcs-1.60_beta.zip				ULOŽENO V DATABÁZI
+newcs-1.50.zip					ULOŽENO V DATABÁZI
+newcs-1.31.zip					ULOŽENO V DATABÁZI
+newcs-1.30.zip					ULOŽENO V DATABÁZI
+newcs-1.20_RC13.zip				ULOŽENO V DATABÁZI
+newcs-1.19_RC12.zip				ULOŽENO V DATABÁZI
+newcs-1.18_RC11.zip				ULOŽENO V DATABÁZI
+newcs-1.17_RC10.zip				ULOŽENO V DATABÁZI
+newcs-1.16_RC9.zip				ULOŽENO V DATABÁZI
+newcs-1.15_RC8.zip				ULOŽENO V DATABÁZI
+newcs-1.14_RC7.zip				ULOŽENO V DATABÁZI
+newcs-1.13_RC6.zip				ULOŽENO V DATABÁZI
+newcs-1.12_RC6.zip				ULOŽENO V DATABÁZI
+newcs-1.11_RC5.zip
+newcs-1.10_RC4.zip
+newcs-1.09_RC3.zip
+newcs-1.08_RC2.zip
+newcs-1.07_RC1.zip
+newcs-1.06_PublicBeta.zip		ULOŽENO V DATABÁZI
+newcs-1.05_PublicBeta.zip		ULOŽENO V DATABÁZI
+newcs-1.04_PublicBeta.zip		
+newcs-1.03_PublicBeta.zip		ULOŽENO V DATABÁZI
+newcs-1.02_PublicBeta.rar		ULOŽENO V DATABÁZI
+newcs-1.01_PublicBeta.rar		ULOŽENO V DATABÁZI
+
+Mbox - seznam vydaných verzí
+----------------------------------------
+
+Sbox - seznam vydaných verzí
+----------------------------------------
+
+Scam - seznam vydaných verzí
+----------------------------------------
+
+MGcamd - seznam vydaných verzí
+----------------------------------------
+
+Camd3 - seznam vydaných verzí
+----------------------------------------
+
+Doscam - seznam vydaných verzí
+----------------------------------------
+
+Hypercam - seznam vydaných verzí
+----------------------------------------
+
+MPCS - seznam vydaných verzí
+----------------------------------------
+
+Wicard - seznam vydaných verzí
+----------------------------------------
+
+Evocamd - seznam vydaných verzí
+----------------------------------------
+
+IncubusCamd - seznam vydaných verzí
+----------------------------------------

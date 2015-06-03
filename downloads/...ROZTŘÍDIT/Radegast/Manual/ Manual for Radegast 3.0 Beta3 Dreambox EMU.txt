@@ -1,0 +1,363 @@
+- rdgd: the core part of radegast project. It is a DVB hardware independent part which are doing the most interesting things - the emu computing.
+- camd: this is a DVB hardware dependent part, which retrieves data from DVB stream and sends it to server.
+- netpilot: network manager add-on for rdgd. Supports many connections from remote clients.
+
+
+Default dirs and files
+config file: /var/etc/radegast.cfg, /var/etc/radegast.users (for cardsharing)
+keys files: SoftCam.Key, Conax.Key, AutoRoll.Key, MK.Key
+keys dir: /var/keys
+
+
+Configuration file radegast.cfg
+Code:
+
+#
+# radegast.conf
+#
+# $Id: radegast.cfg,v 1.20 2004/04/15 12:44:25 kzz Exp $
+#
+# Sample of configuration file for radegast project
+#
+
+# ---------------------------------------
+# Client configuration (for rdgc or camd)
+# ---------------------------------------
+[camd]
+#pmt = own|file|socket
+pmt = file
+
+
+PMT is abbreviation for "program map table". [TODO: need more explanations, don't we ?]
+
+Code:
+
+debug = 0
+
+
+If you change it to debug=1 you can read debug infos in the standard output.
+
+Code:
+
+# PMT table magic
+#ecm caid remove = caidrovid
+# * Filter specified ECM stream off. Usefull when simulcrypt
+# is used and is known that some of the ECM stream is unsupported
+# (ie. when new cards are testing but not already at customers)
+ecm caid remove = 1801:0000
+
+
+Some methods for zapping optimization. The above example simply remove ECM pid for nagra2.
+
+Code:
+
+#ecm caid remap = caidrovidid-oldid-new
+# * Remap ECM pid for some service. Usable
+# - when provider sends fake ECM PID entry
+# - when provider uses the same DW for more services
+#ecm caid priority = ciadrovid (unimplemented)
+#ecm caid fixed dw = caidrovid:dw_16hex (unimplemented)
+
+
+ECM stands for Entitlement Control Message. [TODO: so what does it mean and what are the implications of the different options we have here?] TODO: explain.
+
+Code:
+
+dvb api = 2
+# * DVB API version: 2 or 3
+
+
+TODO: explain.
+
+Code:
+
+descr mode = v3api
+# * Descrambler feeding method: v2api, file, v3api
+
+
+This is recommanded to use API v.3 (v3api); choosing descr mode = file is an old method when sdev.o driver is used on dreambox (for example)
+
+Code:
+
+demux index = 1
+# * index = 1 for working timeshifting/recording
+# on dreambox
+
+
+This option was previously set to 0 because a bug in a closed source driver was causing kernel panics. But now that kindzadza found a workaround you can set it to 1 and enjoy a working timeshifting and recording.
+
+Code:
+
+#ecm flood lock = 5
+#ecm flood release = 200
+
+
+This line protects the server when in a sharing environment. In the above example, if the server return 5 incorrect CW's in a row, the client is prevented from sending more decrypt requests for a total of 200 * 0.5 Seconds back to the server. This prevents the clients from flooding the server with junk requests.
+Only use this if you are a client connecting to a server elsewhere. The default for this option is OFF (if you want to make it on, simply uncomment these two lines).
+
+Code:
+
+# -------------------------------
+# Server configuration (for rdgd)
+# -------------------------------
+[rdgd]
+ecm op mode = both
+emm op mode = local
+# * filter EMM suport based on remote/local access. And possibility to disable
+# EMM support at all
+
+
+
+EMM stands for Entitlements Management Message. [TODO: so what does it mean and what are the implications of the different options we have here?]
+
+Code:
+
+#emu mode = on
+# * on/off softemu mode
+
+#card mode = on
+# * on/off card mode
+
+
+By default Radegast works in emu and card mode, but if you want to change this behaviour, simply uncomment emu mode and cart mode lines and set them to "off" instead of "on".
+
+Code:
+
+sw cache = 0
+ca cache = 0
+# * cache level for softemu and card mode. 0 = cache off
+
+
+This controls the cache management of emu and card mode (disabled by default). [TODO: what is cached exactly and what can we expected if we raise up this level ? better zapping performances?]
+
+Code:
+
+log level = 0
+
+
+This setting lets you choose how much informations is outputted in the log file [TODO: explain the levels and tell where is the logfile]
+
+Code:
+
+net port = 666
+# * TCP port waiting for remote connection. As (by default) this port
+# can handle _ONLY_ONE_ (!!!) remote connection the main use is
+# for connecting netpilot to the rdgd. But in "2-boxes only"environment
+# this port can be used directly for serving one remote connect.
+# In this case, howewer, "net ip" has to be changed to real IP address
+# of the box.
+
+#net ip = 127.0.0.1
+# * IP address where rdgd is waiting for network connection.
+# By default, only connect from the same box is allowed.
+
+
+As explained in the comments, you can choose here the port where radegast listens for connections. Usually you use this only to let netpilot (the radegast server) connect to radegast and the connections from outside are made to netpilot's port (see below).
+
+Code:
+
+local cmd pipe = /var/tmp/rdgd.cmd
+
+
+TODO: explain.
+
+Code:
+
+#sottemu
+softcam file = /var/keys/SoftCam.Key
+conax file = /var/keys/Conax.Key
+autoroll file = /var/keys/AutoRoll.Key
+mkeys file = /var/keys/MK.Key
+
+
+You can define where are stored the keys to be used by radegast.
+
+Code:
+
+#slots
+atr timeout = 2000
+# * Timeout waiting for ATR. If rdgd has problems detecting card type
+# then this value has to be increased.
+# Warning: Using too high value may corrupt a normal rdgd processing!
+# Use with caution.
+
+
+Read the comments.
+
+Code:
+
+#sc card detect = 1
+# * Possibility of use normal card detection mechanism.
+# Warning: Usable only on newer boxes or harware (sc resistors) patched ones!
+
+
+TODO: tell from what serial number started these "newer boxes", is it 3* ?
+
+Code:
+
+#slots
+readers = 2
+
+reader 1 type = sc
+reader 1 name = /dev/sci0
+reader 1 shareble = yes
+reader 1 timeout = 1000
+reader 1 log mask = 0
+reader 1 nagra boxkey =
+reader 1 blocker = all
+
+reader 2 type = sc
+reader 2 name = /dev/sci1
+reader 2 shareble = yes
+reader 2 timeout = 1000
+reader 2 log mask = 0
+reader 2 nagra boxkey =
+reader 2 blocker = all
+
+
+TODO: explain.
+
+Code:
+
+#remote boxes
+net routes = 0
+#net route i = caid:ident:ip-or-domain:socket:flags
+#auth i = usernameassword:keyhex
+#examples:
+#net route 1 = 0D:0d01:192.168.1.202:666:0
+#auth 1 = kzz:hello:1122334455667788
+#net route 2 = 05:04A10:dbsrv.somewhere.net:666:0
+#auth 2 = kzz:hello:1122334455667788
+
+
+In this part you have to define the number of servers you want to access (if you are yourself a client).
+First enter the number of servers you want to access by changing the number after "net routes =".
+Then add two lines for each server; the first line is of form:
+Code:
+net route i = caid:ident:ip-or-domain:socket:flags
+
+Where:
+- i: the number of the route, starting with i=1
+- caid: the crypto system used
+Quote:
+
+The crypro system is identified by the most sigificant byte from CAID:
+01 = Seca
+05 = Via
+0B = Conax
+0D = Cryptoworks
+17 = Beta
+18 = Nagra
+
+
+- ident: the identification code of the provider [TODO: where to find these idents, can we say to use a server for any provider of a choosen crypto system?]
+- ip_or_domain: the ip address or domain name of the server
+- socket: the port where the server listens for connections (usually 678)
+- flags: "0" means TCP (default) and "1" means UDP. UDP offers faster connections, altho its not encrypted and only intened for home networks. If the sharing port is 678 for tcp/ip then the UDP transmit is 679 and the UDP receive is 670 on the client side. (The server side is obviously the oppssite at Listen at 679 and transmit at 680) Please keep in mind that ports need to be forwarded on the client and server side as UDP is connection-less.
+
+
+and the second line is of the form:
+Code:
+auth i = usernameassword:keyhex
+
+Where:
+- i: the number of the route, starting with i=1
+- username: the username that will be used to authentificate with server
+- password: the corresponding password
+- keyhex: the DES key used for encryption of the cardsharing protocol
+Please note that the auth. lines will be only used if connecting to v3.x radegast server with auth/crypto enabled (i.e. it is backward compatible with radegast 2.x but then no crypto will be used).
+DES stands for Digital Encryption System and is a widely used symetrical cryptographic system. As it is symetrical you just use the same keys on the server and clients for encrypting communications between the hosts.
+
+Code:
+
+net timeout = 1000
+# * Timeout for network I/O operations when rdgd
+# acts as client
+
+
+If you experience disconnections or no picture at all you can try to raise the net timeout until 10000.
+
+Code:
+
+#max clients = 1
+# * Possibility to enable remote multi-access
+# to rdgd. But note: without authentication
+# and encryption support !!!
+
+
+If you don't want to use netpilot for sharing your cards, you can uncomment the #max clients = n line where n is the number of clients you want to serve simultaneously but be carefull as it won't encrypt anything then and thus is not recommanded (in this case netpilot won't be used and rdgd will be the server and the client).
+
+Code:
+
+# ----------------------
+# NetPilot configuration
+# ----------------------
+[netpilot]
+shared port = 678
+
+
+The port where the server listens for incomming connections.
+
+Code:
+
+#shared info file = /var/tmp/shared.info (unimplemented)
+
+authentication = on
+
+
+The authentification parameter lets you choose if you want Radegast to use authentification (recommended for Internet sharing).
+
+
+Cardsharing
+Changes to make to radegast.cfg
+Please read the above explanation of radegast.cfg to know how to setup your cardserver's configuration.
+
+Changes to make to radegast.users
+In this file after the comments (line beginning with #) you have to enter informations about each user that can connect to your radegast server.
+As explained in this file, the format is the following:
+Code:
+
+# <usernameassword:16byteKey:emm_on>
+#
+# Note:
+# 1. 16 byte key is VERY important!!!
+# 2. emm_on = 1 => remote update allowed
+
+
+This means that if you want to have a user named rdgd_user with password rdgd_passwd to connect to your radegast server using DES key 1122334455667788, you have to add the following line to this file:
+
+Code:
+rdgd_user:rdgd_passwd:1122334455667788:0
+
+
+TODO: explain what emm_on makes exactly (needs definition of EMM as well)
+
+
+NAT/Firewall configuration
+If you are serving cards and kept the default port values, you'll have to open the following ports in your firewall and be sure that your NAT/SUA router is configured to let incomming connections on these ports to be routed to your dreambox IP (only if the client boxes are outside of your network):
+
+for multisharing (recommanded):
+- port 678 tcp (netpilot)
+
+for multisharing using UDP transport protocol:
+- port 680 udp on the client
+- port 679 udp on the server
+
+for monosharing:
+- port 666 tcp (radegast)
+
+
+Cards/Crypto systems supported
+Seca1 soft, CAM
+Seca2 soft, CAM
+Irdeto1/Beta soft
+Irdeto2 CAM
+Viaccess1/TPS soft, CAM
+Viaccess2 CAM
+Cryptoworks CAM
+Conax soft, CAM
+Nagravision/RSA soft, CAM
+
+
+Update rights on card
+Updateing the card's rights is all about EMM; EMM support is experimental, many fetures are still missing. [TODO: What features are missing?]

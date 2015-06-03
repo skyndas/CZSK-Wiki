@@ -1,0 +1,604 @@
+2008/06/11
+TPS au pid auto-find, U: config option changed.
+
+2008/06/10
+TPS fix, also tps au pid added to U: config option.
+kathrein support fixed.
+
+2008/06/09
+v1.30b
+fix for irdeto net sharing with G: 09, kathrein is back.
+
+2008/05/14
+v1.30a
+fix for no pic on pw 503 id in some keys/ignore/priority combination.
+
+2008/04/07
+v1.30
+ipbox9000HD support, dm800 autodetect.
+tps au fix.
+I2 sa/pmk moved to autoroll, in vplug format, make sure you have 
+M3, M4 16 bytes long and M7 3 bytes long for provider there.
+Kathrein support stopped until they make russian epg support.
+
+2008/02/14
+v1.29
+MCT, enjoy while it lasts :D
+
+2008/02/04
+v1.28
+tps au fix.
+not always clean shutdown on kathrein fixed, mg can be restarted now without reboot.
+using 1801 ecm pid on pw, if no 1702 ecm found (for pw hd channels on 1702 cards).
+
+2007/12/29
+v1.27a
+PW au hack, not for a long time.
+
+2007/12/19
+v1.27
+pw fix.
+kathrein 1.04 image support including record and timeshift (new libioctl needed), 
+not tested on 1.03, known issue: switching audio tracks while recording damage recording,
+ok in timeshift mode.
+
+2007/12/02
+v1.26
+kathrein support (stapi)
+gbox client improvements, G:, Y: support, better card list handling,
+virtual cards support for viaccess (can be used for tps) and N2.
+tps and pw au fixes.
+
+2007/09/13
+v1.25
+tps au fix
+D+, polsat limited au support
+
+2007/06/17
+v1.24
+MCT/RedLight. key format I 628 06 xxxxxxx.... , put X: { 06 28 } in priority.list.
+crypto keys for skylink added (not tested).
+
+2007/06/13
+v1.23
+tps au (look on U: option), remove old tps.au file if any !
+PW mecm.
+
+experimental gbox client (client only, no forwarding), 
+config file - peer.cfg, cards list in /tmp/mg.info,
+reports itself as version 2.0A (there was no such gbox version, can be detected).
+if gbox client enabled, it always will be tryed first for irdeto, ignoring P: option.
+tested using own local gbox "hub", this is recommended mode to use.
+
+U:, N:, G:, P: options changed, read config file.
+osd on disconnect/reconnect to newcamd servers (if S: +02).
+
+2007/03/13
+v1.22
+another tps fix.
+via1 au fixes for mips.
+
+2007/03/11
+v1.21
+internal cw keys updated.
+tps "au" fix.
+pw sharing fix.
+async connections to newcamd servers (not fully tested).
+
+2007/02/13
+v1.20
+tps au, tune to 10873 to get keys.
+tps.bin has priority over au keys, so remove outdated one to reduce cpu load.
+note what this is not real au and can be broken at any moment by t*s,
+enjoy while it lasts.
+
+2007/02/05
+v1.19
+d+ au, des key searched as N 4101 I2, 
+different emm keysets not supported, so make sure you use right rsa/idea/des(/vkey) set.
+
+2007/01/11
+v1.18
+new tpscrypt algo and /var/keys/tps.bin support using timestamps, make sure your box have correct unix time!
+added h.264 video pid type to decoded pids.
+
+2006/12/31
+v1.17
+Happy new year, best wishes and less black screens to all.
+
+web port option for OSD (look on S: in config sample)
+blocked emm types and blocked sids exchange with newcs
+remember current newcamd share when failed to send ecm, and return to it after reconnect.
+possible fix for crash on zap.
+dm7025: fixes for leave/reenter recording services.
+dbox2: forward ca-pmt to /tmp/camd2.socket for using mgcamd together with (patched) camd2.
+openbox: irdeto chids fixes
+openbox: mgstat.info back to /tmp, because buggy software not stopping decoding when going to standby,
+	so mg continue to save stats, and hdd wakeups. auto-reread keys option can be the reason too.
+
+2006/11/13
+v1.16
+user/pass auth support for osd.
+fix start to d/l aes keys on non-tps channels where no good key found.
+two ppc binaries, .ppc compiled with posix threads and new libs (for dbox2, dreambox etc on kernel 2.6.xx),
+and .ppc_old compiled with linux threads and old libs (for openbox, dbox2, kernel 2.4.xx)
+internal changes and fixes.
+
+2006/09/27
+v1.15
+new debug options
+possible lower cpu load on aes channels with many aes keys, if good aes key present.
+n2 fix for fakes cw when dw scrambled.
+demux number for emm workarounds on dm7025
+log to file option in L:
+workarounds to use n2 over BEEF prov on k3
+aes-http protocol fixes.
+fix port parsing in aes url.
+fix ecm priority usind ca cache info for systems, where no provid in pmt.
+
+2006/08/19
+v1.14
+fixes for bev sharing over newcamd, both emm and ecm
+original (Id : 007C00, clef Pri, clef Sec) aes http format added
+aes update over http (W: option), U: option changes, look in mg_cfg
+R: option changes, support for auto-reload softcam.key on file change
+fixes for multidecoding on 7025
+more workarounds for multidecoding using newcamd protocol shares
+
+changes in biss keys handling:
+F 01 SSSSPPPP 123455678..... SSSS = sid PPPP = pid
+if pid = 1FFFF, keys searching using sid, if not:
+on channels with biss in pmt or without any ca info in pmt keys searching using sid, 
+then comparing pid with service video pid or PMT pid.
+openbox: support for scrambled pip
+
+2006/05/18
+mg1pre12a.
+fixed cryptoworks for mips.
+fixed brocken irdeto chids and changelog :-D
+new A: option 03 : emm only for network cards
+
+2006/05/17
+mg1pre12
+fix for crypto network emms
+fix multi-channel decoding on dbox2.
+fix for saving cw keys on au.
+cw data for easy.tv, mtv added
+
+2006/04/25
+mg1pre11a
+support for cw provs CL,SL,BT,Turner added
+
+2006/04/24
+mg1pre11
+des included in ppc binary.
+cw op keys from softcam file, rsa inside binary
+more cw providers
+cryptoworks emu (dt, xtra)
+some endian fixes for 7025
+dreambox 7025 support
+more NA nagra2 fixes.
+
+2006/03/22
+v1pre10
+N2 emm fix, polsat ok
+ecm pid cache fix for emu.
+additional binary with des inside for poor openbox libcrypto.
+fix no decoding on mgm/biss after standby/wakeup on this channel
+
+2006/03/14
+v1pre9
+Additional biss keyset support for separate a/v decoding, example for MGMint/10E:
+# sid|ecm pid
+F 00631FFF 00 XXXXXXXXXXXXXXXX
+F 00631FFF 01 XXXXXXXXXXXXXXXX
+# sid|audio pid
+F 00631066 02 XXXXXXXXXXXXXXXX
+F 00631066 03 XXXXXXXXXXXXXXXX
+tested on dreambox only, impossible on openbox due to sw limitation.
+NA C101 nagra2 fix.
+Emm cache on/off added to H: option
+openbox code merged to one common ppc binary.
+D: option changes, read mg_cfg, code not complete atm.
+T: 01 option now means, all mgcamd files will be searched in /tmp.
+code cleanup (-> new bugs, return to 1.08, if you not happy)
+multi-channel decoding support for openbox.
+from now supported only firmware from 3.03.2006 or later.
+
+2006/03/07
+v1pre8.
+EMMG for cryptoworks fixes.
+polsat ecm code added.
+n2 emm parser fixes.
+new E: option, seconds to keep ecm data cache, default is 15, for openbox mostly.
+openbox-7000 pvr support as stand-alone binary
+
+2006/02/12
+v1pre7
+code merge for all supported hw, from now one binary for dbox2/dream/relook/td.
+if for some reason box type detected wrong, use B: option to set it.
+biss and reread key files on zap is back.
+
+2006/02/01
+v1pre6
+reread key files on zap disabled due to possible bug in case of multi-channel decoding.
+n2 cw swap fix for some channels.
+n2 ecm keys change: idea in softcam from 10 to 00/01, in autoroll N1 to M1
+n2 GA emms for shared cards fix.
+n2 key auto-update, tested on d+.
+support for using all newcs cards over one tcp port, for upcoming newcs (ecm only).
+support for caid replacing in replace.list, its done after priority check.
+
+2006/01/09
+v1pre5
+reverse login for newcamd protocol
+make sure CWS lines have unique host+port+server name.
+
+2005/12/26
+v1pre4
+multiple aes keys support.
+fixed 2x tuners support on relook 400s
+added command to send server->client string for OSD display.
+
+2005/11/25
+1.00pre3
+nagra emm for shared cards added.
+better code for shared cards ecm asnwer wait (K:)
+
+2005/11/13
+1.00pre2
+relook 400s support (working only with changed driver/main prog)
+sky.it emm fixes.
+nagra sharing fixes.
+
+2005/10/25
+switched from endless beta to version 1.00pre1
+fixed cmd line args overwrite with config reread option.
+fixed newcamd server type detection.
+
+2005/10/21
+Cabo au fix
+
+2005/10/19
+newcamd shares statistics added, saved to /tmp/mgstat.info every 5 min.
+
+2005/10/18
+emm cache. repeated emms not send to newcamd shares.
+
+2005/10/14
+added viaccess emm for newcamd shares.
+
+2005/10/12
+added cryptoworks emm for newcamd shares.
+
+2005/10/10
+a-sync newcamd shares login, ca cache fixes.
+full share list now not shown in log, look in /tmp/mgshare.info
+
+2005/10/04
+viasat emm fixed.
+
+2005/09/26
+camd3 client disabled.
+
+2005/09/15
+fixed camd3 client.
+
+2005/09/01
+fix D+/hispa MTV.
+
+2005/08/28
+D+ added, put rsa as N1 to AutoRoll.Key and idea as N 4101 10 to SoftCam.Key
+
+2005/07/12
+test version, CWS_KEEPALIVE can be: no, yes (600sec), or value in seconds
+
+2005/07/11
+test version
+
+2005/07/08
+fixes
+
+2005/07/06
+nds sa/ua emm for newcamd cards.
+mg now looking /var/keys/newcamd.list for share list (same, CWS = format !!), if not found, then newcamd.conf.
+
+2005/07/04
+Biss fixes for channels without cas in pmt, use sid + pmt pid in place of ecm pid in F keys.
+
+2005/06/19
+some fixes in ecm cache and newcamd client code.
+
+2005/06/07
+small CW provid fix.
+
+2005/06/01
+ca_cache.list saving fix.
+
+2005/05/02
+polsat fixes
+
+2005/05/01
+cmd line args to change config options at run time, for ex. -g 1 -c 2 and so on,
+names the same as in config file. no -l opt.
+
+2005/04/26
+added options to use fast pmt, -start to start decoding immediate using pmt.tmp, 
+-fastpmt to ignore socket and use only pmt.tmp (only 1 service !!).
+some fixes, some new bugs.
+
+2005/04/22
+N: option 04 added to enable/disable 04/19 code
+
+2005/04/21
+conax emm support for cards, shared on newcamd protocol.
+
+2005/04/19
+closed cardserver's connection detection added, mg will try to re-login
+during next 10 seconds. if not successfull, next try after Q time.
+
+2005/04/16
+fix F key bug introduced 04/15 changes
+support for V <id> 01 tps aes key format
+
+2005/04/15
+via2 keys changed to be 16 bytes
+
+2005/03/01
+Cryptoworks provid added to ecm for better shared cards using.
+
+2005/02/23
+L: option changes, use 02 to get console log (read mg_cfg)
+
+2005/01/20
+polsat update fixed
+Q: option
+
+2005/01/15
+mode S2 Fx tables, 51xx fixes
+
+2005/01/13
+S2 0065 Fx table
+
+2005/01/08
+Biss fixes, not tested
+
+2005/01/05
+S2 freezes fixed
+P: 02 option
+
+2005/01/03
+S2 5109 algo, thx to Tiger.
+
+2004/12/19
+K: network ecm timeout option
+T key lost after au fixed
+
+2004/12/18
+S: osd options
+
+2004/12/17
+remote emm for pw cards on camd3 shares
+new tps2 key
+port option for udp log
+tps key now can be used from key file,  in the form: T 007C00 00 00112233445566778899AABBCCDDEEFF
+
+2004/12/13
+temp hack for polsat, put new keys as E1n, N1n, if not found, E1/N1 will be used.
+fixes in camd3.servers parsing
+more shares types in /tmp/mgshare.info
+
+2004/12/07
+P: option to change shares priority.
+changes in newcamd shares handling, dead at start time shares marked as offline,
+mg will try to connect every 10 min if set in N option.
+background connection to newcamd shares, mg ready to run as emu/another client faster.
+Shl removed, didn't work well anyway.
+New bugs :D
+
+2004/12/04
+10 seconds local ecm caching, usefull for fast zapping using network shares.
+
+2004/12/03
+active newcamd servers dumped to /tmp/mgshare.info at startup time
+added current share and time info to /tmp/ecm.info 
+more accurate network clients timing info
+D: config option for debug, atm used for client<->server dump
+
+2004/11/29
+fixed old stupid c&p bug, camd3 client don't work if user/pass have not the same len
+
+2004/11/28
+new newcamd client protocol, for newcamd >= 5.25, not compatible with old !!
+
+2004/24/11
+new tps crypt
+
+2004/11/20
+more info sent to udp
+
+2004/11/02
+another fix for newcamd share reconnect
+fixed newcamd server answer dump
+added fixed cw support, example for Sct as of 11/01:
+Tag Sid+Ecm pid Number CW
+F 2217096f 00 F3B3B359704F9E5D
+F 2217096f 01 3BED2048A2462D15
+
+2004/11/01
+fixed huge mem leak on fta channels (who need them anyway? *g*)
+
+2004/10/31
+display msecs for network shares
+fixed seca emm pids parsing from cat
+irdeto/beta/seca emm for newcamd shared cards (needs more testing)
+new N: option to enable/disable continuos retry of network shares
+
+2004/10/24
+seca2 bug with bad key present in key file fixed 
+newcamd's radegast as server detection (R)
+
+2004/10/22
+0065 9x table
+network mode G: changes
+support for newcamd's connect timeout and keep-alive
+camd3 client fix
+
+2004/10/15
+stupid bug with reading replace.list fixed
+
+2004/10/14
+multiple services decoding under enigma and modified zapit
+no more libmd5sum dependancy
+R config option
+
+2004/10/08
+no more ipc, common binary for all images
+
+2004/10/05
+Fullx "working" again (well, 50/50)
+
+2004/10/01
+ecm pids caching (H:)
+emu switching code moved to standalone prog
+
+2004/09/26
+replace.list for priority fine tuning
+
+2004/09/24
+(may be) better handling of newcamd shares
+
+2004/09/22
+camd3 network client code
+
+2004/07/29
+Added priority by caid (X:).
+
+2004/07/28
+Camd switch code rewritten.
+
+2004/07/27
+D+ fixes.
+
+2004/07/26
+Viaccess E8/E9 ecm nanos fixed.
+
+2004/07/15
+Zap speedup.
+
+2004/07/14
+Real ecm sorting according to priority list (S/V only).
+
+2004/07/13
+Newcamd client reconnect on connection lost fixed.
+Newcamd-compatible S2 key format.
+
+2004/07/08
+Added code to use camd.socket, for plug&play using in any image.
+Enigma descriptors parsing.
+
+2004/07/07
+S2 fixes.
+
+2004/06/20
+New shl code, freextv, full-x, DP (ugly)
+Irdeto chid handling to reduce network traffic (use good one only until verion change)
+
+2004/06/10
+Added ignore.list / priority.list (ugly).
+Push newcamd cardservers to the top of route list to be tryed before spider shares.
+
+2004/06/02
+S2 nano51/0F.
+
+2004/05/18
+Added udp log code.
+Nagra 180x sharing fixed.
+
+2004/05/10
+Descrambling 2 channels at the same time on dreamox added.
+
+2004/03/22
+Newcamd network client added.
+
+2004/03/16
+Radegast network client added.
+
+2004/01/xx
+Osd for neutrino and enigma.
+
+12/23/2003
+ram files loading, rom7/polsat & rom11/11 D+ au fixes
+
+12/22/2003
+D+ mecm fix
+
+12/07/2003
+show emm in readable form and in /tmp/emm.info
+
+11/30/2003
+fixing for nagra attacks every day
+
+11/05/2003
+new code for nagra ecm/emm from sc-0.3.5
+
+10/22/2003
+long time no work, started again
+
+08/25/2003
+blocker code for ntv+, slow a little but works
+
+07/XX/2003
+no more Free-X TV 
+
+06/23/2003
+Free-X TV
+
+02/08/2003
+stupid daemon mode bug fix
+
+02/07/2003
+tps fix/workaround
+
+02/02/2003
+gbox key files reading
+au keys write to emm.info 
+auto-au if no good op key
+check for dup op keys 
+
+02/01/2003
+some code cleanup
+
+01/30/2003
+conax.key using for conax key
+
+01/29/2003
+reorder of pmtpid/vpid args using
+radio channels without pmt.tmp fix
+fix fd leak in daemon mode
+
+01/24/2003
+ORF one ecm pid/many keys used fixed
+nagra math lock for emm/ecm
+
+01/23/2003
+beta code for via update on group/SA
+tested on SRG and SLO
+
+01/21/2003
+beta code for via au on UA
+tested on NTV-Int
+
+01/20/2003
+emm merged for au thread on irdeto/nagra
+tested on PW and polsat, not work on 30W
+irdeto au fix
+
+01/14/2003
+fix for some absat channels in via mode
+
+01/12/2003
+fix for viasat and CGA
+
+01/10/2003
+conax added, thanks to hop3

@@ -1,0 +1,7 @@
+
+<name>Scam 3.58 - Complete</name>
+<description>Scam 3.x incl. Ronald-CS-Startscript, No Configs, Keys,and no Ronald / Sharing (bin) included!</description>
+<creator>unknown</creator>
+not_for=500,56xx,7000
+
+### edit by root: Fr 28. Jan 23:57:19 CET 2011

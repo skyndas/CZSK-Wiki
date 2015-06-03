@@ -1,0 +1,6 @@
+
+<name>RqCamd 1.31</name>
+<description>RqCamd 1.31 for North America. No Configs and Keys included!</description>
+<creator>raton_craquero</creator>
+
+### edit by root: Fr 28. Jan 23:56:39 CET 2011

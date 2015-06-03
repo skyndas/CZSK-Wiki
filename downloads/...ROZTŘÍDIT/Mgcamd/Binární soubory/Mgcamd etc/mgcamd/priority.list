@@ -1,0 +1,10 @@
+# use this via prov first
+V: { 00 74 00 }
+V: { 00 78 00 }
+V: { 02 26 10 }
+# use this seca prov first
+S: { 00 2A }
+S: { 00 30 }
+# use this caid first
+X: { 18 01 }
+X: { 0D 05 }

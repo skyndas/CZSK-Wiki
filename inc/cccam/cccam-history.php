@@ -299,7 +299,7 @@ see CCcam.cfg for details</li>
 									<li>fixed stealth mode, also set per N line now (see CCcam.cfg)</li>
 								</ul>
 
-								<h5>1.3.0 (unknow)</h5>
+								<h5>1.3.0 (27.09.2006 - přibližné datum)</h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li>fixed some 64 bits issues</li>
 									<li>fixed radegast provider id and nano field</li>
@@ -317,13 +317,13 @@ see CCcam.cfg for details</li>
 									<li>allow emm one extra level</li>
 								</ul>
 
-								<h5>1.2.1 (unknow)</h5>
+								<h5>1.2.1 (13.07.2006 - přibližné datum)</h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li>fixed smartcard support for some seca providers</li>
 									<li>fixed smartcard activation for some seca providers</li>
 								</ul>
 
-								<h5>1.2.0 (unknow)</h5>
+								<h5>1.2.0 (06.07.2006 - přibližné datum)</h5>
 								<ul class="dt-sc-fancy-list arrow" >
 									<li>fixed betacrypt entitlements</li>
 									<li>fixed betacrypt emm</li>

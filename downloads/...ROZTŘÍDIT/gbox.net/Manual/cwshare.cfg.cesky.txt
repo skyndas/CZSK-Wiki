@@ -1,0 +1,97 @@
+##########################################################################################
+#                                   CWSHARE.CFG                                          #                          
+##########################################################################################
+M: { tvoje domena.dyndns.org { 1234ABCD }}                                               #
+##########################################################################################
+#  Pripojeni pratel prez internet                                                        #
+#  ==============================                                                        #
+#                  domena pritele     tvuj port            CODE1                         #
+#                  |                  |    jeho port       |  CODE2                      #
+#                  |                  |    |       heslo   |  |                          #
+#                  |                  |    |       |       |  |                          #
+D: { 1.tvuj CS kamarad.dyndns.org { 2999 2999 { D3BA5678 { A5 A5 }}}}                    #
+D: { 2.tvuj CS kamarad.dyndns.org { 2999 2999 { DCBA7678 { A5 A5 }}}}                    #
+##########################################################################################
+#  A5   code1 - tato IP muze me vlastni karty davat na x dalsich okruhu kamaradu dale    #
+#  A5   code2 - tato IP muze me dostavane karty davat na x dalsich okruhu kamaradu dale  #
+##########################################################################################                                          
+#   Zbyvajici vnitrni prijimace                                                          #
+#   ============================                                                         #
+#                                                                                        #
+D: { 192.168.1.3 { 2999 2999 { DCBA5678 { A5 A5 }}}}                                     #
+D: { 192.168.1.2 { 2999 2999 { DCB46678 { A5 A5 }}}}                                     #
+##########################################################################################
+#  A5   code1 - tato IP muze me vlastni karty davat na x dalsich okruhu kamaradu dale    #
+#  A5   code2 - tato IP muze me dostavane karty davat na x dalsich okruhu kamaradu dale  #
+##########################################################################################
+# Tady je mozno nastavit maximalni hloubku prijmu karet, ktere hodlate prijimat.         #
+# V tomto pripade je to max.distanz 4, vsechny dalsi jsou ignorovany, ma to vliv na      #
+# mnozstvi karet a stabilitu gboxu.                                                      #
+I: { 0A }                                                                                #
+##########################################################################################
+# nastaveni max. mnozstvi dotazu na CW (karet od jednoho providera)                      #
+# (Doporuceno 5)                                                                         #
+X: { 05 }                                                                                #
+##########################################################################################
+#                                                                                        # 
+#    01 opakovani EMM's                                                                  #
+#    00 vybirat kazdy EMM pouze jednou                                                   #
+#     | 01 zrestartovani PID                                                             #
+#     |  | 1* reset ENX pri prepinani kanalu                                             #
+#     |  | *1 test/reset ENX mrznuti u FTA                                               #
+#     |  | *2 test/reset ENX mrznuti u PayTV                                             #
+#     |  | *3 test/reset ENX mrznuti u FTA a PayT                                        #
+#     |  |  | 00 nezapisovat atack.txt                                                   #
+#     |  |  | 01 zapisovat do atack.txt: spatne heslo                                    #
+#     |  |  | 02 zapisovat do atack.txt: nezname ID                                      #
+#     |  |  | 04 zapisovat do atack.txt: spatna IP adresa                                # 
+#     |  |  | 08 zapisovat do atack.txt: spatny port                                     #
+#     |  |  | 10 zapisovat do atack.txt: share.stat                                      #
+#     |  |  | 20 vytvoreni online.log pro online/offline loggovani                       #
+#     |  |  | 1F zapisovani vseho bez hlaseni byti Online/Offline                        #
+#     |  |  | 3F zazapisovani vseho (kombinovane bity pro jine kombinace)                #
+#     |  |  |  | 4000 vysilat ECM opakovane kazde 4 Sekundy, kdyz neprichazi platne CW   #
+#     |  |  |  |    | 6000 nove synchronizovat kazdych 6 sekund, kdyz neprichazi platneCW#
+#     |  |  |  |    |    |                                                               #
+N: { 00 01 03 00 4000 6000 }                                                             #
+##########################################################################################
+# zadani Caid a BoxID pro prednostni pouziti karty z boxu,                               #
+# G: ma prednost pred X:                                                                 #
+G: { 17020000 1234 }                                                                     #
+G: { 0B000000 ABCD }                                                                     #
+G: { 05021510 AB34 }                                                                     #
+G: { 0D03A000 A234 }                                                                     #
+##########################################################################################
+# zablokovat ID ucastnika ktery posila nezadouci karty (CW`s)                            #
+# maximalni mnozstvi Y zapisu je 255                                                     #
+Y:{ 12 34 }                                                                              #
+##########################################################################################                                                             
+# pro W: je vhodne si precist cwshare.txt, tyto udaje pouze jako priklady                #
+# pouzit 1. kartu pouze pro tyto PIDy:                                                   #
+#W: { 01 02 02 } 1022 100A 100B 102B 1009 101D 1029 1014 1011 101B                       #
+# nepouzivat 2. kartu pro tyto PIDy:                                                     #
+#W: { 02 03 03 } 1008 1016                                                               #
+##########################################################################################
+# 0x=cislo ctecky (od 1 do 8) pro ktere se W: vstahuje                                   #
+# 0x=level pro majitele                                                                  #
+# 0 =kartu nepouzivat                                                                    #
+# 1 =kartu pro vsechny PIDy pouzivat                                                     #
+# 2 =kartu pouze pro tyto PIDy pouzivat                                                  #
+# 0x=level pro cizi (sit)                                                                #
+# 0 =kartu neuvolnovat                                                                   #
+# 1 =kartu uvolnit pro vsechny PIDy                                                      #
+# 2 =kartu uvolnit pouze pro tyto PIDy                                                   #
+#W: { 0B 02 02 } 1008 100A 100B 102B 1009 101D 1029 1014                                 #
+##########################################################################################                                                                               
+# S: je zhodne jako W:, jen misto PIDu jsou SIDy                                         #
+# 0x=cislo ctecky (od 1 do 8) pro ktere se S: vstahuje                                   #
+# 0x=level pro majitele                                                                  #
+# 0 =kartu nepouzivat                                                                    #
+# 1 =kartu pro vsechny SIDy pouzivat                                                     #
+# 2 =kartu pouze pro tyto SIDy pouzivat                                                  #
+# 0x=level pro cizi (sit)                                                                #
+# 0 =kartu neuvolnovat                                                                   #
+# 1 =kartu uvolnit pro vsechny SIDy                                                      #
+# 2 =kartu uvolnit pouze pro tyto SIDy                                                   #
+#S: { 0B 02 02 } 0008 000A 000B 002B 0009 001D 0029 0014                                 #
+##########################################################################################

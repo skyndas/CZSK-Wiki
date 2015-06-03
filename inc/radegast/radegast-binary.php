@@ -37,11 +37,18 @@
 						</div>
 						<div class="dt-sc-tabs-vertical-container">
 							<h4>Binární soubory</h4>
-							<p>Poslední známý funkční binární soubor je <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel10.zip">Radegast v4.2 rel 10</a>.</p>
-
-							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel8.zip">Radegast v4.2 rel 8</a></p>
-							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel6.zip">Radegast v4.2 rel 6</a></p>
-							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2 _rel6.zip">Radegast v4.2 rel 5</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2_rel10.zip">Radegast v4.2 rel 10</a> - poslední známý funkční binární soubor</p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2_rel8.zip">Radegast v4.2 rel 8</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2_rel6.zip">Radegast v4.2 rel 6</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2_rel5.zip">Radegast v4.2 rel 5</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.2_beta4.zip">Radegast v4.2 beta 4</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.1_beta43.zip">Radegast v4.1 beta 43</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.1_beta14.zip">Radegast v4.1 beta 14</a></p>
+							<p><img src="images/icons/icon_file-rar-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.1_beta13.rar">Radegast v4.1 beta 13</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.1_beta11.zip">Radegast v4.1 beta 11</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v4.0_beta29_full.zip">Radegast v4.0 beta 29 full</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v2.2_finalP1.zip">Radegast v2.2 final P1</a></p>
+							<p><img src="images/icons/icon_file-zip-24x24.png" class="icon-right-set" alt="" /> <a href="downloads/radegast/binary_version/Radegast_v2.2_final.zip">Radegast v2.2 final</a></p>
 						</div>
 					</div>
 					<div class="dt-sc-hr-invisible-small"></div>

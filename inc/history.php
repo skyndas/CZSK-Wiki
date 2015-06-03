@@ -16,6 +16,33 @@
 			<!-- **Full-width-section - Starts** -->       
 			<div class="full-width-section">
 				<div class="container">
+					<h5><u>v12 (03-06-2015)</u></h5>
+					<ul class="dt-sc-fancy-list arrow" >
+						<li><strong>Radegast</strong> 
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- dopsaná historie verze 3.0</li>
+								<li>- dopsaná historie verze 4.1.0</li>
+							</ul>
+						</li>
+						<li><strong>Linux Box</strong> - přehled boxů podle architektury.</li>
+						<li><strong>Karty</strong> - přidána karta RTVS Slovak.</li>
+						<li><strong>CCcam</strong> - přidána karta RTVS Slovak.</li>
+						<li><strong>Wiki</strong>
+							<ul class="dt-sc-fancy-list caret-right">
+								<li>- vytvořena sekce s Kódovacími systémy (nyní jen Cryptoworks)</li>
+								<li>- úprava html kódu v install.html</li>
+								<li>- vytvořena Timeline: Časová osa emulátorů aneb přehled vývoje emulátorů v časové ose</li>
+								<li>- redukce html kódu</li>
+								<li>- přidán script pro popup modal (je nutné odladit css style) <a href="http://www.jqueryscript.net/lightbox/Lightweight-Responsive-jQuery-Modal-Popup-Plugin-modality.html" target="_blank">Lightweight Responsive jQuery Modal Popup Plugin</a></li>
+								<li>- přidán PHP kód pro aktivní položku v hlavním menu</li>
+								<li>- PHP soubory DOSCamu přejmenovány z "doscam*.php" na "dos_cam*.php"</li>
+								<li>- vytvořena sekce Newcamd</li>
+								<li>- přidána sekce Cardsharing protocoly (vše o jednotlivých protocolech a šifrování)</li>
+								<li>- přidány binární soubory pro Radegast, Newcamd, Mgcamd, Mbox.</li>
+							</ul>
+						</li>
+					</ul>
+
 					<h5><u>v11 (24-05-2015)</u></h5>
 					<ul class="dt-sc-fancy-list arrow" >
 						<li><strong>CCcam</strong>

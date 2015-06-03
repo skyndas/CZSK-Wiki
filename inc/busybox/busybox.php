@@ -20,7 +20,7 @@
 					<aside class="widget widget_product_categories">
 						<h3>Kategorie</h3>
 						<ul>
-							<li> <a href="index.php?page=busybox">O Busyboxu</a> </li>
+							<li> <a href="index.php?category=busybox&page=busybox">O Busyboxu</a> </li>
 						</ul>   
 					</aside>     
 				</section> <!-- **secondary - Ends** --> 

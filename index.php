@@ -119,26 +119,29 @@
 			case 'cccam-webif' :
 				$title = "CCcam - WebIf";
 			break;
-			case 'doscam-index' :
+			case 'dos_cam-index' :
 				$title = "DOSCam";
 			break;
-			case 'doscam-doscam-cfg' :
+			case 'dos_cam-config_cfg' :
 				$title = "Konfigurace DOSCamu";
 			break;
-			case 'doscam-history' :
+			case 'dos_cam-history' :
 				$title = "DOSCam - Historie";
 			break;
-			case 'doscam-telnet' :
+			case 'dos_cam-telnet' :
 				$title = "DOSCam - Telnet";
 			break;
 			case 'dyndns' :
 				$title = "DynDNS";
 			break;
-			case 'historie' :
+			case 'history' :
 				$title = "Historie Wiki";
 			break;
 			case 'linuxbox-index' :
-				$title = "Linux - Standartní porty";
+				$title = "Linux - Linux boxy";
+			break;
+			case 'linuxbox-arch' :
+				$title = "Linux - Architektůra boxů";
 			break;
 			case 'linuxbox-symlink' :
 				$title = "Linux - Symlink";
@@ -146,11 +149,23 @@
 			case 'mgcamd-index' :
 				$title = "MGcamd";
 			break;
+			case 'newcamd-index' :
+				$title = "Newcamd";
+			break;
 			case 'oscam-index' :
 				$title = "OSCam";
 			break;
 			case 'oscam-todo' :
 				$title = "OSCam - TODO list";
+			break;
+			case 'protocol-index' :
+				$title = "Cardsharing protokoly";
+			break;
+			case 'protocol-index' :
+				$title = "Cardsharing protokoly";
+			break;
+			case 'protocol-cryptography' :
+				$title = "Cardsharing šifrování";
 			break;
 			case 'radegast-index' :
 				$title = "Radegast";
@@ -178,6 +193,9 @@
 			break;
 			case 'radegast-log' :
 				$title = "Radegast - Log";
+			break;
+			case 'timeline-index' :
+				$title = "Timeline - Časová osa emulátorů";
 			break;
 			default:
 				$title = "Stránka nenalezena";
@@ -224,6 +242,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>  
 	<link rel="stylesheet" href="css/fonts.css" />
 
+	<!-- **Timeliner** -->
+	<link rel="stylesheet"  href="css/timeliner_component.css" media="all" />
+
 	<!-- **Custom stylesheets** -->
 	<link rel="stylesheet"  href="css/basic/custom.css" media="all" />
 	<link rel="stylesheet"  href="css/czsk-wiki-font.css" media="all" />
@@ -235,11 +256,17 @@
 	<link type="text/css" rel="stylesheet" href="js/SyntaxHighlighter/shCoreDefault.css"/>
 	<script type="text/javascript">SyntaxHighlighter.all();</script>
 
-	<!-- **jQuery** -->  
+	<!-- **PopUp Modal CSS Style** -->
+	<link rel="stylesheet" href="css/modality.css">
+
+	<!-- **jQuery** -->
 	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 
 	<!-- **Chart javascript** -->  
 	<script src="js/Chart.js" type="text/javascript"></script>
+
+	<!-- **PopUp Modal** -->
+	<script src="js/modality.jquery.min.js"></script>
 
 	<!-- **JQuery encode/decode Base64 -->
 	<script src="js/jquery.base64.js" type="text/javascript"></script>
@@ -307,46 +334,24 @@
 	
 </div><!-- **Wrapper - End** -->
 
-<!-- **jQuery** -->  
-	<script src="js/jquery-migrate.min.js"></script>
-	<script src="js/pace.min.js" type="text/javascript"></script>
-	
-	<script src="js/jquery.tabs.min.js"></script>
-	
+<!-- **jQuery** -->
 	<script src="js/jquery-easing-1.3.js" type="text/javascript"></script>
-	
-	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-	
-	<script src="js/jquery.inview.js" type="text/javascript"></script>
-	<script src="js/jquery.viewport.js" type="text/javascript"></script>
-	
-	<script type="text/javascript" src="js/jquery.nav.js"></script>
-	
-	<script src="js/layerslider.transitions.js"></script> 
-	<script src="js/layerslider.kreaturamedia.jquery.js"></script> 
-	<script src="js/greensock.js"></script> 
-	
-	<script data-cfasync="false" type="text/javascript">var lsjQuery = jQuery;</script><script data-cfasync="false" type="text/javascript"> lsjQuery(document).ready(function() { if(typeof lsjQuery.fn.layerSlider == "undefined") { lsShowNotice('layerslider_9','jquery'); } else { lsjQuery("#layerslider_9").layerSlider({responsiveUnder: 1240, layersContainer: 1170, startInViewport: false, pauseOnHover: false, forceLoopNum: false, autoPlayVideos: false, skinsPath: 'js/layerslider/skins/'}) } }); </script>
-	
-	<script src="js/jquery.jcarousel.min.js" type="text/javascript"></script>
-	<script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
-	
-	<script src="js/jquery.isotope.min.js" type="text/javascript"></script>
-	<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-	
-	<script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
-	
-	<script src="js/responsive-nav.js" type="text/javascript"></script>
-	<script src="js/jquery.meanmenu.min.js" type="text/javascript"></script>
-	
-	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	
-	<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
-
-<!-- **Sticky Nav** -->
-	<script src="js/jquery.sticky.js" type="text/javascript"></script>
+	<script src="js/jquery-migrate.min.js"></script>
 <!-- **Preloader** -->
 	<script src="js/preloader.js" type="text/javascript"></script>
+	<script src="js/pace.min.js" type="text/javascript"></script>
+<!--**prettyPhoto**-->
+	<script src="js/jquery.isotope.min.js" type="text/javascript"></script>
+	<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>	
+<!--**Responsive navigation** -->
+	<script src="js/responsive-nav.js" type="text/javascript"></script>
+	<script src="js/jquery.meanmenu.min.js" type="text/javascript"></script>
+<!--**jQuery-One-Page-Nav**-->	
+	<script type="text/javascript" src="js/jquery.nav.js"></script>
+<!-- **Scrollbars compatble with destkop, tablet and phone devices**-->
+	<script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
+<!-- **Sticky Nav** -->
+	<script src="js/jquery.sticky.js" type="text/javascript"></script>
 <!-- **To Top** -->
 	<script src="js/jquery.ui.totop.min.js" type="text/javascript"></script>
 <!-- **Custom script** -->
@@ -371,21 +376,6 @@
 					selection.addRange(range);
 				}
 			};
-		$(function () {
-			$('.popup-modal').magnificPopup({
-				type: 'inline',
-				preloader: false,
-				focus: '#username',
-				modal: true
-			});
-			$(document).on('click', '.popup-modal-dismiss', function (e) {
-				e.preventDefault();
-				$.magnificPopup.close();
-			});
-		});
-	});
 	</script>
-		  
-
 </body>
 </html>
