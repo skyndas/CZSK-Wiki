@@ -1,53 +1,53 @@
-			<div class="breadcrumb-wrapper type2">
-				<div class="container">
-					<div class="main-title">
-						<h1>DOSCam</h1>
-						<div class="breadcrumb">
-							<span class="fa fa-home"></span>
-							<a href="index.php?page=home-page">Úvod</a>
-							<span class="fa fa-angle-right"></span>
-							<span class="fa fa-cube"></span>
-							<a href="index.php?page=home-page">Emulátory</a>
-							<span class="fa fa-angle-right"></span>
-							<span class="current">DOSCam</span>
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="breadcrumb-wrapper type2">
+  <div class="container">
+    <div class="main-title">
+      <h1>DOSCam</h1>
+      <div class="breadcrumb">
+        <span class="fa fa-home"></span>
+        <a href="index.php?page=home-page">Úvod</a>
+        <span class="fa fa-angle-right"></span>
+        <span class="fa fa-cube"></span>
+        <a href="index.php?page=home-page">Emulátory</a>
+        <span class="fa fa-angle-right"></span>
+        <span class="current">DOSCam</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-			<!-- Container starts-->
-			<div class="container">
-				<div class="dt-sc-margin70"></div>
-				<!-- **secondary - starts** --> 
-				<section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
+<!-- Container starts-->
+<div class="container">
+  <div class="dt-sc-margin70"></div>
+  <!-- **secondary - starts** -->
+  <section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
 
-<?php include ("inc/html_content/dos_cam-menu.html"); ?>
+    <?php include("inc/html_content/dos_cam-menu.php"); ?>
 
-				</section> <!-- **secondary - Ends** --> 
-				
-				<!-- Primary Starts -->
-				<section id="primary" class="page-with-sidebar with-left-sidebar">
-					<div class="content">
-						<div class="entry-detail" style="width: 100%;">
-							<!-- **entry-meta-data - Starts** -->
-							<div class="entry-meta-data">
-								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 12.5.2015</p>
-							</div> <!-- **entry-meta-data - Ends** -->
-						</div>
+  </section> <!-- **secondary - Ends** -->
 
-						<div class="dt-sc-tabs-vertical-container">
-							<h4>DOSCam telnet</h4>
-							<p><strong>DOSCam</strong> je možné ovládat pomocí příkazu telnetu. </p>
+  <!-- Primary Starts -->
+  <section id="primary" class="page-with-sidebar with-left-sidebar">
+    <div class="content">
+      <div class="entry-detail" style="width: 100%;">
+        <!-- **entry-meta-data - Starts** -->
+        <div class="entry-meta-data">
+          <p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
+          <p><span class="fa fa-calendar"> </span> Datum: 12.5.2015</p>
+        </div> <!-- **entry-meta-data - Ends** -->
+      </div>
 
-						</div>
+      <div class="dt-sc-tabs-vertical-container">
+        <h4>DOSCam telnet</h4>
+        <p><strong>DOSCam</strong> je možné ovládat pomocí příkazu telnetu. </p>
 
-						<div class="dt-sc-hr-invisible-very-small"></div>
-						<div class="dt-sc-tabs-vertical-container">
-							<h4>Příkazy telnetu pro DOSCam</h4>
+      </div>
 
-							<p><strong>Spuštění DOSCam s parametry:</strong></p>
-							<div class="dt-sc-one dt-sc-lmarg25">
+      <div class="dt-sc-hr-invisible-very-small"></div>
+      <div class="dt-sc-tabs-vertical-container">
+        <h4>Příkazy telnetu pro DOSCam</h4>
+
+        <p><strong>Spuštění DOSCam s parametry:</strong></p>
+        <div class="dt-sc-one dt-sc-lmarg25">
 								<pre>
 DOSCam V0.25 (mipsel-unknown-linux-gnu)
  ConfigDir  : /var/tuxbox/config
@@ -108,12 +108,12 @@ DOSCam V0.25 (mipsel-unknown-linux-gnu)
  -V, --build-info        | Show OSCam binary configuration and version.
 
 								</pre>
-							</div>
+        </div>
 
-						</div>
+      </div>
 
-					</div>
-					<div class="dt-sc-hr-invisible-small"></div>
-				</section><!-- **Primary - Ends** -->
+    </div>
+    <div class="dt-sc-hr-invisible-small"></div>
+  </section><!-- **Primary - Ends** -->
 
-			</div> <!-- **container - Ends** -->
+</div> <!-- **container - Ends** -->

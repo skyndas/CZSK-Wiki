@@ -1,45 +1,45 @@
-			<div class="breadcrumb-wrapper type2">
-				<div class="container">
-					<div class="main-title">
-						<h1>Radegast</h1>
-						<div class="breadcrumb">
-							<span class="fa fa-home"></span>
-							<a href="index.php?page=home-page">Úvod</a>
-							<span class="fa fa-angle-right"></span>
-							<span class="fa fa-cube"></span>
-							<a href="index.php?page=home-page">Emulátory</a>
-							<span class="fa fa-angle-right"></span>
-							<span class="current">Radegast</span>
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="breadcrumb-wrapper type2">
+  <div class="container">
+    <div class="main-title">
+      <h1>Radegast</h1>
+      <div class="breadcrumb">
+        <span class="fa fa-home"></span>
+        <a href="index.php?page=home-page">Úvod</a>
+        <span class="fa fa-angle-right"></span>
+        <span class="fa fa-cube"></span>
+        <a href="index.php?page=home-page">Emulátory</a>
+        <span class="fa fa-angle-right"></span>
+        <span class="current">Radegast</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-			<!-- Container starts-->
-			<div class="container">
-				<div class="dt-sc-margin70"></div>
-				<!-- **secondary - starts** --> 
-				<section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
-					
-<?php include ("inc/html_content/radegast-menu.html"); ?>
+<!-- Container starts-->
+<div class="container">
+  <div class="dt-sc-margin70"></div>
+  <!-- **secondary - starts** -->
+  <section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
 
-				</section> <!-- **secondary - Ends** --> 
-				
-				<!-- Primary Starts -->
-				<section id="primary" class="page-with-sidebar with-left-sidebar">
-					<div class="content">
-						<div class="entry-detail" style="width: 100%;">
-							<!-- **entry-meta-data - Starts** -->
-							<div class="entry-meta-data">
-								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 20.5.2015</p>
-							</div> <!-- **entry-meta-data - Ends** -->
-						</div>
+    <?php include("inc/html_content/radegast-menu.php"); ?>
 
-						<div class="dt-sc-tabs-vertical-container">
-							<h4>Radegast Log</h4>
-							<p>Ukázka výpisu logu Radegastu (nalezeno na www.cssf.cz)</p>
-							<div>
+  </section> <!-- **secondary - Ends** -->
+
+  <!-- Primary Starts -->
+  <section id="primary" class="page-with-sidebar with-left-sidebar">
+    <div class="content">
+      <div class="entry-detail" style="width: 100%;">
+        <!-- **entry-meta-data - Starts** -->
+        <div class="entry-meta-data">
+          <p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
+          <p><span class="fa fa-calendar"> </span> Datum: 20.5.2015</p>
+        </div> <!-- **entry-meta-data - Ends** -->
+      </div>
+
+      <div class="dt-sc-tabs-vertical-container">
+        <h4>Radegast Log</h4>
+        <p>Ukázka výpisu logu Radegastu (nalezeno na www.cssf.cz)</p>
+        <div>
 								<pre class="brush: text;">
 2008-11-01 23:38:24 - int-init, @: $ hop, Jun 2 2008 23:03:27 $
 2008-11-01 23:38:24 - int-init, N: Net console is disabled.
@@ -84,8 +84,8 @@ VIRTUAL CARD: CAID = 1702
 2008-11-01 23:38:25 - net-init, D: Client #1/newcamd:15052(server): CARD_DATA sent ok
 								</pre>
 
-								<p>Ukázka výpisu logu Radegastu (Radegast spuštěn na Xubuntu)</p>
-							<div>
+          <p>Ukázka výpisu logu Radegastu (Radegast spuštěn na Xubuntu)</p>
+          <div>
 								<pre class="brush: text;">
 Radegast server deamon (project Radegast), version 4.2rel10
 (c) 2k3-9, kindzadza and the rest of Radegast team
@@ -132,10 +132,10 @@ VIRTUAL CARD: CAID = 0100
 2015-05-22 14:40:58 - keys-init, W: Failed stat mkeys file 'MK.Key'.
 2015-05-22 14:40:58 -   LocCMD: Waiting for connection on /var/tmp/rdgd.cmd
 								</pre>
-							</div>
-						</div>
-					</div>
-					<div class="dt-sc-hr-invisible-small"></div>
-				</section><!-- **Primary - Ends** -->
+          </div>
+        </div>
+      </div>
+      <div class="dt-sc-hr-invisible-small"></div>
+  </section><!-- **Primary - Ends** -->
 
-			</div> <!-- **container - Ends** -->
+</div> <!-- **container - Ends** -->

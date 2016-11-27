@@ -1,51 +1,53 @@
-			<div class="breadcrumb-wrapper type2">
-				<div class="container">
-					<div class="main-title">
-						<h1>Cccam</h1>
-						<div class="breadcrumb">
-							<span class="fa fa-home"></span>
-							<a href="index.php?page=home-page">Úvod</a>
-							<span class="fa fa-angle-right"></span>
-							<span class="fa fa-cube"></span>
-							<a href="index.php?page=home-page">Emulátory</a>
-							<span class="fa fa-angle-right"></span>
-							<span class="current">CCcam</span>
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="breadcrumb-wrapper type2">
+  <div class="container">
+    <div class="main-title">
+      <h1>Cccam</h1>
+      <div class="breadcrumb">
+        <span class="fa fa-home"></span>
+        <a href="index.php?page=home-page">Úvod</a>
+        <span class="fa fa-angle-right"></span>
+        <span class="fa fa-cube"></span>
+        <a href="index.php?page=home-page">Emulátory</a>
+        <span class="fa fa-angle-right"></span>
+        <span class="current">CCcam</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-			<!-- Container starts-->
-			<div class="container">
-				<div class="dt-sc-margin70"></div>
-				<!-- **secondary - starts** --> 
-				<section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
-					
-<?php include ("inc/html_content/cccam-menu.html"); ?>
+<!-- Container starts-->
+<div class="container">
+  <div class="dt-sc-margin70"></div>
+  <!-- **secondary - starts** -->
+  <section id="secondary-left" class="secondary-sidebar secondary-has-left-sidebar">
 
-				</section> <!-- **secondary - Ends** --> 
-				
-				<!-- Primary Starts -->
-				<section id="primary" class="page-with-sidebar with-left-sidebar">
-					<div class="content">
-						<div class="entry-detail" style="width: 100%;">
-							<!-- **entry-meta-data - Starts** -->
-							<div class="entry-meta-data">
-								<p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
-								<p><span class="fa fa-calendar"> </span> Datum: 10.5.2015</p>
-							</div> <!-- **entry-meta-data - Ends** -->
-						</div>
-						<div class="dt-sc-tabs-vertical-container">
-							<h4>Ostatní Bash scripty pro CCcam</h4>
+    <?php include("inc/html_content/cccam-menu.php"); ?>
 
-						</div>
+  </section> <!-- **secondary - Ends** -->
 
-						<div class="dt-sc-hr-invisible-very-small"></div>
-						<div class="dt-sc-tabs-vertical-container">
-							<h4>Přidání expirační doby pro F: line</h4>
-							<p><strong>Popis scriptu</strong></p>
-							<div class="dt-sc-one dt-sc-lmarg25">
-								<p>Tento script jsem testoval a stále nechápu jakým způsobem pracuje. Nicméně je to dobrý nápad jako trénink na bash scripty. Až bude někdy čas rád se na něj podívám blíže. Alespoň uvádím anglický manuál instalace.</p>
+  <!-- Primary Starts -->
+  <section id="primary" class="page-with-sidebar with-left-sidebar">
+    <div class="content">
+      <div class="entry-detail" style="width: 100%;">
+        <!-- **entry-meta-data - Starts** -->
+        <div class="entry-meta-data">
+          <p style="width: 20%;"><span class="fa fa-user"> </span> Autor: skyndas </p>
+          <p><span class="fa fa-calendar"> </span> Datum: 10.5.2015</p>
+        </div> <!-- **entry-meta-data - Ends** -->
+      </div>
+      <div class="dt-sc-tabs-vertical-container">
+        <h4>Ostatní Bash scripty pro CCcam</h4>
+
+      </div>
+
+      <div class="dt-sc-hr-invisible-very-small"></div>
+      <div class="dt-sc-tabs-vertical-container">
+        <h4>Přidání expirační doby pro F: line</h4>
+        <p><strong>Popis scriptu</strong></p>
+        <div class="dt-sc-one dt-sc-lmarg25">
+          <p>Tento script jsem testoval a stále nechápu jakým způsobem pracuje. Nicméně je to dobrý nápad jako trénink
+            na bash scripty. Až bude někdy čas rád se na něj podívám blíže. Alespoň uvádím anglický manuál
+            instalace.</p>
 								<pre>
 Add expiry date for any F line
 This is a very wonderful addition for CCcam server owners to control their F lines
@@ -78,9 +80,9 @@ now you will found new file with name "expired" on the directory
 
 where all you expired F lines listed
 								</pre>
-							</div>
-							<p><strong>Zdrojový kód scriptu</strong></p>
-							<div class="dt-sc-one dt-sc-lmarg25">
+        </div>
+        <p><strong>Zdrojový kód scriptu</strong></p>
+        <div class="dt-sc-one dt-sc-lmarg25">
 								<pre class="brush: bash;">
 ## ##
 grep $(date +%d-%m-%Y) /etc/CCcam.cfg >> /etc/expired
@@ -89,25 +91,32 @@ chmod 755 /tmp/check-expire
 /tmp/check-expire
 rm /tmp/check-expire
 								</pre>
-							</div>
-						</div>
+        </div>
+      </div>
 
-						<div class="dt-sc-hr-invisible-very-small"></div>
-						<div class="dt-sc-tabs-vertical-container">
-							<h4>Konverze C:line a F:line pro OSCam</h4>
-							<p><strong>Popis scriptu</strong></p>
-							<div class="dt-sc-one dt-sc-lmarg25">
-								<p><strong>TESTOVÁNO a vše funguje s malou vyjímkou (po úpravě bude pracovat na plno i pro nové verze OSCamu).</strong><br> Vzhledem k tomu, že tento script je cca z roku 2012 a nebyl proveden update, jsou výstupní soubory OSCamu již ve špatném formátu. To je z toho důvodu, že OSCam je neustále ve vývoji a jeho formát konfiguračních dat je již jiný.</p>
-							</div>
-							<p><strong>Ke stažení</strong></p>
-							<div class="dt-sc-one dt-sc-lmarg25">
-								<a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/conv_cccam_to_oscam.sh" target="_blank">conv_cccam_to_oscam.sh - script</a><br>
-								<a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/CCcam.cfg" target="_blank">CCcam.cfg - ukázkový konfigurační soubor CCcamu</a><br>
-								<a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/oscam.server" target="_blank">oscam.server - ukázkový výstupní soubor s konverzí čteček</a><br>
-								<a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/oscam.user" target="_blank">oscam.user - ukázkový výstupní soubor s konverzí uživatelů</a><br><br>
-							</div>
-							<p style="clear:both"><strong>Zdrojový kód scriptu</strong></p>
-							<div class="dt-sc-one dt-sc-lmarg25">
+      <div class="dt-sc-hr-invisible-very-small"></div>
+      <div class="dt-sc-tabs-vertical-container">
+        <h4>Konverze C:line a F:line pro OSCam</h4>
+        <p><strong>Popis scriptu</strong></p>
+        <div class="dt-sc-one dt-sc-lmarg25">
+          <p><strong>TESTOVÁNO a vše funguje s malou vyjímkou (po úpravě bude pracovat na plno i pro nové verze
+              OSCamu).</strong><br> Vzhledem k tomu, že tento script je cca z roku 2012 a nebyl proveden update, jsou
+            výstupní soubory OSCamu již ve špatném formátu. To je z toho důvodu, že OSCam je neustále ve vývoji a jeho
+            formát konfiguračních dat je již jiný.</p>
+        </div>
+        <p><strong>Ke stažení</strong></p>
+        <div class="dt-sc-one dt-sc-lmarg25">
+          <a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/conv_cccam_to_oscam.sh" target="_blank">conv_cccam_to_oscam.sh
+            - script</a><br>
+          <a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/CCcam.cfg" target="_blank">CCcam.cfg -
+            ukázkový konfigurační soubor CCcamu</a><br>
+          <a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/oscam.server" target="_blank">oscam.server
+            - ukázkový výstupní soubor s konverzí čteček</a><br>
+          <a href="downloads/cccam/script/bash_script/Convert_C_F_lines_OSCam/oscam.user" target="_blank">oscam.user -
+            ukázkový výstupní soubor s konverzí uživatelů</a><br><br>
+        </div>
+        <p style="clear:both"><strong>Zdrojový kód scriptu</strong></p>
+        <div class="dt-sc-one dt-sc-lmarg25">
 								<pre class="brush: bash;">
 #!/bin/bash
 
@@ -223,10 +232,10 @@ convert_clients
 
 echo "Done"
 								</pre>
-							</div>
-						</div>
-					</div>
-					<div class="dt-sc-hr-invisible-small"></div>
-				</section><!-- **Primary - Ends** -->
+        </div>
+      </div>
+    </div>
+    <div class="dt-sc-hr-invisible-small"></div>
+  </section><!-- **Primary - Ends** -->
 
-			</div> <!-- **container - Ends** -->
+</div> <!-- **container - Ends** -->
